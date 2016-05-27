@@ -1,0 +1,35 @@
+#loginBox
+{
+	border-radius: 15px;
+	overflow: hidden;
+	cursor: auto;
+}
+
+.login_area_top
+{
+	position: absolute;
+	width: 100%;
+	height: 88px;
+	background-color: #FF6666;
+}
+
+.login_form_area
+{
+	position: relative;
+	top: 88px;
+	height: 332px;
+	text-align: center;
+}
+
+.login_input
+{
+	position: relative;
+	width: 299px;
+	height: 35px;
+}
+
+.icheckbox_flat_orange
+{
+	position: relative;
+	height: 50px;
+}
