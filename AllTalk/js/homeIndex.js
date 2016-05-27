@@ -15,6 +15,7 @@ $(document).ready(function(){
 		$(this).find("img").css("visibility","hidden");
 	});
 	
+	//动态载入函数
 	$("body").on("click","#header_logo",function () {
 		$("#content").load("view/user/personal.html #personalPage",function () {
 			$("<link>")
