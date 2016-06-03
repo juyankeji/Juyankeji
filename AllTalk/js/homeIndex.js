@@ -16,19 +16,20 @@ $(document).ready(function(){
 	});
 	
 	//动态载入函数
-	$("body").on("click","#header_logo",function () {
-		$("#content").load("view/user/personal.html #personalPage",function () {
-			$("<link>")
-    			.attr({ rel: "stylesheet",
-        				type: "text/css",
-        				href: "css/personal/main.css"
-    			})
-   				.appendTo("head");
-		});
+	$(function (bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute) {
+		bindElement = "body";
+		action = "click";
+		triggerElement = "#personal_test";
+		loadElement = "#content_test";
+		pageRoute = "view/user/personal.html #personalPage";
+		cssRoute = "css/personal/main.css"
+		jsRoute = "js/personal/personal.js";
+		ajaxLoad(bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute);
 	});
 	
-	$("body").on("click","#header_index_all",function () {
-		$("#content").load("test.html");
-	});
+	$("body").on("click","#header_personal",function () {
+		$("#loginBox").css('display','inherit');
+	});	
+	
 	
 });

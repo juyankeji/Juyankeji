@@ -1,0 +1,36 @@
+#personal_concern_test
+{
+	width: 77.8%;
+	height: 500px;
+	min-width: 1045px;
+}
+
+.personal_concern
+{
+	min-width: 1000px;
+}
+
+.personal_concern li,.personal_concerned li
+{
+	position: relative;
+	list-style: none;
+	margin: 10px 10px;
+	float: left;
+	width: 48%;
+	height: 240px;
+	display: inline-block;
+}
+
+.personal_concern_items,.personal_concerned_items
+{
+	width: 100%;
+	height: 100%;
+	background-color: #CCCCCC;
+	opacity: 0.7;
+	border-radius: 10px;
+}
+
+#personal_concern_items1,#personal_concerned_items1
+{
+	margin-left: 0;
+}

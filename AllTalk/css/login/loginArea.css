@@ -3,6 +3,7 @@
 	border-radius: 15px;
 	overflow: hidden;
 	cursor: auto;
+	display: none;
 }
 
 .login_area_top
@@ -13,7 +14,7 @@
 	background-color: #FF6666;
 }
 
-.login_form_area
+.login_form_area,.register_form_area
 {
 	position: relative;
 	top: 88px;
@@ -21,7 +22,7 @@
 	text-align: center;
 }
 
-.login_input
+.login_input,.register_input
 {
 	position: relative;
 	width: 299px;
@@ -32,4 +33,113 @@
 {
 	position: relative;
 	height: 50px;
+}
+
+#remember
+{
+	text-align: left;
+	padding-left: 70px;
+}
+
+#remember_forget
+{
+	float: right;
+	padding-right: 70px;
+}
+
+#returnLogin
+{
+	float: right;
+	padding-right: 70px;
+	cursor: pointer;
+}
+
+#register_button
+{
+	width: 149px;
+	height: 30px;
+	border: 1px solid #FF6666;
+	border-radius: 5px;
+	color: #FF6666;
+	font-size: 13px;
+	float: right;
+	margin-right: 70px;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+#line
+{
+	position: absolute;
+	width: 1px;
+	height: 125px;
+	top: 160px;
+	left: 439px;
+	background-color: #999999;
+}
+
+.list
+{
+	width: 439px;
+}
+
+.login_input
+{
+	text-align: center;
+}
+
+
+/* iCheck plugin Flat skin
+----------------------------------- */
+/* red */
+.icheckbox_flat-red,
+.iradio_flat-red {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../../img/login/red.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_flat-red {
+    background-position: 0 0;
+}
+    .icheckbox_flat-red.checked {
+        background-position: -22px 0;
+    }
+    .icheckbox_flat-red.disabled {
+        background-position: -44px 0;
+        cursor: default;
+    }
+    .icheckbox_flat-red.checked.disabled {
+        background-position: -66px 0;
+    }
+
+.iradio_flat-red {
+    background-position: -88px 0;
+}
+    .iradio_flat-red.checked {
+        background-position: -110px 0;
+    }
+    .iradio_flat-red.disabled {
+        background-position: -132px 0;
+        cursor: default;
+    }
+    .iradio_flat-red.checked.disabled {
+        background-position: -154px 0;
+    }
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_flat-red,
+    .iradio_flat-red {
+        background-image: url(../../img/login/red@2x.png);
+        -webkit-background-size: 176px 22px;
+        background-size: 176px 22px;
+    }
 }

@@ -80,7 +80,7 @@
 			}
 			
 			//关闭按钮
-			if(o.closeHide != false) closeBtnTpl = '<a id="HCloseBtn" title="关闭" style="width:24px;height:24px;line-height:24px;display:inline-block;cursor:pointer;background-color:'+closeBg+';color:#fff;font-size:1.4em;text-align:center;position:absolute;top:8px;right:8px;"><span style="width:24px;height:24px;display:inline-block;">×</span></a>';
+			if(o.closeHide != false) closeBtnTpl = '<a id="HCloseBtn" title="关闭" style="width:40px;height:40px;line-height:40px;display:inline-block;cursor:pointer;color:#fff;font-size:4em;text-align:center;position:absolute;right:5px;z-index:9;"><span style="width:40px;height:40px;display:inline-block;">×</span></a>';
 
 			//弹框标题
 			if(o.title != '') headTpl = '<div id="HTitle" style="padding:10px 45px 10px 12px;border-bottom:1px solid #ddd;background-color:#f2f2f2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+o.title+'</div>';

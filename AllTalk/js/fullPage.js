@@ -1,11 +1,17 @@
 $(document).ready(function() {
 //	alert($(".sectionType_span").width());
-    $(function() {
+//  alert($("#content").css('display'));
+    if ($("#content").css('display') !='none') {
+    	
+    	$(function() {
         $("#content").fullpage({
 	      	loopTop : false,
 	      	loopBottom: true,
-	      	navigation : true,
+//	      	navigation : true,
 	      	slidesNavPosition: 'bottom',
+	      	slidesNavigation: 'true',
+//	      	scrollBar: 'true',
+//	      	scrollOverflow: false,
 //    		sectionsColor : ['red', 'red', 'red', 'red'],
       		anchors: ['1', '2', '3', '4'],
 //    		afterLoad:function (index) {clearItemPosition();},
@@ -22,6 +28,8 @@ $(document).ready(function() {
       		
         });
     });
+    }
+    
     
     //获取fullPage的ID
     function getSection (index,type) {
@@ -48,11 +56,14 @@ $(document).ready(function() {
     	var height = width;
     	var spanHeight = $(".sectionType_span").height();
     	$(".sectionType").removeClass();
-    	$(".sectionType").css('width',width/1.4);
-    	$(".sectionType").css('height',height/1.4);
-    	$(".sectionType").css('margin-left',(width-width/1.4)/2);
-    	$(".sectionType").css('margin-top',(width-width/1.4)/2);
+    	$(".sectionType").css({
+    		"width" : width/1.4,
+    		"height" : height/1.4,
+    		"margin-left" : (width-width/1.4)/2,
+    		"margin-top" : (width-width/1.4)/2,
+    	});
     	$(".sectionType_span").css('top',height/2.8-spanHeight/2);
+//  	$(".sectionType_span").animate({top:'400px'},"slow");
     }
     
     //自适应窗口大小
@@ -60,13 +71,20 @@ $(document).ready(function() {
     	var section_num = getSection(index,2);
     	var section_1 = $(section_num);
     	var height = section_1.width();
+    	var a = ["height","margin-left","margin-top"];
+    	var b = [height,-height/2,-height/2];
     	section_1.removeClass();
-    	section_1.css('height',height);
-    	section_1.css('margin-left',-height/2);
-    	section_1.css('margin-top',-height/2);
+    	section_1.css({
+    		"height" : height,
+    		"margin-left" : -height/2,
+    		"margin-top" : -height/2,
+    	});
+//  	setCss(section_1,a,b);
     	var section_img = section_1.find('img');
-    	section_img.css('width',height);
-    	section_img.css('height',height);
+    	section_img.css({
+    		'width' : height,
+    		'height': height,
+    	});
     	var section_img_in = section_1.find('.section_img_in');
     }
     

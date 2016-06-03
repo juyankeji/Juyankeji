@@ -5,13 +5,29 @@ $(document).ready(function(){
 	$el.hDialog({
 		width : 642,
 		height : 420,
-		boxBg : '#ccc'
-  });
-});
+		boxBg : '#ccc',
+		modalHide: false
+ 		});
+	});
 	
-  $('input').iCheck({
-    checkboxClass: 'icheckbox_flat_orange',
-    radioClass: 'iradio_flat_orange'
+	$("#register_button").click(function () {
+//		$(".login_form_area").css("display","none");
+		$("#loginBox").css("height",450);
+		$(".login_form_area").css("display","none");
+		$(".register_form_area").css("display","inherit");
+		
+	});
+	
+	$("#returnLogin").click(function () {
+		$("#loginBox").css("height",420);
+		$(".login_form_area").css("display","inherit");
+		$(".register_form_area").css("display","none");
+	});
+	
+	
+  $('#loginBox').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
   });
 });
 
