@@ -10,16 +10,59 @@ $(document).ready(function(){
  		});
 	});
 	
+//	$(".submitBtn").click(function () {
+//		$("#errInfo_area2").html("账号密码错误！");
+//	});
+	
+	
+	
+	$("#register_form_area").validate({
+		rules:{
+			registerUsername:{
+				required:true,
+			},
+			registerPassword:{
+				required:true,
+			},
+			registerPassword2:{
+				required:true,
+			},
+			nickName:{
+				required:true
+			}
+		},
+		messages:{
+			registerUsername:"请输入用户名！",
+			registerPassword:{
+				required: "请输入密码!",
+        minlength: "密码长度不能小于6位！"
+			},
+			registerPassword2:{
+				required: "请输入密码!",
+        minlength: "密码长度不能小于6位！",
+        equalTo: "两次密码输入不一致"
+			},
+		},
+		errorPlacement:function(error,element){
+			if(element.is("input"))
+				error.appendTo(".errInfo_area");
+			else
+				return 0;
+			
+		}
+	});
+	
 	$("#register_button").click(function () {
-//		$(".login_form_area").css("display","none");
-		$("#loginBox").css("height",450);
+		$("#loginBox").animate({height:'450px'});
+		$("#line").animate({height:'160px'});
 		$(".login_form_area").css("display","none");
 		$(".register_form_area").css("display","inherit");
 		
 	});
 	
 	$("#returnLogin").click(function () {
-		$("#loginBox").css("height",420);
+		$("#loginBox").animate({height:'420px'});
+		$("#line").animate({height:'125px'});
 		$(".login_form_area").css("display","inherit");
 		$(".register_form_area").css("display","none");
 	});
@@ -30,7 +73,6 @@ $(document).ready(function(){
     radioClass: 'iradio_flat-red'
   });
 });
-
 
 /*
 	 * 以下是单独的调用示例，你只需要自定义弹框的样式即可。

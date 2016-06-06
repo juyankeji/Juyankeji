@@ -29,10 +29,15 @@
 	height: 35px;
 }
 
-.icheckbox_flat_orange
+/*.icheckbox_flat_orange
 {
 	position: relative;
 	height: 50px;
+}*/
+
+.submitBtn
+{
+	margin-top: 0;
 }
 
 #remember
