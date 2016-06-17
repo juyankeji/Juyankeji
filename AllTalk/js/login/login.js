@@ -1,40 +1,75 @@
 $(document).ready(function(){
   $(function () {
-	var $el = $('.dialog');
+//	var $el = $('.dialog');
 //	$el.hDialog(); //默认调用
-	$el.hDialog({
-		width : 642,
+	$(".login_text").hDialog({
+		'box' : '#loginBox',
+		width : 500,
 		height : 420,
-		boxBg : '#ccc',
-		modalHide: false
- 		});
+		boxBg : '#f2f2f2',
+		modalHide: false,
+		closeBg : "#f2f2f2",
+		effect: "fadeOut",
+ 	});
+});
+ 	
 	});
 	
-//	$(".submitBtn").click(function () {
-//		$("#errInfo_area2").html("账号密码错误！");
-//	});
+	//登录验证
+	$("#login_form_area").validate({
+		rules:{
+			loginUsername:{
+				required:true,
+				email:true,
+			},
+			loginPassword:{
+				required:true,
+			}
+		},
+		messages:{
+			loginUsername:{
+				required:"请输入邮箱！",
+				email:"请确认邮箱格式！",
+			},
+			loginPassword:{
+				required:"账号或密码错误！",
+			}
+		},
+		errorPlacement:function (error,element) {
+			if(element.is("#loginUsername"))
+				error.appendTo("#p1_1");
+			if(element.is("#loginPassword"))
+				error.appendTo("#p1_2");
+		}
+	});
 	
-	
-	
+	//注册验证
 	$("#register_form_area").validate({
 		rules:{
 			registerUsername:{
 				required:true,
+				email:true,
 			},
 			registerPassword:{
 				required:true,
+				minlength:6,
 			},
 			registerPassword2:{
 				required:true,
+				minlength:6,
+				equalTo:"#registerPassword",
 			},
 			nickName:{
 				required:true
 			}
 		},
 		messages:{
-			registerUsername:"请输入用户名！",
+			registerUsername:{
+				required: '请输入用户名！',
+				email: '请输入正确的邮箱！'
+			},
 			registerPassword:{
-				required: "请输入密码!",
+				required: "请输入密码！",
         minlength: "密码长度不能小于6位！"
 			},
 			registerPassword2:{
@@ -43,9 +78,14 @@ $(document).ready(function(){
         equalTo: "两次密码输入不一致"
 			},
 		},
+//		wrapper:"p"
 		errorPlacement:function(error,element){
-			if(element.is("input"))
-				error.appendTo(".errInfo_area");
+			if(element.is("#registerUsername"))
+				error.appendTo("#p2_1");
+			if(element.is("#registerPassword"))
+				error.appendTo("#p2_2");
+			if(element.is("#registerPassword2"))
+				error.appendTo("#p2_3");
 			else
 				return 0;
 			
@@ -53,8 +93,8 @@ $(document).ready(function(){
 	});
 	
 	$("#register_button").click(function () {
-		$("#loginBox").animate({height:'450px'});
-		$("#line").animate({height:'160px'});
+		$("#loginBox").animate({height:'430px'});
+		$("#line").animate({height:'140px'});
 		$(".login_form_area").css("display","none");
 		$(".register_form_area").css("display","inherit");
 		
@@ -72,7 +112,93 @@ $(document).ready(function(){
     checkboxClass: 'icheckbox_flat-red',
     radioClass: 'iradio_flat-red'
   });
+
+//登录输入框获得焦点效果
+$(".ipt").focus(function () {
+	var iptType = $(this).attr("type");
+	switch (iptType){
+		case "text":
+			$(this).siblings("img").attr("src","img/login/user 02.png");
+			$(this).attr("oninput","this.style.color='#666'");
+			break;
+		case "password":
+			$(this).siblings("img").attr("src","img/login/password 02.png");
+			$(this).attr("oninput","this.style.color='#666'");
+			break;
+		default:
+			break;
+	}
 });
+//登录输入框失去焦点效果
+$(".ipt").blur(function () {
+	var iptType = $(this).attr("type");
+	switch (iptType){
+		case "text":
+			$(this).siblings("img").attr("src","img/login/user 01.png");
+			break;
+		case "password":
+			$(this).siblings("img").attr("src","img/login/password 01.png");
+			break;
+		default:
+			break;
+	}
+});
+
+//图标鼠标移入效果
+$(".icon img").hover(function () {
+	var iconName = $(this).attr("name");
+	switch (iconName){
+		case "qq":
+			$(this).attr("src","img/login/QQ 02.png");
+			break;
+		case "weixin":
+			$(this).attr("src","img/login/weixin 02.png");
+			break;
+		case "weibo":
+			$(this).attr("src","img/login/weibo 02.png");
+			break;
+		default:
+			break;
+	}},
+	function (){
+		var iconName = $(this).attr("name");
+	switch (iconName){
+		case "qq":
+			$(this).attr("src","img/login/QQ 01.png");
+			break;
+		case "weixin":
+			$(this).attr("src","img/login/weixin 01.png");
+			break;
+		case "weibo":
+			$(this).attr("src","img/login/weibo 01.png");
+			break;
+		default:
+			break;
+	}
+});
+
+//登录测试
+$("#loginBtn").click(
+	function loginTest () {
+		var userName = $("#loginUsername").val();
+		var passWord = $("#loginPassword").val();
+		var p1_1 = $("#p1_1").text();
+		var p1_2 = $("#p1_2").text();
+		if (p1_1 == "" && p1_2 == "" && userName!="" && passWord!="") {
+			$.tooltip('登录成功，欢迎回来',1000,true);
+		  setTimeout(function(){ 
+		    $("#loginBtn").hDialog('close',{box:'#loginBox'});
+		    $("#HOverlay").remove();
+		    $(".icon_message").css("visibility","visible");
+		    $(".personal_pic_unlogin").css("visibility","visible");
+		    $(".personal_pic_unlogin").attr("src","img/personal/personalPicture.png")
+		    $(".login_text").css("visibility","hidden");
+		   	$("#username").css("visibility","visible");
+		  },1000);
+  
+		}
+});
+
 
 /*
 	 * 以下是单独的调用示例，你只需要自定义弹框的样式即可。
@@ -124,4 +250,4 @@ $(document).ready(function(){
 	 *          - $.goTop(); //返回顶部,(参数1：和屏幕底部的距离，参数2：和屏幕右侧的距离； PS:自定义一定要加单位，比如px,em, 也可以是百分比哦)
 	 *          - $.dialog('alert','提示','hello'); 或者 $.dialog('confirm','提示','确认么？',0,function(){ alert('ok'); });  //消息框,(参数1：消息框类型(alert/confirm)，参数2：消息框标题；参数3：消息框内容度；参数4：消息框自动关闭时间，以毫秒为单位(默认0：不自动关闭)；参数5: 回调函数)
 	 *          - $.closeDialog(); 或者 $.closeDialog(function(){ alert('ok'); }); //关闭消息框,(参数1：回调函数)
-	 */
+//	 */

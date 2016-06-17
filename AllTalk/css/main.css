@@ -29,10 +29,10 @@ body
 
 .header
 {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	height: 65px;
+	height: 64px;
 	width: 100%;
 	font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
 	font-size: 13px;
@@ -40,13 +40,11 @@ body
 	z-index: 99;
 	background-color: white;
 	opacity: 0.9;
-	/*border-radius: 0 0 20px 20px;
-	box-shadow:5px 5px 10px #BDBDBD;*/
 }
 
 .header div
 {
-	height: 66px;
+	height: 64px;
 }
 
 
@@ -68,20 +66,30 @@ body
 	width: 100%;
 	height: 100%;
 	display: inherit;
+	top: 64px;
+	background-color: #BDBDBD;
+}
+
+.header_content
+{
+	position: relative;
+	width: 1002px;
+	min-width: 1002px;
+	margin: 0 auto;
 }
 
 .header_logo
 {
 	position: absolute;
-	margin: 0px auto auto 23%;
-	width: 150px;
-	/*background-color: aqua;*/
+	width: 111px;
 }
 
 .header_logo img
 {
-	/*width: 150px;
-	height: 65px;*/
+	width: 96px;
+	height: 48px;
+	margin-top: 8px;
+	margin-left: 15px;
 	cursor: pointer;
 }
 
@@ -100,36 +108,40 @@ body
 
 .header_index
 {
-	position: absolute;
+	position: relative;
 	top: 0;
-	left: 592px;
-	width: 717px;
+	margin-left: 111px;
+	margin-right: 239px;
+	width: 652px;
 	/*opacity: 1 !important;*/
 }
 
 .index_seleted
 {
-	color: #f66 !important;
-	visibility: visible !important;
-	/*visibility: visible;*/
+	border-bottom:3px solid #F05656;
+	background: rgba(245,245,245, 0.75);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bff5f5f5, endColorstr=#bff5f5f5);
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
 }
 
+.index_seleted_span
+{
+	color: #f66 !important;
+}
 
 
 .header_index div
 {
-	position: relative;
+	position: absolute;
 	display: inline-block;
-	/*background-color: white;*/
 	cursor: pointer
 }
 
 .header_index span
 {
-	font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+	font-family: 'Arial Bold';
 	font-weight: 700;
 	color: #999;
-/*	background-color: white;*/
 }
 
 .index_bottom_orange
@@ -142,16 +154,35 @@ body
 
 .header_index_all
 {
-	left: 110px;
-	width: 100px;
+	left: 80px;
+	width: 80px;
 	color: #f66 ;
+	font-size: 16px;
 	visibility: visible;
+}
+
+.header_index_all:hover
+{
+	border-bottom:3px solid #F05656;
+	background: rgba(245,245,245, 0.75);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bff5f5f5, endColorstr=#bff5f5f5);
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+
+#header_index_topic
+{
+	margin-left: 80px;
+}
+
+#header_index_subject
+{
+	margin-left: 160px;
 }
 
 #header_select
 {
-	left: 163px;
-	width: 170px;
+	right: 10px;
+	width: 240px;
 	cursor: auto;
 }
 
@@ -159,10 +190,9 @@ body
 {
 	position: absolute;
 	top: 0;
-	left: 1309px;
-	width: 120px;
-	/*opacity: 0.5;*/
-	cursor: pointer;
+	right: 0;
+	width: 239px;
+	
 	color: #999999;
 }
 
@@ -170,8 +200,8 @@ body
 {
 	position: absolute;
 	text-align: center;
-	width: 100px;
-	top: 28px;
+	width: 80px;
+	top: 22.5px;
 }
 
 #header_select_text
@@ -184,34 +214,104 @@ body
 
 #header_select_input
 {
+	position: absolute;
 	border-color: #ff6666;
-	height: 30px;
-	line-height: 65px;
+	height: 32px;
+	line-height: 64px;
 	width: 100%;
 	border-radius: 5px;
 	border:1px solid #FF6666;
+	padding: 0 33px 0 10px;
+	font-size: 14px;
+	color: #999999;
 	outline: none;
+}
+
+#header_select_input:focus
+{
+	color: #333333;
+}
+
+#select_line
+{
+	position: absolute;
+	background-color: #f05656;
+	width: 1px;
+	height: 24px;
+	right: 32px;
+	top: 4px;
+}
+
+.header_select_text img
+{
+	position: absolute;
+	right: 0;
+}
+
+.icon_message
+{
+	position: absolute;
+	width: 48px;
+}
+
+.icon_message img
+{
+	margin: 16px 8px;
+	cursor: pointer;
+}
+
+#header_notice
+{
+	margin-left: 0;
+}
+
+#header_message
+{
+	margin-left: 48px;
 }
 
 .personal_pic
 {
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	top: 20px;
+	position: relative;
+	width: 118px;
+	display: inline-block;
+	margin-left: 106px;
 }
 
 .personal_pic_unlogin
 {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	top: 14.5px;
+	margin-right: 10px;
+	cursor: pointer;
 	display: inline-block;
 }
 
 .login_text
 {
 	position: absolute;
-	top: 28px;
-	left: 40px;
+	top: 25px;
+	font-size: 12px;
+	cursor: pointer;
 }
+
+#username
+{
+	position: absolute;
+	top: 25px;
+	left: 45px;
+	font-size: 12px;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.personal_pic span:hover
+{
+	color: #F05656;
+}
+
 
 .content_fouce_area
 {
@@ -231,12 +331,6 @@ h3
 	font-family: 'Hiragino Sans GB W6';
 }
 
-.personalPage
-{
-	width: 100%;
-	height: 100%;
-	top: 65px;
-}
 
 /*#content_test
 {

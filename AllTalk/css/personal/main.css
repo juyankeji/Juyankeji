@@ -8,10 +8,11 @@
 {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	min-height: 900px;
+	height: auto;
 	top: 65px;
 	text-align: center;
-	min-width: 1200px;
+	min-width: 1002px;
 	background-color: #F2F2F2;
 }
 
@@ -41,7 +42,7 @@
 {
 	position: relative;
 	width: 77.8%;
-	height: 100%;
+	height: auto;
 	top:75px;
 	margin: auto;
 }
@@ -175,4 +176,9 @@
 	background-color: #FF6666;
 }
 
-
+.personal_footer
+{
+	min-width: 1002px;
+	width: 1208px;
+	height: 56px;
+}
