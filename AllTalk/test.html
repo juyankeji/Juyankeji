@@ -8,19 +8,7 @@
   <script src="js/jquery-1.11.1.js"></script>
   <script src="js/login/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/login/login.js" type="text/javascript" charset="utf-8"></script>
-  <!--<script type="text/javascript">
-  $(document).ready(function () {
-  	$("#form").validate({
-		rules:{
-			username:"required"
-		
-		},
-		messages:{
-			username:"请输入用户名!"
-		}	
-		});
-  });
-  </script>-->
+
   <style type="text/css">
   	.www
   	{
@@ -63,6 +51,37 @@
 		<img src="img/正反方(大蓝).png"/>
 	</div>
 	<p>没有</p>
+	<canvas id = "myCanvas" width = '230' height = '14'>Canvas画线技巧</canvas>
+  <script>
+   var context = $("#myCanvas")[0].getContext("2d");
+   context.fillStyle ='rgba(255,0,0,.3)';//填充颜色：红色，半透明
+   context.beginPath();
+   context.moveTo(0,0);
+   context.lineTo(230,0);
+   context.lineTo(230,14);
+   context.lineTo(129,14);
+   context.lineTo(115,0);
+   context.lineTo(101,14);
+   context.lineTo(0,14);
+   context.closePath();//可以把这句注释掉再运行比较下不同
+   context.fill();//填充颜色
+  </script>
+  
+  <canvas id = "myCanvas2" width = '230' height = '14'>Canvas画线技巧</canvas>
+  <script>
+   var context = $("#myCanvas2")[0].getContext("2d");
+   context.fillStyle ='rgba(255,0,0,.3)';//填充颜色：红色，半透明
+   context.beginPath();
+   context.moveTo(0,0);
+   context.lineTo(101,0);
+   context.lineTo(115,14);
+   context.lineTo(129,0);
+   context.lineTo(230,0);
+   context.lineTo(230,14);
+   context.lineTo(0,14);
+   context.closePath();//可以把这句注释掉再运行比较下不同
+   context.fill();//填充颜色
+  </script>
   <!--<form action="#" method="post" id="form">
   	<ul>
   		<li><input type="text" id="username" name="username" value="" /></li>

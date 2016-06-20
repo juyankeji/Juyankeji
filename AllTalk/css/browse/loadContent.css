@@ -106,11 +106,6 @@ body
 	background-color: #88cccc;
 }
 
-.topic_font_color
-{
-	color: #FFFFFF;
-}
-
 .topic_item:hover
 {
 	margin: 0;
@@ -118,7 +113,8 @@ body
 	border-style: solid;
 	border-color: #FFFFFF;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	/*transform: scale(1.09);*/
+	transform: scale(1.02);
+	-webkit-transform:scale(1.02);
 }
 
 .topic_item_content
@@ -128,14 +124,66 @@ body
 	overflow: hidden;
 }
 
-.topic_item_img
+.colorType_o_1
 {
-	width: 100%;
-	height: 201px;
-	background-color: #BDBDBD;
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #FFC066;
 }
 
-.topic_item_img img
+.colorType_o_2
+{
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #FFC066;
+}
+
+.colorType_b_1
+{
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #9999EE;
+}
+
+.colorType_b_2
+{
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #9999EE;
+}
+
+.colorType_g_1
+{
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #88CCCC;
+}
+
+.colorType_g_2
+{
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #88CCCC;
+}
+
+.topic_item_content2
+{
+	width: 100%;
+	height: 173px;
+	overflow: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #9999EE;
+}
+
+.topic_item_img
+{
+	position: relative;
+	width: 100%;
+	height: 201px;
+}
+
+.topic_img
 {
 	width: 230px;
 	height: 201px;
@@ -144,9 +192,24 @@ body
 .topic_tag
 {
 	height: 32px;
-	border-style: solid none dotted none;
-	border-width: 3px 0 1px 0;
-	border-color: #ffc066 transparent #a4a4a4 transparent;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #A4A4A4;
+	font:bold 14px simhei ;
+	color: #666666;
+}
+
+.topic_tag span
+{
+	margin:9px auto;
+	display: inline-block;
+}
+
+.topic_tag img
+{
+	float:left ;
+	margin-left: 10px;
+	margin-right: 5px;
 }
 
 .topic_item_text
@@ -206,10 +269,15 @@ body
 }
 
 
-.triangle
+.triangle1
 {
 	position: absolute;
-	z-index: 3;
-	width: 230px;
-	height: 14px;
+	overflow: hidden;
+}
+
+.triangle2
+{
+	position: absolute;
+	overflow: hidden;
+	bottom: 0;
 }
