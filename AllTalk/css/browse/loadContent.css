@@ -12,7 +12,7 @@ body
 	min-width: 1002px;
 	width: 1002px;
 	margin:auto ;
-	background-color: #F2F2F2;
+	/*background-color: #F2F2F2;*/
 }
 
 .clearfloat:after
@@ -215,6 +215,7 @@ body
 	font:bold 16px simhei;
 	color: #333333;
 	text-align: center;
+	height: 36px;
 	margin-bottom: 18px;
 }
 
@@ -232,6 +233,7 @@ body
 
 .topic_item_num
 {
+	position: absolute;
 	width: 166px;
 	height: 20px;
 	font:bold 10px simhei;
@@ -263,4 +265,34 @@ body
 	position: absolute;
 	z-index: 2;
 	overflow: hidden;
+}
+
+hr
+{
+	position: absolute;
+	margin-top: 230px;
+	height:3px;
+	border:none;
+	border-top:3px double red;
+}
+
+.loadMore
+{
+	font: 18px simhei;
+	position: relative;
+	width: 200px;
+	height: 50px;
+	margin: 80px auto 0 auto;
+	text-align: center;
+	line-height: 50px;
+	color: #FFFFFF;
+	cursor: pointer;
+	background-color: #F05656;
+	visibility: hidden;
+}
+
+.loadMore:hover
+{
+	opacity: 0.9;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }

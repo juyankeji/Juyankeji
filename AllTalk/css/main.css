@@ -15,10 +15,16 @@ src: url('resources/font/Hiragino Sans GB W6.otf') format('otf');
 	letter-spacing: 2px;
 }
 
+ul
+{
+	list-style-type: none;
+}
+
 body
 {
 	min-width: 1208px;
 	min-height: 700px;
+	background-color: #F2F2F2;
 }
 
 #main
@@ -40,7 +46,8 @@ body
 	z-index: 99;
 	background-color: white;
 	opacity: 0.9;
-}
+	box-shadow: 0 0 10px #666666;
+	}
 
 .header div
 {
@@ -50,12 +57,12 @@ body
 
 .footer
 {
-	position: absolute;
-	left: 0;
-	bottom: 0;
+	position: relative;
+	margin-top: 50px;
 	width: 100%;
-	background-color: cornflowerblue;
-	height: 56px;
+	background-color: #FFFFFF;
+	height: 150px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	visibility: hidden;
 }
 
@@ -66,14 +73,13 @@ body
 	width: 100%;
 	height: 100%;
 	display: inherit;
-	top: 64px;
 	background-color: #BDBDBD;
 }
 
 .header_content
 {
 	position: relative;
-	width: 1002px;
+	width: 1280px;
 	min-width: 1002px;
 	margin: 0 auto;
 }
@@ -171,12 +177,12 @@ body
 
 #header_index_topic
 {
-	margin-left: 80px;
+	margin-left: 160px;
 }
 
 #header_index_subject
 {
-	margin-left: 160px;
+	margin-left: 80px;
 }
 
 #header_select
@@ -331,9 +337,77 @@ h3
 	font-family: 'Hiragino Sans GB W6';
 }
 
-
-/*#content_test
+.footer-up
 {
-	height: 1200px;
-	z-index: -5;
-}*/
+	width: 1002px;
+	height: 130px;
+	margin: auto;
+}
+
+.footer-bottom
+{
+	/*position: absolute;*/
+	margin: auto;
+	text-align: center;
+	width: 1002px;
+	height: 20px;
+	font: 14px simhei;
+	color: #999999;
+	bottom: 0;
+}
+
+.footer-item
+{
+	margin-top: 20px;
+	width: 230px;
+	height: 90px;
+	display: inline-block;
+	text-align: center;
+	float: left;
+	border-right: solid 1px #CCCCCC;
+}
+
+.footer-item h5
+{
+	font: 14px simhei;
+	color: #666666;
+}
+
+.footer-item p
+{
+	margin-top: 5px;
+	font: 14px simhei;
+	color: #999999;
+	font-weight: 500;
+}
+
+.footer-item a
+{
+	text-decoration:none;
+	color: #999999;
+}
+
+.footer-item a:hover
+{
+	color: #0090CC;
+}
+
+.upToTop
+{
+	position: fixed;
+	bottom:10px;
+	left: 50%;
+	margin-left: 520px;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	font:bold 40px simhei;
+	color: #FFFFFF;
+	background-color: rgba(0,0,0,0.7);
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	border-radius: 25px;
+	text-decoration:none;
+	z-index: 2;
+	visibility: hidden;
+}

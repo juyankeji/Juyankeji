@@ -48,6 +48,29 @@
 	height: 40px;
 }
 
+.verification_input
+{
+	position: relative;
+	width: 305px;
+	height: 40px;
+	text-indent:5px;
+	border:1px solid #ccc;
+	padding:5px 0;
+	box-shadow:0 0 3px #ddd inset;
+	-webkit-box-shadow:0 0 3px #ddd inset;
+	font-size: 15px;
+	padding-left: 40px;
+	
+	/*padding-left: 0;*/
+}
+
+.verification_img
+{
+	width: 65px;
+	height: 40px;
+	vertical-align: top;
+}
+
 .submitBtn
 {
 	margin-bottom: 10px;

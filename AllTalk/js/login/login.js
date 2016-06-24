@@ -78,7 +78,6 @@ $(document).ready(function(){
         equalTo: "两次密码输入不一致"
 			},
 		},
-//		wrapper:"p"
 		errorPlacement:function(error,element){
 			if(element.is("#registerUsername"))
 				error.appendTo("#p2_1");
@@ -93,7 +92,7 @@ $(document).ready(function(){
 	});
 	
 	$("#register_button").click(function () {
-		$("#loginBox").animate({height:'430px'});
+		$("#loginBox").animate({height:'480px'});
 		$("#line").animate({height:'140px'});
 		$(".login_form_area").css("display","none");
 		$(".register_form_area").css("display","inherit");
