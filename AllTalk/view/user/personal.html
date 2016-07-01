@@ -5,49 +5,163 @@
 		<title>聚言-等你来较真</title>
 	</head>
 	<body>
-		<div id="personalPage" class="personalPage">
-			<!--个人信息部分-->
-			<div id="personalInf" class="personalInf">
-				<div id="personalInf_pic">
-					<img src="../../img/personal/personalPicture.png" class="picture"/>
-				</div>
-				<div id="personalInf_text">
-					<p id="personalInf_text_name">海边的孙小鱼</p>
-					<p id="personalInf_text_info">浙江，舟山 | 设计与互联网 | 女</p>
-					<p id="personalInf_text_line">步履不停，思考不停。</p>
-				</div>
-				<div id="personalInf_relation">
-					<p id="personalInf_relation_fans">
-						<span>关注的人：<strong>9</strong></span>&nbsp;&nbsp;
-						<span>关注我的：<strong>3</strong></span>
-					</p>
-					<p id="personalInf_relation_info">
-						赞同：10&nbsp;&nbsp;反驳：10&nbsp;&nbsp;68人浏览
-					</p>
+		<div id="main" class="personal_main">
+			<!-------导航栏_top---------->
+			<div id="header" class="header">
+				<div id="header_content" class="header_content">
+					<!--logo-->
+					<div id="header_logo" class="header_logo">
+						<img src="../../img/聚言-LOGO_01.png" border="0" />
+					</div>
+					<!--导航-->
+					<div id="header_index" class="header_index">
+						<div id="header_index_all" class="header_index_all" onclick="window.open('../../index.html','_self')" >
+							<p id="header_index_text" class="header_index_text">
+								<span class="header_span_txt">首页</span>
+							</p>
+						</div>
+						<div id="header_index_subject" class="header_index_all" onclick="window.open('#','_self')" >
+							<p  class="header_index_text">
+								<span class="header_span_txt">专题</span>
+							</p>
+						</div>
+						<div id="header_index_topic" class="header_index_all" onclick="window.open('../personal_index.html','_self')" >
+							<p  class="header_index_text">
+								<span class="header_span_txt">话题</span>
+							</p>
+						</div>
+						<div id="header_select" class="header_select">
+							<div id="header_select_text" class="header_select_text">
+								<input type="search" name="header_select_input" id="header_select_input" placeholder="搜索" value="" />
+								<div id="select_line"></div>
+								<img src="../../img/select 01.png"/>
+							</div>
+						</div>
+					</div>
+					<!--个人信息-->
+					<div id="header_personal" class="header_personal">
+						<div id="header_notice" class="icon_message">
+							<img src="../../img/login/notic.png"/>
+						</div>
+						<div id="header_message" class="icon_message">
+							<img src="../../img/login/message.png"/>
+						</div>
+						<div id="personal_pic" class="personal_pic">
+							<img src="../../img/unlogin.png" class="personal_pic_unlogin" />
+							<span class="login_text zoomIn dialog">登录/注册</span>
+							<span id="username">name</span>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!--导航标签-->
-			<div id="personalIndex" class="personalIndex">
-				<div id="personalIndex_1" class="personalIndex_1 personalIndex_tag">
-					关注的话题
+			<!-------个人信息主体----------->
+			<div id="personalPage" class="personalPage">
+				<!--个人信息部分-->
+				<div id="personalInf" class="personalInf">
+					<div id="personalInf_pic">
+						<img src="../../img/personal/personalPicture.png" class="picture"/>
+					</div>
+					<div id="personalInf_text" >
+						<p id="personalInf_text_name">海边的孙小鱼&nbsp;<span>12345678@qq.com</span></p>
+						<p id="personalInf_text_info">浙江，舟山 | 设计与互联网 | 女</p>
+						<p id="personalInf_text_line">步履不停，思考不停。</p>
+					</div>
+					<div id="personalInf_relation">
+						<a href='#' class='editBtn'>编辑资料✎</a>
+						<p id="personalInf_relation_fans">
+							<span>关注的人：<strong id="concern_num" class="concern_num">9</strong></span>&nbsp;&nbsp;
+							<span>关注我的：<strong id="concerned_num" class="concerned_num">3</strong></span>
+						</p>
+						<p id="personalInf_relation_info">
+							赞同：10&nbsp;&nbsp;反驳：10&nbsp;&nbsp;68人浏览
+						</p>
+					</div>
 				</div>
-				<div id="personalIndex_2" class="personalIndex_tag">
-					参与的话题
+				<div class="editArea"  style="visibility: hidden;">
+					<form action="" method="post" id="personalInf_edit_form">
+						<div id="personalInf_pic_edit">
+							<div id="uploadImg_top" onclick="imageUpload()">更换头像</div>
+							<div id="uploadImg_cover"></div>
+							<input type="file" id="uploadImg_bottom" accept="image/gif,image/jpeg" />
+							<img src="../../img/personal/personalPicture.png" class="picture_edit"/>
+						</div>
+						<div id="personalInf_text_edit">
+							<input type="text" id="personalInf_text_name_edit" value="海边的孙小鱼" /><span>&nbsp;更改绑定邮箱>></span>
+							<input type="text" id="personalInf_text_info_edit" value="浙江，舟山 | 设计与互联网 | 女"></input>
+							<input type="text" id="personalInf_text_line_edit" value="步履不停，思考不停。"></input>
+						</div>
+						<div class="edit_button">
+							<input type="submit" id="edit_submit" value="保存修改√"/>
+							<input type="reset" id="edit_cancel" value="取消×" />
+						</div>
+					</form>
 				</div>
-				<div id="personalIndex_3" class="personalIndex_tag">
-					关注的标签
+				<!--导航标签-->
+				<div id="personalIndex" class="personalIndex">
+					<div id="personalIndex_1" class="personalIndex_1 personalIndex_tag">
+						关注的话题
+					</div>
+					<div id="personalIndex_2" class="personalIndex_tag">
+						参与的话题
+					</div>
+					<div id="personalIndex_3" class="personalIndex_tag">
+						关注的标签
+					</div>
+				</div>
+				<!--内容展示-->
+				<div id="personalContent" class="personalContent">
+					
 				</div>
 			</div>
-			<!--内容展示-->
-			<div id="personalContent" class="personalContent">
-				
+			<!-------footer------------->
+			<div id="footer" class="footer" style="visibility: visible;">
+				<div class="footer-up">
+					<ul>
+						<li class="footer-item">
+							<h5>关于</h5>
+							<p><a href="../../view/footer/about.html#q1">关于我们</a></p>
+							<p><a href="../../view/footer/about.html#q2">联系我们</a></p>
+							<p><a href="../../view/footer/about.html#q3">加入我们</a></p>
+						</li>
+						<li class="footer-item">
+							<h5>反馈</h5>
+							<p><a href="../../view/footer/feedback.html#q1">用户协议</a></p>
+							<p><a href="../../view/footer/feedback.html#q2">意见反馈</a></p>
+						</li>
+						<li class="footer-item">
+							<h5>关注</h5>
+							<p><a href="#">官方微博</a></p>
+							<p><a href="#">微信公众号</a></p>
+						</li>
+						<li class="footer-item">
+							<h5>功能</h5>
+							<p><a href="#">友情链接</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-bottom">
+					<div class="copyright">
+						Copyright &copy; 2016 聚言网络科技有限公司.
+					</div>
+				</div>
 			</div>
-			<div id="personal_footer" class="personal_footer">
-				
-			</div>
+			
 		</div>
-		<link rel="stylesheet" type="text/css" href="../../css/personal/main.css"/>
-		<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="../../js/personal/personal.js"></script>
+	
+	
+	
+	
+	
+	
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/personal/main.css"/>
+	<!--javascript-->
+	<script src="../../js/jquery-1.11.1.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../../js/homeIndex.js"></script>
+	<script type="text/javascript" src="../../js/examples.js"></script>
+	<script src="../../js/personal/personal.js" type="text/javascript" charset="utf-8"></script>
+	
 	</body>
 </html>

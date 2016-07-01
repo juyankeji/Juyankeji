@@ -1,0 +1,157 @@
+a{
+	text-decoration: none;
+}
+
+.concern_person,.concerned_person
+{
+	min-width: 1002px;
+	background-color: #DDDDDD;
+	font-size:0;
+}
+
+.concern_person_item
+{
+	position: relative;
+	width: 480px;
+	height: 100px;
+	background-color: #CCCCCC;
+	margin: 5px 10px;
+	display: inline-block;
+	font-size: 20px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.concern_person_item_img
+{
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	border-radius: 40px;
+	background-color: #BDBDBD;
+	cursor: pointer;
+}
+
+.concern_person_item_img img
+{
+	width: 80px;
+	height: 80px;
+}
+
+.concern_person_item_content
+{
+	position: relative;
+	float: right;
+	width: 370px;
+	height: 90px;
+	margin:5px 0 0 15px;
+}
+
+.concern_person_item_name
+{
+	height: 30px;
+	font: 18px simhei ;
+	font-weight: 700;
+	line-height: 30px;
+}
+
+.concern_person_item_name a
+{
+	color: #F05656;
+}
+
+.concern_person_item_name img
+{
+	width: 30px;
+	height: 30px;
+	vertical-align: bottom;
+}
+
+.concern_person_item_line
+{
+	height: 30px;
+	font: 14px simhei;
+	font-weight: 400;
+	color: #666666;
+	line-height: 30px;
+}
+.concern_person_item_info
+{
+	height: 30px;
+	font: 14px simhei;
+	font-weight: 400;
+	color: #666666;
+}
+
+.concern_person_item_info_fansNum
+{
+	line-height: 30px;
+	display: inline-block;
+}
+
+.concern_person_item_info_lastTime
+{
+	line-height: 30px;
+	text-align: right;
+	display: inline-block;
+	float: right;
+	margin-right: 15px;
+}
+
+.concern_Btn
+{
+	position: absolute;
+	display: inline-block;
+	float: right;
+	width: 70px;
+	height: 100px;
+	font: 10px simhei;
+	text-align: center;
+	line-height: 26px;
+	background-color: #F05656;
+	color: #FFFFFF;
+	padding: 0 3px;
+	right: -75px;
+	letter-spacing: 0.5px;
+	opacity: 0.5;
+	visibility: hidden;
+}
+
+.concern_Btn p
+{
+	font: bold 14px "微软雅黑";
+	margin: 20px auto;
+	cursor: pointer;
+	border-bottom: solid 2px rgba(255,255,255,0);
+}
+
+.concern_Btn p:hover
+{
+	border-bottom: solid 2px rgba(255,255,255,1);
+}
+
+.concern_Btn:before
+{
+	content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 25px solid #F05656;
+    border-bottom: 50px solid transparent;
+    
+}
+
+.concern_Btn_click_area
+{
+	position: absolute;
+	height: 100px;
+	width: 28px;
+	cursor: pointer;
+	margin-left: -28px;
+	font: bold 16px simhei;
+	line-height: 100px;
+}

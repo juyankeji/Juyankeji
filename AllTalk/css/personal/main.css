@@ -1,29 +1,39 @@
 *
 {
 	margin: 0;
-	font-family: "黑体";
+	font-family: simhei;
+}
+
+input
+{
+	outline: none;
+}
+
+.personal_main
+{
+	/*background-image: url(../../img/personal/070.jpg);*/
+	background: #283048; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #283048 , #859398); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 }
 
 .personalPage
 {
-	position: absolute;
-	width: 100%;
+	width: 1002px;
 	min-height: 900px;
-	height: auto;
-	top: 65px;
-	text-align: center;
 	min-width: 1002px;
-	background-color: #F2F2F2;
+	margin:65px auto 0;
 }
 
 .personalInf
 {
 	position: relative;
-	width: 77.8%;
-	height: 120px;
+	height: 145px;
 	top: 25px;
-	margin: auto;
+	margin: auto 5px;
 	font-size: 16px;
+	text-shadow: 1px 2px #666666;
 }
 
 .personalIndex
@@ -31,20 +41,20 @@
 	position: relative;
 	width: 77.8%;
 	height: 95px;
-	top: 50px;
+	top: 25px;
 	margin: auto;
 	font-family: "黑体";
 	font-size: 16px;
 	min-width: 1000px;
+	text-align: center;
 }
 
 .personalContent
 {
-	position: relative;
-	width: 77.8%;
+	width: 1000px;
 	height: auto;
-	top:75px;
-	margin: auto;
+	margin: 50px auto 0;
+	padding: 0 1px;
 }
 
 #personalInf_pic
@@ -68,7 +78,6 @@
 	left: 40px;
 	display: inline-block;
 	text-align: left;
-	
 }
 
 #personalInf_relation
@@ -91,13 +100,6 @@
 	display: inline-block;
 	float: left;
 }
-
-
-
-/*#personalIndex_1:hover,#personalIndex_2:hover,#personalIndex_3:hover
-{
-	background-color: #FF6666;
-}*/
 
 #personalIndex_2
 {
@@ -128,7 +130,8 @@
 
 .personalIndex_1
 {
-	background-color: #FF6666;
+	background-color: #F05656;
+	color: #FFFFFF;
 }
 
 .picture
@@ -141,29 +144,40 @@
 {
 	margin-top: 5px;
 	font-size: 24px;
-	color: #FF6666;
+	color: #F05656;
+}
+
+#personalInf_text_name span
+{
+	font-size: 16px;
+	color: #999999;
 }
 
 #personalInf_text_info
 {
 	margin-top: 27px;
+	color: #FDFDFD;
 }
 
 #personalInf_text_line
 {
 	margin-top: 23px;
+	color: #FDFDFD;
 }
 
 #personalInf_relation_fans
 {
-	margin-top: 59px;
+	margin-top: 29px;
+	color: #FDFDFD;
 }
 
 #personalInf_relation_fans strong
 {
-	color: #FF6666;
+	color: #F05656;
 	cursor: pointer;
 }
+
+
 
 #personalInf_relation_info
 {
@@ -171,9 +185,58 @@
 	color: #999999;
 }
 
+.editBtn{ 
+ 	line-height:30px;
+	height:30px;
+	width:100px;
+	padding-left: 10px;
+	color:#ffffff;
+	background-color:#f05656;
+	font-size:14px;
+	font-weight:normal;
+	font-family:simhei;
+	background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #f05656), color-stop(1, #ff6666));
+	background:-moz-linear-gradient(top, #f05656 5%, #ff6666 100%);
+	background:-o-linear-gradient(top, #f05656 5%, #ff6666 100%);
+	background:-ms-linear-gradient(top, #f05656 5%, #ff6666 100%);
+	background:linear-gradient(to bottom, #f05656 5%, #ff6666 100%);
+	background:-webkit-linear-gradient(top, #f05656 5%, #ff6666 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f05656', endColorstr='#ff6666',GradientType=0);
+	border:0px solid #d9d9d9;
+	-webkit-border-top-left-radius:10px;
+	-moz-border-radius-topleft:10px;
+	border-top-left-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	border-top-right-radius:10px;
+	-webkit-border-bottom-left-radius:10px;
+	-moz-border-radius-bottomleft:10px;
+	border-bottom-left-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+	-moz-border-radius-bottomright:10px;
+	border-bottom-right-radius:10px;
+	-moz-box-shadow: inset 0px 0px 0px 0px #1c1b18;
+	-webkit-box-shadow: inset 0px 0px 0px 0px #1c1b18;
+	box-shadow: inset 0px 0px 0px 0px #1c1b18;
+	text-align:center;
+	display:inline-block;
+	text-decoration:none;
+}
+.editBtn:hover {
+	background-color:#ff6666;
+	background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #ff6666), color-stop(1, #f05656));
+	background:-moz-linear-gradient(top, #ff6666 5%, #f05656 100%);
+	background:-o-linear-gradient(top, #ff6666 5%, #f05656 100%);
+	background:-ms-linear-gradient(top, #ff6666 5%, #f05656 100%);
+	background:linear-gradient(to bottom, #ff6666 5%, #f05656 100%);
+	background:-webkit-linear-gradient(top, #ff6666 5%, #f05656 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6666', endColorstr='#f05656',GradientType=0);
+}
+
 .personalIndex_tag_selected
 {
-	background-color: #FF6666;
+	background-color: #F05656;
+	color: #FFFFFF;
 }
 
 .personal_footer
@@ -181,4 +244,152 @@
 	min-width: 1002px;
 	width: 1208px;
 	height: 56px;
+}
+
+
+.editArea
+{
+	position: absolute;
+	width: 1002px;/*1002px*/
+	height: 145px;/*145px*/
+	background-color: rgba(0,0,0,0.5);
+	top: 79px;
+	border-radius: 5px;
+}
+
+#personalInf_edit_form
+{
+	position: absolute;
+	width: 1002px;
+	height: 145px;
+	border-radius: 5px;
+}
+
+.edit_button
+{
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+
+.edit_button input
+{
+	height: 30px;
+	background-color: #F05656;
+	border: none;
+	border-radius: 5px;
+	font: 12px  "微软雅黑";
+	color: #FFFFFF;
+	font-weight: 500;
+	padding-left: 10px;
+	cursor: pointer;
+	line-height: 30px;
+}
+
+#edit_cancel
+{
+	background-color: #0090CC;
+}
+
+.editArea input[type="text"]
+{
+	background-color: rgba(0,0,0,0);
+	border: hidden;
+	border-bottom: solid 3px #FFFFFF;
+	color: #FFFFFF;
+	padding: 0 10px;
+	letter-spacing: 0;
+	width: 330px;
+}
+
+#uploadImg_top
+{
+	position: absolute;
+	width: 80px;
+	height: 40px;
+	left: 20px;
+	top: 40px;
+	font: bold 16px simhei;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	cursor: pointer;
+	z-index: 1;
+	opacity: 0;
+}
+
+#uploadImg_cover
+{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	background-color: #000000;
+	opacity: 0;
+}
+
+#uploadImg_bottom
+{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	background-color: rgba(0,0,0,0.8);
+	display: none;
+}
+
+#personalInf_pic_edit
+{
+	position: relative;
+	width: 120px;
+	height: 120px;
+	float: left;
+	display: inline-block;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: 5px;
+	top: 11px;
+}
+
+#personalInf_text_edit
+{
+	position: relative;
+	width: 670px;
+	height: 120px;
+	float: left;
+	left: 40px;
+	display: inline-block;
+	text-align: left;
+	top: 11px;
+}
+
+#personalInf_text_edit span
+{
+	color: #DDDDDD;
+	cursor: pointer;
+}
+
+.picture_edit
+{
+	width: 100%;
+	height: 100%;
+}
+
+#personalInf_text_name_edit
+{
+	margin-top: 5px;
+	font-size: 24px;
+}
+
+
+#personalInf_text_info_edit
+{
+	margin-top: 27px;
+	display: block;
+	font-size: 16px;
+}
+
+#personalInf_text_line_edit
+{
+	margin-top: 23px;
+	display: block;
+	font-size: 16px;
 }

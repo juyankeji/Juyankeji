@@ -25,19 +25,21 @@ $(document).ready(function(){
 		cssRoute = "css/personal/main.css";
 		jsRoute = "js/personal/personal.js";
 		ajaxLoad(bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute);
+		
 	});
 	
 	
 //	$("body").on("click","#personal_pic",function () {
 //		$("#loginBox").css('display','inherit');
-//	});	
+//	});
+
+	//底部信息栏跳转到相应位置
 	$(".footer-item a").click(function () {
 		var href = $(this).attr("href");
     	var pos = $(href).offset().top;
     	pos = pos - 89;
     	$("html,body").animate({scrollTop: pos}, 700);
     	return false;
-    	console.log(pos);
 	});
 	
 });

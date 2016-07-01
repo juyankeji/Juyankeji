@@ -53,7 +53,6 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
     		default:
     			break;
     	}
-//  	var section_x = "#section_"+index;
 		return section_x;
     }
     
@@ -82,8 +81,6 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
     	var section_num = getSection(index,2);
     	var section_1 = $(section_num);
     	var height = section_1.width();
-//  	var a = ["height","margin-left","margin-top"];
-//  	var b = [height,-height/2,-height/2];
     	section_1.removeClass();
     	section_1.css({
     		"height" : height,
@@ -100,7 +97,7 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
     }
 
    //话题标签定位 
-   function itemPosition (index) {
+  	function itemPosition (index) {
     	var section = $(".section");
     	var section_num = getSection(index,2);
     	var section_1 = $(section_num);
@@ -146,6 +143,100 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 		var items6Height = $(itemsX[5]).height();
 		$(itemsX[5]).animate({right:items6Left-items6Length-30,opacity:'1'},1500);
 		$(itemsX[5]).css('top',items6Top+30);
-//		alert(items1Length);
     }
    
+	//构建item内的元素
+	function addTopicItem (tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemType) {
+		if (itemType == "1") {
+			var div1 = $('<div>').addClass('topic_item').appendTo($('#topic_area'));
+			 //加入话题内容区域
+			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
+			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
+			  //加入话题标签区域
+			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
+			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
+			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
+			  //加入话题文字区域
+			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
+			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
+			   $(div1_1_2_1).html(title);
+			   var div1_1_2_2 = $('<span></span>').addClass('topic_time').appendTo(div1_1_2);
+			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;"+editor);
+			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
+			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
+			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
+			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
+			    $(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support + '/'+oppose);
+			 //加入话题图片区域
+			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
+			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
+			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
+		}else{
+			var div1 = $('<div>').addClass('topic_item').appendTo($('#topic_area'));
+			 //加入话题图片区域
+			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
+			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
+			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
+			 //加入话题内容区域
+			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
+			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
+			  //加入话题标签区域
+			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
+			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
+			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
+			  //加入话题文字区域
+			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
+			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
+			   $(div1_1_2_1).html(title);
+			   var div1_1_2_2 = $('<span></span>').addClass('topic_time').appendTo(div1_1_2);
+			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;Alex"+editor);
+			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
+			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
+			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
+			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
+			    $(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>'+support+'/'+oppose);
+		}
+		
+	}
+	
+	
+	
+//图片替换函数
+function changeImg (elementLoc,imgSrc) {
+	$(this).find(elementLoc).attr(imgSrc);
+}
+
+function getTopic () {  
+         $.ajax({  
+             url: '',  
+             type: 'post',  
+             dataType: 'json',  
+             timeout: 1000,  
+             cache: false,  
+             beforeSend: LoadFunction, //加载执行方法    
+             error: erryFunction,  //错误执行方法    
+             success: succFunction //成功执行方法    
+         })  
+         function LoadFunction() {  
+//           $("#list").html('加载中...');  
+         }  
+         function erryFunction() {  
+             alert("error");  
+         }  
+         function succFunction(sql) {    
+  
+             //eval将字符串转成对象数组  
+             //var json = { "id": "10086", "uname": "zhangsan", "email": "zhangsan@qq.com" };  
+             //json = eval(json);  
+             //alert("===json:id=" + json.id + ",uname=" + json.uname + ",email=" + json.email);  
+  
+             sql = eval(sql); //数组         
+//           $.each(sql, function (index, item) {  
+//               //循环获取数据    
+//               var name = sql[index].Name;  
+//               var idnumber = sql[index].IdNumber;  
+//               var sex = sql[index].Sex;  
+//               $("#list").html($("#list").html() + "<br>" + name + " - " + idnumber + " - " + sex + "<br/>");  
+//           });  
+         }  
+     }

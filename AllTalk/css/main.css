@@ -12,7 +12,7 @@ src: url('resources/font/Hiragino Sans GB W6.otf') format('otf');
 {
 	margin: 0;
 	line-height: normal;
-	letter-spacing: 2px;
+	letter-spacing: 1.5px;
 }
 
 ul
@@ -74,6 +74,13 @@ body
 	height: 100%;
 	display: inherit;
 	background-color: #BDBDBD;
+}
+
+#content_test
+{
+	min-width: 1024px;
+	height: 100%;
+	visibility: hidden;
 }
 
 .header_content
@@ -299,7 +306,7 @@ body
 {
 	position: absolute;
 	top: 25px;
-	font-size: 12px;
+	/*font-size: 12px;*/
 	cursor: pointer;
 }
 

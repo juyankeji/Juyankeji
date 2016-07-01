@@ -1,4 +1,86 @@
 $(document).ready(function () {
+	var isClick = false;
+	//二级菜单
+	$(".itemsBtn").on("mouseover",".type_item",function  () {
+		var thisSrc = $(this).find("img").attr("name");
+		thisSrc = "../img/browse/" + thisSrc + "2.png";
+		$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
+		$(this).css("color","#F05656");
+	}).on("mouseout",".type_item",function  () {
+		if ($(this).attr("state") == "0") {
+			var thisSrc = $(this).find("img").attr("name");
+			thisSrc = "../img/browse/" + thisSrc + ".png";
+			$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
+			$(this).css("color","#666666");
+		}
+	});
+	
+	//三级菜单-动画
+	$(document).on("click",".type_item",function  () {
+		var thisName = $(this).find("img").attr("name");
+		$(".itemsBtn li").css("color","#666666");
+		var allName;
+		for (var i = 0;i<$(".type_item").length;i++) {
+			allName = $(".type_item").eq(i).find("img").attr("name");
+			allName = "../img/browse/" + allName + ".png";
+			$(".type_item").find(".type_item_img3,.type_item_img1").eq(i).attr("src",allName);
+			$(".type_item").eq(i).attr("state","0");
+		}
+		allName = "../img/browse/" + thisName + "2.png";
+		$(this).find(".type_item_img3,.type_item_img1").attr("src",allName);
+		$(this).css("color","#F05656");
+		$(this).attr("state","1");
+		switch (thisName){
+			case "type_select_all":
+				$(".header_third").stop().animate({
+					opacity:0,
+					width:'0',
+				},800);
+				$(".header_third_content1,.header_third_content2,.header_third_content3").css("visibility","hidden");
+				break;
+			case "shsh":
+				$(".header_third").stop().animate({
+					opacity:1,
+					width:'100%'
+				},1000);
+				$(".header_third_content1").css("visibility","visible");
+				$(".header_third_content2,.header_third_content3").stop().animate({left:'-14.5px',opacity:0},500);
+				$(".header_third_content1").animate({left:'-14.5px',opacity:1},500);
+				$(".header_third_content2,.header_third_content3").css("visibility","hidden");
+				break;
+			case "shxx":
+				$(".header_third").stop().animate({
+					opacity:1,
+					width:'100%'
+				},1000);
+				$(".header_third_content2").css("visibility","visible");
+				$(".header_third_content1,.header_third_content3").stop().animate({left:'145.5px',opacity:0},500);
+				$(".header_third_content2").animate({opacity:1,left:'145.5px'},500);
+				$(".header_third_content1,.header_third_content3").css("visibility","hidden");
+				break;
+			case "ylyd":
+				$(".header_third").stop().animate({
+					opacity:1,
+					width:'100%'
+				},1000);
+				$(".header_third_content3").css("visibility","visible");
+				$(".header_third_content1,.header_third_content2").stop().animate({left:'306.5px',opacity:0},500);
+				$(".header_third_content3").animate({opacity:1,left:'306.5px'},500);
+				$(".header_third_content1,.header_third_content2").css("visibility","hidden");
+				break;
+			default:
+				break;
+		}
+	});
+	//三级菜单功能
+	$(".header_third_index li").click(function () {
+		$(".header_third_index li").css("color","#999999");
+		$(this).css("color","#F05656");
+		var q = $(this).html();
+		var tagName = $(".topic_tag span").html().substring($(".topic_tag span").html().length-2,$(".topic_tag span").html().length);
+		console.log(tagName);
+	});
+	
 	$(".topic_item").animate({opacity:'1'});
 	//设置标签颜色的函数
 	var itemType;
@@ -117,73 +199,19 @@ $(document).ready(function () {
 		   ctx.fill();//填充颜色
 	   }
 	}
-	//构建item内的元素
-	function addTopicItem (tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemType) {
-		if (itemType == "1") {
-			var div1 = $('<div>').addClass('topic_item').appendTo($('#topic_area'));
-			 //加入话题内容区域
-			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
-			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
-			  //加入话题标签区域
-			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
-			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
-			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
-			  //加入话题文字区域
-			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
-			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
-			   $(div1_1_2_1).html(title);
-			   var div1_1_2_2 = $('<span></span>').addClass('topic_time').appendTo(div1_1_2);
-			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;"+editor);
-			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
-			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
-			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support + '/'+oppose);
-			 //加入话题图片区域
-			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
-			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
-			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
-		}else{
-			var div1 = $('<div>').addClass('topic_item').appendTo($('#topic_area'));
-			 //加入话题图片区域
-			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
-			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
-			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
-			 //加入话题内容区域
-			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
-			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
-			  //加入话题标签区域
-			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
-			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
-			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
-			  //加入话题文字区域
-			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
-			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
-			   $(div1_1_2_1).html(title);
-			   var div1_1_2_2 = $('<span></span>').addClass('topic_time').appendTo(div1_1_2);
-			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;Alex"+editor);
-			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
-			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
-			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>'+support+'/'+oppose);
-			 
-			 
-		}
-		
-	}
+	
 	var sql=[{'colorType':'o','tagName':'标签1','title':'1你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签2','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
+			 {'colorType':'b','tagName':'文化','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'b','tagName':'标签3','title':'3你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'g','tagName':'标签4','title':'你愿意承受雾霾等代价在南方集中供暖吗？','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签5','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
+			 {'colorType':'o','tagName':'文化','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'o','tagName':'标签6','title':'6你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'g','tagName':'标签7','title':'7你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签8','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
+			 {'colorType':'b','tagName':'文化','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'o','tagName':'标签9','title':'9你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签10','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
+			 {'colorType':'b','tagName':'文化','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'o','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签12','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
+			 {'colorType':'g','tagName':'文化','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'o','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'b','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 			 {'colorType':'g','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
@@ -244,6 +272,7 @@ $(document).ready(function () {
 					itemType = "1";
 				}
 			}
+			$("#topic_area").css("height","+=406")
 			$(".topic_item").animate({opacity:'1'},1000);
 		}
 		//加载更多按钮和footer区域
@@ -254,6 +283,9 @@ $(document).ready(function () {
 		//数据加载完成
 		if (i>=sql.length) {
 		$(".loadMore").html("没有更多了");
+		$(".loadMore").click(function () {
+			return false;
+		});
 		$(".footer").css("visibility","visible");
 		}
 		//回到顶部按钮出现与隐藏
@@ -263,6 +295,7 @@ $(document).ready(function () {
 			$(".upToTop").css("visibility","hidden");
 		}
 	});
+	
 	
 	//加载更多
 	$(".loadMore").click(function  () {
