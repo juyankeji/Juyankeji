@@ -1,24 +1,4 @@
 $(document).ready(function() {
-	//input随value宽度自适应
-//	$("#personalInf_text_edit").keydown(function () {
-////		console.log($(this).find("input").val().length);
-//		var fontLength = $(this).find("input").val().length;
-//		fontLength = 2*fontLength-1;
-//		$(this).find("input").attr("size",fontLength);
-//		
-//	})
-	
-//	$(function () {
-//		var inputPro = $(".editArea").find('input[type="text"]');
-//		for (var i=0;i<inputPro.length;i++) {
-//			var fontSize = inputPro.eq(i).css("font-size");
-//			fontSize = fontSize.substring(0,fontSize.length-2);
-//			inputPro.eq(i).css("width",inputPro.eq(i).val().length*fontSize);
-////			console.log(fontSize);
-//			
-//		}
-////		console.log(inputPro.length);
-//	});
 	
 	//头像设置鼠标移入样式
 	$("#personalInf_pic_edit").hover(function () {
@@ -95,6 +75,29 @@ $(document).ready(function() {
 		ajaxLoad(bindElement,action,triggerElement2,loadElement,pageRoute2,cssRoute,jsRoute);
 	});
 	
+	/********他人主页相关效果-begin*********/
+	//关注按钮变化
+	$(".stranger_concern_Btn").click(function () {
+		$(".stranger_concern_Btn").css("display","none");
+		$(".stranger_concerned_Btn").css("display","inline-block");
+	});
+	
+	$(".stranger_concerned_Btn").click(function () {
+		$(".stranger_concerned_Btn").css("display","none");
+		$(".stranger_concern_Btn").css("display","inline-block");
+	});
+	
+	$(".stranger_concerned_Btn").hover(function () {
+		$(".stranger_concerned_Btn").addClass("stranger_concerned_Btn_cover");
+		$(".stranger_concerned_Btn").html("×取消关注");
+	},
+	function () {
+		$(".stranger_concerned_Btn").removeClass("stranger_concerned_Btn_cover");
+		$(".stranger_concerned_Btn").html("√已关注");
+	});
+	
+	
+	/********他人主页相关效果-end*********/
 });
 
 //上传图片

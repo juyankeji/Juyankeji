@@ -9,6 +9,11 @@ input
 	outline: none;
 }
 
+a
+{
+text-decoration: none;	
+}
+
 .personal_main
 {
 	/*background-image: url(../../img/personal/070.jpg);*/
@@ -185,7 +190,8 @@ input
 	color: #999999;
 }
 
-.editBtn{ 
+.editBtn,.stranger_concern_Btn
+{ 
  	line-height:30px;
 	height:30px;
 	width:100px;
@@ -222,7 +228,7 @@ input
 	display:inline-block;
 	text-decoration:none;
 }
-.editBtn:hover {
+.editBtn:hover,.stranger_concern_Btn:hover {
 	background-color:#ff6666;
 	background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #ff6666), color-stop(1, #f05656));
 	background:-moz-linear-gradient(top, #ff6666 5%, #f05656 100%);
@@ -231,6 +237,41 @@ input
 	background:linear-gradient(to bottom, #ff6666 5%, #f05656 100%);
 	background:-webkit-linear-gradient(top, #ff6666 5%, #f05656 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6666', endColorstr='#f05656',GradientType=0);
+}
+
+.stranger_concern_Btn
+{
+	padding-left: 0;
+}
+
+.stranger_concerned_Btn
+{
+	height:26px;
+	width:100px;
+	background-color: transparent;
+	border: solid 2px #0090CC;
+	color: #0090CC;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 10px;
+	display: none;
+}
+
+.stranger_concerned_Btn_cover
+{
+	height:26px;
+	width:100px;
+	background-color: transparent;
+	border: solid 2px #F05656;
+	color: #F05656;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 10px;
+	/*display: inline-block;*/
 }
 
 .personalIndex_tag_selected

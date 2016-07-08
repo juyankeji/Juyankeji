@@ -82,6 +82,7 @@ $(document).ready(function () {
 	});
 	
 	$(".topic_item").animate({opacity:'1'});
+	
 	//设置标签颜色的函数
 	var itemType;
 	var ctx;
@@ -251,7 +252,8 @@ $(document).ready(function () {
 		if ($(window).scrollTop() >= scrollBottom && topicLength<20) {
 			for (var j=0;j<4;j++) {
 				if (i<sql.length) {
-					addTopicItem(sql[i].tagName,
+					addTopicItem("#topic_area",
+								 sql[i].tagName,
 								 sql[i].title,
 								 sql[i].time,
 								 sql[i].editor,
@@ -301,7 +303,8 @@ $(document).ready(function () {
 	$(".loadMore").click(function  () {
 		for (var j=0;j<4;j++) {
 				if (i<sql.length) {
-					addTopicItem(sql[i].tagName,
+					addTopicItem("#topic_area",
+								 sql[i].tagName,
 								 sql[i].title,
 								 sql[i].time,
 								 sql[i].editor,
