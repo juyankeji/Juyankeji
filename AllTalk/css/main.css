@@ -56,7 +56,7 @@ body
 	font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
 	font-size: 13px;
 	font-weight: 700;
-	z-index: 99;
+	z-index: 999999;
 	background-color: white;
 	opacity: 0.9;
 	box-shadow: 0 0 10px #666666;

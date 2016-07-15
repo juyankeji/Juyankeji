@@ -1,4 +1,12 @@
 $(document).ready(function () {
+	//移入删除按钮动作
+	$(".delete_item").hover(function () {
+		$(this).addClass("delete_item_hover");
+	},function () {
+		$(this).removeClass("delete_item_hover");
+	}).click(function () {
+		$(this).parent().remove();
+	});
 	//设置标签颜色的函数
 	var itemType;
 	var ctx;
@@ -74,7 +82,10 @@ $(document).ready(function () {
 				break;
 		}
 		triangle(ctx,itemType,q);
-		$(".delete_item").css("right","-15px");
+//		$(".delete_item").css("right","-30px");
+		//删除按钮移入
+		$(this).find(".delete_item").stop().animate({top:"-30px",right:"-30px"},100);
+//		$(".delete_item").stop().animate({top:"-30px",right:"-30px"},500);
 	})
 	//鼠标移出恢复
 	.on("mouseout",".topic_item",function () {
@@ -88,6 +99,8 @@ $(document).ready(function () {
 		$(this).find(".topic_tag img").attr("src","../../img/browse/topic_tag.png");
 		$(this).find(".topic_browse img").attr("src","../../img/browse/topic_browse.png");
 		$(this).find(".topic_vote img").attr("src","../../img/browse/topic_vote.png");
+		//删除按钮移除
+		$(this).find(".delete_item").stop().animate({top:"-60px",right:"-60px"},10);
 	});
 	
 	//绘制图片遮盖
