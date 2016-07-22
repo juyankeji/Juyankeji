@@ -330,4 +330,86 @@ $(document).ready(function () {
 			$(".loadMore").css("visibility","hidden");
 			$(".footer").css("visibility","hidden");
 	});
+	
+	var specialTopic = [{
+		'URL':'#specialTopic_content',
+		'imgSrc':'../../../img/homepage/game/ylyx5.jpg',
+		'title':'标题标题标题标题标题标题标题标题标题标题标题',
+		'topicTag':'生活',
+		'browseNum':'1111',
+		'commentNum':'1111',
+		'supportNum':'111',
+		'opposeNum':'111',
+		'edit':'Alex1',
+		'time':'06/17-18:37',
+	},{
+		'URL':'#specialTopic_content',
+		'imgSrc':'../../../img/homepage/game/ylyx4.jpg',
+		'title':'标题标题标题标题标题标题标题标题',
+		'topicTag':'休闲',
+		'browseNum':'2222',
+		'commentNum':'2222',
+		'supportNum':'222',
+		'opposeNum':'222',
+		'edit':'Alex2',
+		'time':'06/17-18:37',
+	},{
+		'URL':'#specialTopic_content',
+		'imgSrc':'../../../img/homepage/game/ylyx3.jpg',
+		'title':'标标标标标标题标题标题标题标题标题',
+		'topicTag':'游戏',
+		'browseNum':'3333',
+		'commentNum':'3333',
+		'supportNum':'333',
+		'opposeNum':'333',
+		'edit':'Alex3',
+		'time':'06/17-18:37',
+	}]
+	
+	//专题浏览页数据引入
+	$(function () {
+		for (var i=0;i<specialTopic.length;i++) {
+			addSpecialTopic(
+				specialTopic[i].URL,
+				specialTopic[i].imgSrc,
+				specialTopic[i].title,
+				specialTopic[i].topicTag,
+				specialTopic[i].browseNum,
+				specialTopic[i].commentNum,
+				specialTopic[i].supportNum,
+				specialTopic[i].opposeNum,
+				specialTopic[i].edit,
+				specialTopic[i].time
+			);
+		}
+	});
+	
+	//生成专题浏览页单条条目函数
+	function addSpecialTopic (URL,imgSrc,title,topicTag,browseNum,commentNum,supportNum,opposeNum,edit,time) {
+		var d1 = $("<li></li>").appendTo(".specialTopic_content_layout");
+		var d2 = $("<div></div>").addClass("specialTopic_item_block").appendTo(d1);
+		var d3 = $("<a></a>").appendTo(d2);
+		d3.attr("href",URL);//链接地址
+		 var d3_1 = $("<div></div>").addClass("specialTopic_item_pic").appendTo(d3);
+		  var d3_1_1 = $("<img />").appendTo(d3_1);
+		  d3_1_1.attr("src",imgSrc);//图片链接地址
+		 var d3_2 = $("<div></div>").addClass("specialTopic_item_content").appendTo(d3);
+		  var d3_2_1 = $("<div></div>").addClass("specialTopic_item_title").appendTo(d3_2);
+		  d3_2_1.html(title);//标题文字
+		  var d3_2_2 = $("<div></div>").addClass("specialTopic_item_state clearfloat").appendTo(d3_2);
+		   var d3_2_2_1 = $("<span></span>").addClass("specialTopic_item_tag").appendTo(d3_2_2);
+		   d3_2_2_1.html('<img src="../../../img/browse/specialTopic/icon_specialTag.png"/>'+topicTag);
+		   var d3_2_2_2 = $("<span></span>").addClass("item_state state1").appendTo(d3_2_2);
+		   d3_2_2_2.html(browseNum);//浏览量
+		   var d3_2_2_3 = $("<span></span>").addClass("item_state state2").appendTo(d3_2_2);
+		   d3_2_2_3.html(commentNum);//评论数
+		   var d3_2_2_4 = $("<span></span>").addClass("item_state state3").appendTo(d3_2_2);
+		   d3_2_2_4.html(supportNum+'/'+opposeNum);//支持和反对人数
+		  var d3_2_3 = $("<div></div>").addClass("specialTopic_item_edit").appendTo(d3_2);
+		   var d3_2_3_1 = $("<span></span>").addClass("specialTopic_edit").appendTo(d3_2_3);
+		   d3_2_3_1.html('编辑：'+edit);//编辑人
+		   var d3_2_3_2 = $("<span></span>").addClass("specialTopic_time").appendTo(d3_2_3);
+		   d3_2_3_2.html(time);//发表时间
+	}
+	
 });

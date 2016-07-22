@@ -76,7 +76,7 @@ a
     left: 50%;
     margin-left: -2px;
     margin-top: 65px;
-    min-height: 10px;
+    min-height: 15px;
     width: 4px;
     background: #444;
 }
@@ -538,34 +538,41 @@ li
     -webkit-text-size-adjust:none;
 }
 
-.mark1:after
+.mark:after
 {
 	content: '';
     position: absolute;
     width: 15px;
     height: 15px;
     background-color: #fff;
-    border-top: solid 1px #F05656;
-    border-left: solid 1px #F05656;
-    right: 190px;
     margin-top: 25px;
     transform: rotate(45deg);
     overflow: hidden;
+    visibility: hidden;
 }
 
-.mark2:after
+.mark1_1:after
 {
-	content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    border-top: solid 1px #F05656;
-    border-left: solid 1px #F05656;
+    right: 190px;
+    visibility: visible;
+}
+
+.mark1_2:after
+{
     right: 115px;
-    margin-top: 25px;
-    transform: rotate(45deg);
-    overflow: hidden;
+    visibility: visible;
+}
+
+.colorBlue:after
+{
+    border-top: solid 1px #0090CC;
+    border-left: solid 1px #0090CC;
+}
+
+.colorRed:after
+{
+	border-top: solid 1px #F05656;
+    border-left: solid 1px #F05656;
 }
 
 .pikachusPic
@@ -600,12 +607,63 @@ li
 	font: 10px simhei;
 }
 
+.like_area
+{
+	width: 33px;
+	height: 43px;
+	float: right;
+}
+
 .like
 {
-	width: 45px;
-	height: 45px;
+	height: 16px;
+	background-color: #E8E8E8;
+	background: url(../../img/topic/like_red.png) no-repeat;
+	padding-top: 13px;
+	cursor: pointer;
+}
+
+.like div
+{
+	height: 16px;
+	font: 13px arial;
+	letter-spacing: 0;
+	text-align: center;;
+}
+
+.like:before
+{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px;
+	border-color: transparent transparent #FFFFFF transparent;
+	margin-left: 12.5px;
+    margin-top: -12px;
+}
+
+.unlike:before
+{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #FFFFFF transparent transparent transparent;
+	margin-left: 12.5px;
+    margin-top: 4px;
+}
+
+.unlike
+{
+	height: 13px;
 	background-color: #DDDDDD;
-	float: right;
+	background: url(../../img/topic/unlike_red.png) no-repeat;
+	margin-top: 1px;
+	cursor: pointer;
 }
 
 .comment_content
@@ -681,6 +739,7 @@ li
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	box-shadow: 0 3px 0 #d7e4ed;
+	z-index: 1;
 }
 
 
@@ -696,16 +755,20 @@ li
 	width: 100%;
 }
 
-.isay_content a
+.reply_name_s
 {
 	color: #F05656;
+}
+
+.reply_name_o
+{
+	color: #0090CC;
 }
 
 .isay_support_avatar
 {
 	width: 30px;
 	height: 30px;
-	background-color: #999999;
 	float: left;
 	display: inline-block;
 	border-left: solid 5px #F05656;
@@ -716,7 +779,6 @@ li
 {
 	width: 30px;
 	height: 30px;
-	background-color: #999999;
 	float: right;
 	display: inline-block;
 	border-right: solid 5px #0090CC;
@@ -737,18 +799,22 @@ li
 {
 	width: 30px;
 	height: 30px;
-	background-color: #999999;
 	float: right;
 	display: inline-block;
+	font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .isay_oppose_like
 {
 	width: 30px;
 	height: 30px;
-	background-color: #999999;
 	float: left;
 	display: inline-block;
+	font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .isay_time
@@ -818,7 +884,6 @@ li
 	min-height: 70px;
 	background-color: #fafafa;
 	border: solid 1px #999999;
-	/*display: none;*/
 }
 
 .area_display
@@ -1022,6 +1087,20 @@ li
 	cursor: pointer;
 }
 
+.comment_reply_cancel
+{
+	width: 36px;
+	height: 20px;
+	float: right;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+	font: 12px "微软雅黑";
+	background-color: transparent;
+	color: #333333;
+	cursor: pointer;
+}
+
 .comment_btn_enable
 {
 	background-color: rgba(240,86,86,1);
@@ -1047,4 +1126,6 @@ li
 	color: #F05656;
 	font: 10px "微软雅黑";
 	cursor: pointer;
+	bottom: 0;
+    position: absolute;
 }

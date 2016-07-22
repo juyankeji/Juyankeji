@@ -104,7 +104,7 @@ header h1 {
 }
 
 .cd-timeline-block {
-  /*position: absolute;*/
+  position: absolute;
 }
 .cd-timeline-block:after {
   content: "";
@@ -132,7 +132,7 @@ header h1 {
 .cd-timeline-img {
   position: absolute;
   /*top: 0;*/
-  left: 0;
+  /*left: 0;*/
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -165,7 +165,8 @@ header h1 {
   .cd-timeline-img {
     width: 60px;
     height: 60px;
-    left: 50%;
+    /*left: 50%;*/
+   	right: -83px;
     margin-left: -30px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
@@ -258,25 +259,7 @@ header h1 {
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
 }
-.cd-timeline-content p {
-  margin: 1em 0;
-  line-height: 1.6;
-}
-.cd-timeline-content .cd-read-more {
-  float: right;
-  padding: .8em 1em;
-  background: #acb7c0;
-  color: #ffffff;
-  border-radius: 0.25em;
-}
-.no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;
-}
-.cd-timeline-content .cd-date {
-  float: left;
-  padding: .8em 0;
-  opacity: .7;
-}
+
 .cd-timeline-content::before {
   content: '';
   position: absolute;
@@ -285,20 +268,7 @@ header h1 {
   height: 0;
   width: 0;
 }
-@media only screen and (min-width: 768px) {
-  .cd-timeline-content h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  .cd-timeline-content p {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-}
+
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
@@ -314,23 +284,22 @@ header h1 {
     height: 14px;
     transform: rotate(45deg);
   }
-  .cd-timeline-content .cd-read-more {
-    float: left;
+ 	
+  .even-cd-timeline-block
+  {
+  	right: 0;
   }
-  .cd-timeline-content .cd-date {
-    position: absolute;
-    width: 100%;
-    left: 122%;
-    top: 6px;
-    font-size: 16px;
-    font-size: 1rem;
+  .even-cd-timeline-block .cd-timeline-img
+  {
+  	left: -51px;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content {
-    float: right;
+  .even-cd-timeline-block .cd-timeline-content
+  {
+  	float: right;
     border: solid 1px #0090CC;
   	border-right: solid 10px #0090CC;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  .even-cd-timeline-block .cd-timeline-content::before {
     top: 24px;
     left: auto;
     right: calc(100% - 7px);
@@ -338,9 +307,14 @@ header h1 {
     border-left: solid 1px #0090CC;
     border-bottom: solid 1px #0090CC;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
-    float: right;
+  .even-cd-timeline-block .comment_reply
+  {
+  	float: right;
+    clear: both;
+    border: solid 1px #0090CC;
+    border-top: none;
   }
+  
   
   .cssanimations .cd-timeline-content.is-hidden {
     visibility: hidden;
@@ -355,7 +329,8 @@ header h1 {
     animation: cd-bounce-2 0.6s;
   }
   .cssanimations .comment_reply.bounce-in {
-    visibility: hidden;
+    visibility: visible;
+    display: none;
     position: relative;
     -webkit-animation: cd-bounce-2 0.6s;
     -moz-animation: cd-bounce-2 0.6s;
@@ -365,7 +340,7 @@ header h1 {
 
 @media only screen and (min-width: 1170px) {
   /* inverse bounce effect on even content blocks */
-  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
+  .cssanimations .even-cd-timeline-block .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
     -moz-animation: cd-bounce-2-inverse 0.6s;
     animation: cd-bounce-2-inverse 0.6s;

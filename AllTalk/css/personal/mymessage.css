@@ -1,0 +1,316 @@
+*
+{
+	word-break: break-all;
+}
+
+ul
+{
+	padding: 0;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+.message_content_area
+{
+	position: relative;
+	height: 100%;
+	min-height: 520px;
+	min-width: 1002px;
+	width: 1002px;
+	margin:64px auto auto;
+	background-color: #BDBDBD;
+	padding: 30px 0;
+}
+
+.myMessage_container
+{
+	width: 980px;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+
+.myMessage_index
+{
+	width: 192px;
+	height: 100%;
+	background-color: #FAFAFA;
+	border-right: solid 1px #CCCCCC;
+	box-shadow: 1px 0 2px rgba(0,0,0,0.2);
+	display: inline-block;
+}
+
+.myMessage_content
+{
+	width: 787px;
+	height: 100%;
+	float: right;
+	display: inline-block;
+}
+
+.myMessage_index_message,.myMessage_index_set
+{
+	height: 67px;
+	padding: 0 24px;
+	font: bold 18px "黑体";
+	color: #333333;
+	line-height: 67px;
+}
+
+.index_message
+{
+	height: 48px;
+	padding: 0 40px;
+	font: 16px "黑体";
+	color: #666666;
+	line-height: 48px;
+}
+
+.myMessage_reply,.myMessage_aite,.myMessage_like,.myMessage_notice
+{
+	margin: 20px 25px 0 27px;
+	padding-right: 55px;
+	padding-bottom: 20px;
+	border-bottom: dashed 1px #CCCCCC;
+}
+
+.myMessage_fans,.myMessage_letter
+{
+	margin: 20px 25px 0 27px;
+	padding-right: 55px;
+	padding-bottom: 20px;
+	border-bottom: dashed 1px #CCCCCC;
+	min-height: 50px;
+}
+
+.myMessage_reply_pic,.myMessage_aite_pic,.myMessage_like_pic,.myMessage_fans_pic,.myMessage_letter_pic
+{
+	width: 50px;
+	height: 50px;
+	background-color: #A4A4A4;
+	border-radius: 5px;
+	margin-right: 10px;
+	display: inline-block;
+	float: left;
+}
+
+.myMessage_reply_pic img,.myMessage_aite_pic img,.myMessage_like_pic img,.myMessage_fans_pic img,.myMessage_letter_pic img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.myMessage_reply_content,.myMessage_aite_content,.myMessage_like_content,.myMessage_fans_content,.myMessage_notice_content,.myMessage_letter_content
+{
+	width: 620px;
+	display: inline-block;
+	float: left;
+}
+
+.myMessage_reply_name,.myMessage_aite_name,.myMessage_like_name,.myMessage_notice_title,.myMessage_letter_name
+{
+	margin-top: 5px;
+}
+
+.myMessage_fans_name
+{
+	margin-top: 5px;
+	display: inline-block;
+	width: 550px;
+}
+
+.msg_fans_num
+{
+	display: inline-block;
+	margin-left: 50px;
+	font: 13px "微软雅黑";
+	color: #333333;
+}
+
+.msg_fans_num span
+{
+	margin-right: 20px;
+	font: 13px "微软雅黑";
+	color: #0090CC;
+	letter-spacing: 0.5px;
+}
+
+.msg_reply_name,.msg_aite_name,.msg_like_name,.msg_fans_name,.msg_notice_title,.msg_letter_name
+{
+	font: bold 16px "黑体";
+	color: #333333;
+}
+
+.msg_reply_time,.msg_aite_time,.msg_like_time,.msg_notice_time,.msg_letter_time
+{
+	font: 12px arial;
+	color: #999999;
+	float: right;
+	letter-spacing: 0.5px;
+}
+
+.msg_reply_content,.msg_aite_content,.msg_notice_content
+{
+	font: 13px "微软雅黑";
+	color: #333333;
+	margin-top: 12px;
+	line-height: 1.5em;
+	letter-spacing: 0.5px;
+}
+
+.msg_notice_content
+{
+	color: #999999;
+}
+
+.msg_like_content,.msg_fans_content
+{
+	font: 13px "微软雅黑";
+	color: #999999;
+	margin-top: 12px;
+	line-height: 13px;
+	letter-spacing: 0.5px;
+}
+
+.msg_aite_content span
+{
+	color: #0090CC;
+	cursor: pointer;
+}
+
+.msg_reply_for,.msg_aite_for
+{
+	margin-top: 12px;
+	padding: 10px;
+	font: 13px "微软雅黑";
+	color: #333333;
+	background-color: #F2F2F2;
+	line-height: 1.5em;
+	letter-spacing: 0.5px;
+}
+.msg_like_for
+{
+	padding: 10px;
+	font: 13px "微软雅黑";
+	color: #333333;
+	background-color: #F2F2F2;
+	line-height: 1.5em;
+	letter-spacing: 0.5px;
+	display: inline-block;
+    width: 530px;
+    white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden; 
+}
+
+.msg_reply_for span,.msg_aite_for span,.msg_like_for span
+{
+	color: #999999;
+}
+
+.myMessage_reply_title,.myMessage_aite_title,.myMessage_like_title
+{
+	margin-top: 15px;
+}
+
+.myMessage_letter_text
+{
+	margin-top: 5px;
+}
+
+.msg_reply_topicname,.msg_aite_topicname,.msg_like_topicname,.msg_letter_text
+{
+	font: 12px "微软雅黑";
+	color: #999999;
+	border-left: solid 3px #F05656;
+	padding-left: 10px;
+}
+
+.msg_letter_text
+{
+	width: 530px;
+	display: inline-block;
+	font: 13px "微软雅黑";
+	color: #333333;
+	border: none;
+	padding: 3.5px 10px;
+	background-color: #F2F2F2;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden;
+}
+
+.msg_aite_topicname_type2
+{
+	font: 16px "微软雅黑";
+	color: #333333;
+	background-color: #F2F2F2;
+	width: 537px;
+    display: inline-block;
+}
+
+#myMessage_reply_btn,#myMessage_aite_btn,#myMessage_like_btn
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 16px;
+	float: right;
+	text-align: right;
+	font: 12px "微软雅黑";
+	color: #999999;
+	padding-left: 21px;
+	line-height: 16px;
+	background: url(../../img/topic/icon_comment_blue.png) no-repeat;
+}
+
+#myMessage_like_btn
+{
+	margin: 12px auto;
+}
+
+#myMessage_fans_btn
+{
+	margin: 0;
+	padding: 0 6px;
+	border: solid 1px #0090CC;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	width: 64px;
+	height: 24px;
+	float: right;
+	text-align: right;
+	font: bold 14px "黑体";
+	color: #333333;
+	padding-left: 21px;
+	background: url(../../img/browse/specialTopic/icon_concern.png) no-repeat;
+}
+
+#myMessage_letter_btn
+{
+	margin: 4px auto;
+	padding: 0 4px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 16px;
+	min-width: 16px;
+	float: right;
+	text-align: right;
+	font: 12px "微软雅黑";
+	color: #FFFFFF;
+	line-height: 16px;
+	background-color: #F05656;
+	border-radius: 8px;
+	letter-spacing: 0;
+}
