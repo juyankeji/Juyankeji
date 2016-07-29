@@ -17,22 +17,23 @@ a
 {
 	position: relative;
 	height: 100%;
-	min-height: 520px;
+	min-height: 660px;
 	min-width: 1002px;
 	width: 1002px;
 	margin:64px auto auto;
-	background-color: #BDBDBD;
-	padding: 30px 0;
+	padding: 30px 0 0 0;
 }
 
 .myMessage_container
 {
 	width: 980px;
+	min-height: 630px;
 	background-color: #FFFFFF;
 	border-radius: 5px;
 	margin: 0 auto;
 	overflow: hidden;
 	padding-bottom: 30px;
+	position: relative;
 }
 
 .myMessage_index
@@ -41,8 +42,8 @@ a
 	height: 100%;
 	background-color: #FAFAFA;
 	border-right: solid 1px #CCCCCC;
-	box-shadow: 1px 0 2px rgba(0,0,0,0.2);
 	display: inline-block;
+	position: absolute;
 }
 
 .myMessage_content
@@ -60,15 +61,46 @@ a
 	font: bold 18px "黑体";
 	color: #333333;
 	line-height: 67px;
+	border-right: solid 1px #CCCCCC;
+	box-shadow: 1px 0 2px rgba(0,0,0,0.2);
 }
 
 .index_message
 {
 	height: 48px;
-	padding: 0 40px;
+	padding: 0 10px 0 40px;
 	font: 16px "黑体";
 	color: #666666;
 	line-height: 48px;
+}
+
+.index_message_checked,.index_message:hover
+{
+	color: #0090CC;
+	border-left: solid 6px #0090CC;
+	box-shadow: 4px 0 6px rgba(0,0,0,0.2) inset;
+	border-right: none;
+	background-color: #FFFFFF;
+	width: 137px;
+}
+
+.message_num
+{
+	display: inline-block;
+    border-radius: 10px;
+    background-color: #F05656;
+    font: 9px arial;
+    color: #ffffff;
+    text-align: center;
+    float: right;
+    line-height: 12px;
+    margin: 15px auto;
+    letter-spacing: 0;
+}
+
+.message_num_padding
+{
+	padding: 2px 5px;
 }
 
 .myMessage_reply,.myMessage_aite,.myMessage_like,.myMessage_notice
@@ -105,9 +137,16 @@ a
 	height: 100%;
 }
 
-.myMessage_reply_content,.myMessage_aite_content,.myMessage_like_content,.myMessage_fans_content,.myMessage_notice_content,.myMessage_letter_content
+.myMessage_reply_content,.myMessage_aite_content,.myMessage_like_content,.myMessage_fans_content,.myMessage_letter_content
 {
 	width: 620px;
+	display: inline-block;
+	float: left;
+}
+
+.myMessage_notice_content
+{
+	width: 100%;
 	display: inline-block;
 	float: left;
 }
@@ -313,4 +352,159 @@ a
 	background-color: #F05656;
 	border-radius: 8px;
 	letter-spacing: 0;
+}
+
+.myMessage_dialogue
+{
+	margin-left: 788px;
+	/*display: none;*/
+	width: 787px;
+    height: 100%;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+
+.dialogue_target_area
+{
+	height: 62px;
+	border-bottom: solid 1px #CCCCCC;
+	background-color: #FAFAFA;
+	font-size: 0;
+}
+
+.dialogue_back_btn
+{
+	font-size: 50px;
+	font-weight: bold;
+	width: 62px;
+	height: 62px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	line-height: 62px;
+	color: #999999;
+}
+
+.dialogue_back_btn:hover
+{
+	background-color: #0090CC;
+	color: #FFFFFF;
+}
+
+.dialogue_target_name
+{
+	height: 62px;
+	display: inline-block;
+	font-size: 30px;
+	color: #999999;
+	letter-spacing: 0;
+	line-height: 62px;
+	padding: 0 10px;
+}
+
+.dialogue_content_area
+{
+	padding: 10px 30px 10px 27px;
+	height: 476px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.dialogue_content_item_time
+{
+	text-align: center;
+	font: 12px arial;
+	color: #999;
+	margin-bottom: 10px;
+}
+
+.dialogue_content_item
+{
+	font-size: 0;
+	margin-bottom: 20px;
+}
+
+.dialogue_content_pic
+{
+	width: 50px;
+	height: 50px;
+	background-color: #999999;
+	border-radius: 5px;
+	float: left;
+}
+
+.dialogue_content_item_text
+{
+	max-width: 590px;
+	display: inline-block;
+	font: 13px "微软雅黑";
+	color: #333333;
+	vertical-align: top;
+	float: left;
+	margin: auto 10px;
+	background-color: #FAFAFA;
+	border: solid 1px #CCCCCC;
+	padding: 10px;
+	border-radius: 10px;
+	line-height: 1.5em;
+	letter-spacing: 0.5px;
+}
+
+.mydialogue_reply
+{
+	float: right;
+}
+
+.dialogue_operate_area
+{
+	width: 733px;
+    height: 100px;
+	padding: 10px 27px;
+	background-color: #F2F2F2;
+	border-top: solid 1px #CCCCCC;
+	position: absolute;
+	bottom: 0;
+}
+
+.dialogue_operate_area form
+{
+	font-size: 0;
+}
+
+.dialogue_operate_input
+{
+	width: 710px;
+	height: 50px;
+	outline: none;
+	padding: 10px;
+	resize: none;
+	font: 13px "微软雅黑";
+	color: #333333;
+}
+
+.dialogue_operate_insert
+{
+	height: 20px;
+	width: 100%;
+	margin-top: 10px;
+	line-height: 20px;
+}
+
+.dialogue_operate_insert input
+{
+	height: 20px;
+	float: right;
+	outline: none;
+	background-color: #0090CC;
+	border: none;
+	font:10px "微软雅黑";
+	color: #FFFFFF;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.dialogue_operate_insert img
+{
+	margin-right: 8px;
 }

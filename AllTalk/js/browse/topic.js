@@ -625,5 +625,5 @@ $(document).ready(function () {
 		 var div1_4 = $('<div></div>').addClass('isay_floor').appendTo(div1);
 		 div1_4.html("#"+floor);
 	}
-	
+
 });
