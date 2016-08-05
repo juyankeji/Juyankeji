@@ -34,6 +34,7 @@ a
 	overflow: hidden;
 	padding-bottom: 30px;
 	position: relative;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
 }
 
 .myMessage_index
@@ -356,11 +357,10 @@ a
 
 .myMessage_dialogue
 {
-	margin-left: 788px;
-	/*display: none;*/
+	/*margin-left: 788px;*/
 	width: 787px;
     height: 100%;
-    position: absolute;
+    /*position: absolute;*/
     background-color: #FFFFFF;
 }
 

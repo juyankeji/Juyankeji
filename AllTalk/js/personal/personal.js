@@ -28,52 +28,52 @@ $(document).ready(function() {
 	
 	$("#content").css('display','none');
 	//载入关注话题
-	$("#personalContent").load("concern.html #personal_concern",function () {
-			$("<link>")
-    			.attr({ rel: "stylesheet",
-        				type: "text/css",
-        				href: "../../css/personal/concern.css"
-    			})
-   				.appendTo("head");
-   		jQuery.getScript("../../js/personal/concern.js")
- 		.done(function() {
-//			alert("success!");
- 		})
-		.fail(function() {
- 			alert("load personal.js fail!");
-		});
-	});
+//	$("#personalContent").load("concern.html #personal_concern",function () {
+//			$("<link>")
+//  			.attr({ rel: "stylesheet",
+//      				type: "text/css",
+//      				href: "../../css/personal/concern.css"
+//  			})
+// 				.appendTo("head");
+// 		jQuery.getScript("../../js/personal/concern.js")
+// 		.done(function() {
+////			alert("success!");
+// 		})
+//		.fail(function() {
+// 			alert("load personal.js fail!");
+//		});
+//	});
 	//关注的话题与参与的话题的ajax载入
-	$(function () {
-		var bindElement,action,triggerElement1,triggerElement2,loadElement,pageRoute1,pageRoute2,cssRoute,jsRoute;
-		bindElement = "#personalPage";
-		action = "click";
-		triggerElement1 = "#personalIndex_1";
-		triggerElement2 = "#personalIndex_2";
-		loadElement = "#personalContent";
-		pageRoute1 = "concern.html #personal_concern";
-		pageRoute2 = "concerned.html #personal_concerned";
-		cssRoute = "../../css/personal/concern.css";
-		jsRoute = "../../js/personal/concern.js";
-		ajaxLoad(bindElement,action,triggerElement1,loadElement,pageRoute1,cssRoute,jsRoute);
-		ajaxLoad(bindElement,action,triggerElement2,loadElement,pageRoute2,cssRoute,jsRoute);
-	});
+//	$(function () {
+//		var bindElement,action,triggerElement1,triggerElement2,loadElement,pageRoute1,pageRoute2,cssRoute,jsRoute;
+//		bindElement = "#personalPage";
+//		action = "click";
+//		triggerElement1 = "#personalIndex_1";
+//		triggerElement2 = "#personalIndex_2";
+//		loadElement = "#personalContent";
+//		pageRoute1 = "concern.html #personal_concern";
+//		pageRoute2 = "concerned.html #personal_concerned";
+//		cssRoute = "../../css/personal/concern.css";
+//		jsRoute = "../../js/personal/concern.js";
+//		ajaxLoad(bindElement,action,triggerElement1,loadElement,pageRoute1,cssRoute,jsRoute);
+//		ajaxLoad(bindElement,action,triggerElement2,loadElement,pageRoute2,cssRoute,jsRoute);
+//	});
 	
 	//关注的人和粉丝的ajax载入
-	$(function () {
-		var bindElement,action,triggerElement1,triggerElement2,loadElement,pageRoute1,pageRoute2,cssRoute,jsRoute;
-		bindElement = "#personalPage";
-		action = "click";
-		triggerElement1 = "#concern_num";
-		triggerElement2 = "#concerned_num";
-		loadElement = "#personalContent";
-		pageRoute1 = "concern_person.html #concern_person";
-		pageRoute2 = "concerned_person.html #concerned_person";
-		cssRoute = "../../css/personal/concern_person.css";
-		jsRoute = "../../js/personal/concern_person.js";
-		ajaxLoad(bindElement,action,triggerElement1,loadElement,pageRoute1,cssRoute,jsRoute);
-		ajaxLoad(bindElement,action,triggerElement2,loadElement,pageRoute2,cssRoute,jsRoute);
-	});
+//	$(function () {
+//		var bindElement,action,triggerElement1,triggerElement2,loadElement,pageRoute1,pageRoute2,cssRoute,jsRoute;
+//		bindElement = "#personalPage";
+//		action = "click";
+//		triggerElement1 = "#concern_num";
+//		triggerElement2 = "#concerned_num";
+//		loadElement = "#personalContent";
+//		pageRoute1 = "concern_person.html #concern_person";
+//		pageRoute2 = "concerned_person.html #concerned_person";
+//		cssRoute = "../../css/personal/concern_person.css";
+//		jsRoute = "../../js/personal/concern_person.js";
+//		ajaxLoad(bindElement,action,triggerElement1,loadElement,pageRoute1,cssRoute,jsRoute);
+//		ajaxLoad(bindElement,action,triggerElement2,loadElement,pageRoute2,cssRoute,jsRoute);
+//	});
 	
 	/********他人主页相关效果-begin*********/
 	//关注按钮变化

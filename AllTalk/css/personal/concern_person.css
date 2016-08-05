@@ -5,32 +5,34 @@ a{
 .concern_person,.concerned_person
 {
 	min-width: 1002px;
-	background-color: #DDDDDD;
 	font-size:0;
 }
 
 .concern_person_item
 {
 	position: relative;
-	width: 480px;
-	height: 100px;
-	background-color: #CCCCCC;
+	width: 440px;
+	height: 80px;
+	background-color: #F2F2F2;
 	margin: 5px 10px;
 	display: inline-block;
 	font-size: 20px;
 	vertical-align: middle;
 	overflow: hidden;
+	border: solid 5px #FFFFFF;
+	border-radius: 5px;
+	font-size: 0;
+    padding: 10px;
 }
 
 .concern_person_item_img
 {
-	position: absolute;
 	width: 80px;
 	height: 80px;
-	margin: 10px;
 	border-radius: 40px;
 	background-color: #BDBDBD;
 	cursor: pointer;
+	display: inline-block;
 }
 
 .concern_person_item_img img
@@ -42,10 +44,11 @@ a{
 .concern_person_item_content
 {
 	position: relative;
-	float: right;
-	width: 370px;
-	height: 90px;
-	margin:5px 0 0 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 347px;
+    height: 80px;
+    margin-left: 10px;
 }
 
 .concern_person_item_name
@@ -70,15 +73,16 @@ a{
 
 .concern_person_item_line
 {
-	height: 30px;
 	font: 14px simhei;
 	font-weight: 400;
 	color: #666666;
-	line-height: 30px;
+	line-height: 25px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
 }
 .concern_person_item_info
 {
-	height: 30px;
 	font: 14px simhei;
 	font-weight: 400;
 	color: #666666;
@@ -86,13 +90,13 @@ a{
 
 .concern_person_item_info_fansNum
 {
-	line-height: 30px;
+	line-height: 25px;
 	display: inline-block;
 }
 
 .concern_person_item_info_lastTime
 {
-	line-height: 30px;
+	line-height: 25px;
 	text-align: right;
 	display: inline-block;
 	float: right;
@@ -109,24 +113,25 @@ a{
 	font: 10px simhei;
 	text-align: center;
 	line-height: 26px;
-	background-color: #F05656;
-	color: #FFFFFF;
+	background-color: rgba(0,0,0,0.5);
 	padding: 0 3px;
+	top: 0;
 	right: -75px;
 	letter-spacing: 0.5px;
-	opacity: 0.5;
 	visibility: hidden;
 }
 
-.concern_Btn p
+.concern_Btn a
 {
+	display: block;
 	font: bold 14px "微软雅黑";
-	margin: 20px auto;
+	margin: 20px auto 0;
+	color: #FFFFFF;
 	cursor: pointer;
 	border-bottom: solid 2px rgba(255,255,255,0);
 }
 
-.concern_Btn p:hover
+.concern_Btn a:hover
 {
 	border-bottom: solid 2px rgba(255,255,255,1);
 }
@@ -140,7 +145,7 @@ a{
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
-    border-right: 25px solid #F05656;
+    border-right: 25px solid rgba(0,0,0,0.5);
     border-bottom: 50px solid transparent;
     
 }

@@ -15,18 +15,18 @@ $(document).ready(function(){
 		$(this).find("span").css("color","#999999");
 	});
 	
-	//动态载入函数
-	$(function (bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute) {
-		bindElement = "body";
-		action = "click";
-		triggerElement = "#username";
-		loadElement = "#content_test";
-		pageRoute = "view/user/personal.html #personalPage";
-		cssRoute = "css/personal/main.css";
-		jsRoute = "js/personal/personal.js";
-		ajaxLoad(bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute);
-		
-	});
+	//ajax载入个人主页
+//	$(function (bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute) {
+//		bindElement = "body";
+//		action = "click";
+//		triggerElement = "#username";
+//		loadElement = "#content_test";
+//		pageRoute = "view/user/personal.html #personalPage";
+//		cssRoute = "css/personal/main.css";
+//		jsRoute = "js/personal/personal.js";
+//		ajaxLoad(bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute);
+//		
+//	});
 	
 	
 //	$("body").on("click","#personal_pic",function () {

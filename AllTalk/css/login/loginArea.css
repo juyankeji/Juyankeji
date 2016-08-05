@@ -39,6 +39,12 @@
 	top: 88px;
 	height: 332px;
 	text-align: center;
+	display: none;
+}
+
+.form_area_disply
+{
+	display: block;
 }
 
 .login_input,.register_input
@@ -194,7 +200,7 @@ label.error {
 
 .icon_message,.personal_pic_unlogin
 {
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 
 /* iCheck plugin Flat skin*/

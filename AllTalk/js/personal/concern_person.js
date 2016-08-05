@@ -28,6 +28,38 @@ $(document).ready(function () {
 			$(this).parent().animate({right:'-75px'},200);
 		}
 	});
-	
-	
+	$("#concern_cancel_Btn,.delete_item").click(function(){
+		swal({
+			title: "确定取消关注此人?",
+//			text: "点击确定将不再关注此人!",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: '#DD6B55',
+			confirmButtonText: '确定',
+			cancelButtonText: "取消",
+			closeOnConfirm: false,
+			confirmButtonText: "完成",
+		},
+		function(isConfirm){
+			swal("已取消关注", "", "success");
+			$(this).parents(".concern_person_item").remove();
+			
+		});
+    });
+		
+//	});
+//	document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
+//		swal({
+//			title: "Are you sure?",
+//			text: "You will not be able to recover this imaginary file!",
+//			type: "warning",
+//			showCancelButton: true,
+//			confirmButtonColor: '#DD6B55',
+//			confirmButtonText: 'Yes, delete it!',
+//			closeOnConfirm: false
+//		},
+//		function(){
+//			swal("Deleted!", "Your imaginary file has been deleted!", "success");
+//		});
+//	};
 });

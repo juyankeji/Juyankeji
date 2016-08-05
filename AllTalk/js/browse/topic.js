@@ -380,7 +380,6 @@ $(document).ready(function () {
 			var top = $(this).parents(".cd-timeline-block").css("top");
 			top = parseInt(top.substring(top));
 			var height =$(this).parents(".cd-timeline-block").height();
-			console.log(top+" "+height+","+typeof(height)+" "+$("#cd-timeline").height()+","+typeof($("#cd-timeline").height()));
 			if (height >= $("#cd-timeline").height()) {
 				alert("1");
 			}

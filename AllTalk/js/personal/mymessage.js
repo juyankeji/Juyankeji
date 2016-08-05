@@ -13,97 +13,97 @@ $(document).ready(function () {
 	});
 	
 	//点击导航项目效果
-	$(".index_message").click(function () {
-		$("#myMessage_content").html("");
-		$(".index_message").removeClass("index_message_checked");
-		$(this).addClass("index_message_checked");
-		$(this).find(".message_num").html("");
-		$(this).find(".message_num").removeClass("message_num_padding");
-		switch ($(this).attr("buttonIndex")){
-			case "1":
-				for (var i=0;i<reply_item.length;i++) {
-					addMessageReplyItem(
-						reply_item[i].personalURL,
-						reply_item[i].imgURL,
-						reply_item[i].name,
-						reply_item[i].time,
-						reply_item[i].replyContent,
-						reply_item[i].replyFor,
-						reply_item[i].topicURL,
-						reply_item[i].topicTitle
-					);
-				}
-				break;
-			case "2":
-				for (var i=0;i<aite_item.length;i++) {
-					addMessageAiteItem(
-						aite_item[i].aiteType,
-						aite_item[i].personalURL,
-						aite_item[i].imgURL,
-						aite_item[i].name,
-						aite_item[i].time,
-						aite_item[i].aiteName,
-						aite_item[i].replyContent,
-						aite_item[i].replyFor,
-						aite_item[i].topicURL,
-						aite_item[i].topicTitle
-					);
-				}
-				break;
-			case "3":
-				for (var i=0;i<like_item.length;i++) {
-					addMessageLikeItem(
-						like_item[i].personalURL,
-						like_item[i].imgURL,
-						like_item[i].name,
-						like_item[i].time,
-						like_item[i].replyFor
-					);
-				}
-				break;
-			case "4":
-				for (var i=0;i<fans_item.length;i++) {
-					addMessageFansItem(
-						fans_item[i].personalURL,
-						fans_item[i].imgURL,
-						fans_item[i].name,
-						fans_item[i].fansNum,
-						fans_item[i].concernNum,
-						fans_item[i].personalIntro
-					);
-				}
-				break;
-			case "5":
-				for (var i=0;i<notice_item.length;i++) {
-					addMessageNoticeItem(
-						notice_item[i].linkURL,
-						notice_item[i].noticeTitle,
-						notice_item[i].time,
-						notice_item[i].noticeContent
-					);
-				}
-				break;
-			case "6":
-				for (var i=0;i<letter_item.length;i++) {
-					addMessageLetterItem(
-						letter_item[i].personalURL,
-						letter_item[i].imgURL,
-						letter_item[i].name,
-						letter_item[i].time,
-						letter_item[i].replyContent,
-						letter_item[i].replyNum
-					);
-				}
-				enterLetter(letter_item);
-				break;
-			case "7":
-				break;
-			case "8":
-				break;
-			default:
-				break;
-		}
-	});
+//	$(".index_message").click(function () {
+//		$("#myMessage_content").html("");
+//		$(".index_message").removeClass("index_message_checked");
+//		$(this).addClass("index_message_checked");
+//		$(this).find(".message_num").html("");
+//		$(this).find(".message_num").removeClass("message_num_padding");
+//		switch ($(this).attr("buttonIndex")){
+//			case "1":
+//				for (var i=0;i<reply_item.length;i++) {
+//					addMessageReplyItem(
+//						reply_item[i].personalURL,
+//						reply_item[i].imgURL,
+//						reply_item[i].name,
+//						reply_item[i].time,
+//						reply_item[i].replyContent,
+//						reply_item[i].replyFor,
+//						reply_item[i].topicURL,
+//						reply_item[i].topicTitle
+//					);
+//				}
+//				break;
+//			case "2":
+//				for (var i=0;i<aite_item.length;i++) {
+//					addMessageAiteItem(
+//						aite_item[i].aiteType,
+//						aite_item[i].personalURL,
+//						aite_item[i].imgURL,
+//						aite_item[i].name,
+//						aite_item[i].time,
+//						aite_item[i].aiteName,
+//						aite_item[i].replyContent,
+//						aite_item[i].replyFor,
+//						aite_item[i].topicURL,
+//						aite_item[i].topicTitle
+//					);
+//				}
+//				break;
+//			case "3":
+//				for (var i=0;i<like_item.length;i++) {
+//					addMessageLikeItem(
+//						like_item[i].personalURL,
+//						like_item[i].imgURL,
+//						like_item[i].name,
+//						like_item[i].time,
+//						like_item[i].replyFor
+//					);
+//				}
+//				break;
+//			case "4":
+//				for (var i=0;i<fans_item.length;i++) {
+//					addMessageFansItem(
+//						fans_item[i].personalURL,
+//						fans_item[i].imgURL,
+//						fans_item[i].name,
+//						fans_item[i].fansNum,
+//						fans_item[i].concernNum,
+//						fans_item[i].personalIntro
+//					);
+//				}
+//				break;
+//			case "5":
+//				for (var i=0;i<notice_item.length;i++) {
+//					addMessageNoticeItem(
+//						notice_item[i].linkURL,
+//						notice_item[i].noticeTitle,
+//						notice_item[i].time,
+//						notice_item[i].noticeContent
+//					);
+//				}
+//				break;
+//			case "6":
+//				for (var i=0;i<letter_item.length;i++) {
+//					addMessageLetterItem(
+//						letter_item[i].personalURL,
+//						letter_item[i].imgURL,
+//						letter_item[i].name,
+//						letter_item[i].time,
+//						letter_item[i].replyContent,
+//						letter_item[i].replyNum
+//					);
+//				}
+//				enterLetter(letter_item);
+//				break;
+//			case "7":
+//				break;
+//			case "8":
+//				break;
+//			default:
+//				break;
+//		}
+//	});
 	
 	var reply_item=[
 		{
@@ -464,4 +464,13 @@ $(document).ready(function () {
 			}
 		});
 	}
+	
+	//点击发送按钮显示
+		$("#myMessage_content").on("click","#sendReply",function () {
+			var replyText = $("#dialogue_operate_input").val();
+			if (replyText != "") {
+				$("#dialogue_operate_input").val("");
+				createDialogueItem(replyText);
+			}
+		});
 });

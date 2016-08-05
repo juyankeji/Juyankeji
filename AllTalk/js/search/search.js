@@ -3,7 +3,6 @@ $(document).ready(function () {
 	var inputValue;
 	$(".input").on("keyup","#search_input",function () {
 		inputValue = $("#search_input").val();
-//		console.log(inputValue);
 	}).on("mouseover",".input__label-content",function () {
 		var hotWord = $(this).html();
 		$("#search_input").val(hotWord);
@@ -155,36 +154,36 @@ $(document).ready(function () {
 	   }
 	}
 	
-	var i=0;
-	$("#search_button").click(function () {
-		itemType = "1";
-		for (i;i<sql.length;i++) {
-				addTopicItem("#search_content_items",
-							 sql[i].tagName,
-							 sql[i].title,
-							 sql[i].time,
-							 sql[i].editor,
-							 sql[i].browseNum,
-							 sql[i].support,
-							 sql[i].oppose,
-							 sql[i].imgSrc,
-							 sql[i].colorType,
-							 itemType);
-				setColor();
-//				ctx = $(".triangle")[i].getContext("2d");
-				if (itemType == "1") {
-					itemType = "2";
-				} else{
-					itemType = "1";
-				}
-				
-				if (i%4 == 0) {
-					$("#search_content_items").css("height","+=406");
-				}
-				
-			$(".topic_item").animate({opacity:'1'},1000);
-			}
-			
-	});
+//	var i=0;
+//	$("#search_button").click(function () {
+//		itemType = "1";
+//		for (i;i<sql.length;i++) {
+//				addTopicItem("#search_content_items",
+//							 sql[i].tagName,
+//							 sql[i].title,
+//							 sql[i].time,
+//							 sql[i].editor,
+//							 sql[i].browseNum,
+//							 sql[i].support,
+//							 sql[i].oppose,
+//							 sql[i].imgSrc,
+//							 sql[i].colorType,
+//							 itemType);
+//				setColor();
+////				ctx = $(".triangle")[i].getContext("2d");
+//				if (itemType == "1") {
+//					itemType = "2";
+//				} else{
+//					itemType = "1";
+//				}
+//				
+//				if (i%4 == 0) {
+//					$("#search_content_items").css("height","+=406");
+//				}
+//				
+//			$(".topic_item").animate({opacity:'1'},1000);
+//			}
+//			
+//	});
 	
 });

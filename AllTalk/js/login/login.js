@@ -11,8 +11,28 @@ $(document).ready(function(){
 		closeBg : "#f2f2f2",
 		effect: "fadeOut",
  	});
-});
  	
+ 	$(".register_text").hDialog({
+		'box' : '#loginBox',
+		width : 500,
+		height : 480,
+		boxBg : '#f2f2f2',
+		modalHide: false,
+		closeBg : "#f2f2f2",
+		effect: "fadeOut",
+ 	});
+ 	$("#HCloseBtn").click(function () {
+ 		$(".register_form_area,.login_form_area").css("display","none");
+ 	});
+});
+	 	$("#login_text").click(function () {
+	 		$(".register_form_area").removeClass("form_area_disply");
+	 		$(".login_form_area").addClass("form_area_disply");
+	 	});
+	 	$("#register_text").click(function () {
+	 		$(".login_form_area").removeClass("form_area_disply");
+	 		$(".register_form_area").addClass("form_area_disply");
+	 	});
 	});
 	
 	//登录验证
@@ -191,7 +211,7 @@ $("#loginBtn").click(
 		    $(".icon_message").css("visibility","visible");
 		    $(".personal_pic_unlogin").css("visibility","visible");
 		    $(".personal_pic_unlogin").attr("src","img/personal/personalPicture.png")
-		    $(".login_text").css("visibility","hidden");
+		    $(".signUp").css("visibility","hidden");
 		   	$("#username").css("visibility","visible");
 		  },1000);
   
