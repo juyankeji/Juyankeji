@@ -42,9 +42,7 @@ Modules - reusable parts of our design
 -------------------------------- */
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 100%;
   max-width: 1170px;
-  margin: 0 auto;
 }
 .cd-container::after {
   /* clearfix */
@@ -81,8 +79,9 @@ header h1 {
 }
 
 #cd-timeline {
+	display: inline-block;
   position: relative;
-  margin: 45px auto;
+  margin: 0 auto 45px 0;
 }
 /*#cd-timeline::before {
   content: '';
@@ -104,7 +103,7 @@ header h1 {
 }
 
 .cd-timeline-block {
-  position: absolute;
+  /*position: absolute;*/
 }
 .cd-timeline-block:after {
   content: "";
@@ -119,10 +118,11 @@ header h1 {
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-block {
-    /*margin: 4em 0;*/
+    margin-top: 20px;
   }
   .cd-timeline-block:first-child {
     margin-top: 0;
+    padding-bottom: 20px;
   }
   .cd-timeline-block:last-child {
     margin-bottom: 0;
@@ -131,8 +131,6 @@ header h1 {
 
 .cd-timeline-img {
   position: absolute;
-  /*top: 0;*/
-  /*left: 0;*/
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -154,9 +152,12 @@ header h1 {
 }
 .cd-timeline-img.cd-picture {
   background: #F05656;
+  left: 100%;
+  z-index: 1;
 }
 .cd-timeline-img.cd-movie {
   background: #0090CC;
+  left: 0;
 }
 .cd-timeline-img.cd-location {
   background: #f0ca45;
@@ -166,7 +167,6 @@ header h1 {
     width: 60px;
     height: 60px;
     /*left: 50%;*/
-   	right: -83px;
     margin-left: -30px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
@@ -244,13 +244,18 @@ header h1 {
   border: solid 1px #F05656;
   border-left: solid 10px #F05656;
 }
+
+.timeline-content-set-support
+{
+	padding: 0 10px;
+	border: solid 1px #F05656;
+	background-color: #FAFAFA;
+}
+
 .cd-timeline-content:after {
   content: "";
   display: table;
   clear: both;
-}
-.cd-timeline-content h2 {
-  color: #303e49;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 13px;
@@ -274,6 +279,14 @@ header h1 {
     margin-left: 0;
     width: 390px;
   }
+  .timeline-content-set-support
+	{
+		width: 428px;
+	}
+	  .timeline-content-set-oppose
+  {
+  	width: 428px;
+  }
   .cd-timeline-content::before {
     top: 24px;
     left: calc(100% - 7px);
@@ -291,7 +304,7 @@ header h1 {
   }
   .even-cd-timeline-block .cd-timeline-img
   {
-  	left: -51px;
+  	/*left: -51px;*/
   }
   .even-cd-timeline-block .cd-timeline-content
   {
@@ -299,6 +312,13 @@ header h1 {
     border: solid 1px #0090CC;
   	border-right: solid 10px #0090CC;
   }
+  
+  .timeline-content-set-oppose
+	{
+	  padding: 0 10px;
+		border: solid 1px #0090CC !important;
+		background-color: #FAFAFA;
+	}
   .even-cd-timeline-block .cd-timeline-content::before {
     top: 24px;
     left: auto;
@@ -314,6 +334,8 @@ header h1 {
     border: solid 1px #0090CC;
     border-top: none;
   }
+  
+
   
   
   .cssanimations .cd-timeline-content.is-hidden {

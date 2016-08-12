@@ -1,3 +1,18 @@
+//导航条登录按钮事件
+function logIn () {
+	$("#loginBox").load("/AllTalk/view/login/loginBox.html",function () {
+		$("<link>").attr({ 
+			rel: "stylesheet",
+        	type: "text/css",
+        	href: "css/login/loginArea.css"}).appendTo("head");
+   		jQuery.getScript("js/login/login.js").done(function() {
+//			alert("success!");
+ 		}).fail(function() {
+ 			alert("load personal.js fail!");
+		});
+	});
+}
+
 //ajax载入页面
 function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute) {
 	$(bindElement).on(action,triggerElement,function () {
@@ -21,6 +36,7 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 // 			$("#loginBox").css('visibility','hidden');
 		});
 	});
+
 }
 
 //用js设置样式，css()方法

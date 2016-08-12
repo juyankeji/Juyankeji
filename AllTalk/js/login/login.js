@@ -1,39 +1,42 @@
 $(document).ready(function(){
-  $(function () {
-//	var $el = $('.dialog');
-//	$el.hDialog(); //默认调用
-	$(".login_text").hDialog({
-		'box' : '#loginBox',
-		width : 500,
-		height : 420,
-		boxBg : '#f2f2f2',
-		modalHide: false,
-		closeBg : "#f2f2f2",
-		effect: "fadeOut",
- 	});
- 	
- 	$(".register_text").hDialog({
-		'box' : '#loginBox',
-		width : 500,
-		height : 480,
-		boxBg : '#f2f2f2',
-		modalHide: false,
-		closeBg : "#f2f2f2",
-		effect: "fadeOut",
- 	});
- 	$("#HCloseBtn").click(function () {
- 		$(".register_form_area,.login_form_area").css("display","none");
- 	});
+//	$("#login_text").click(function () {
+		$("#loginBox").load("/AllTalk/view/login/loginBox.html",function () {
+			loginEffect ();
+		});
 });
+
+function loginEffect () {
+	$(".login_text").hDialog({
+			'box' : '#loginBox',
+			width : 500,
+			height : 420,
+			boxBg : '#f2f2f2',
+			modalHide: false,
+			closeBg : "#f2f2f2",
+			effect: "fadeOut",
+	 	});
+	 	
+	 	$(".register_text").hDialog({
+			'box' : '#loginBox',
+			width : 500,
+			height : 480,
+			boxBg : '#f2f2f2',
+			modalHide: false,
+			closeBg : "#f2f2f2",
+			effect: "fadeOut",
+	 	});
+	 	$("#HCloseBtn").click(function () {
+	 		$(".register_form_area,.login_form_area").removeClass("form_area_disply");
+	 	});
+	
 	 	$("#login_text").click(function () {
-	 		$(".register_form_area").removeClass("form_area_disply");
+	 		$(".register_form_area,.login_form_area").removeClass("form_area_disply");
 	 		$(".login_form_area").addClass("form_area_disply");
 	 	});
 	 	$("#register_text").click(function () {
-	 		$(".login_form_area").removeClass("form_area_disply");
+	 		$(".login_form_area,.register_form_area").removeClass("form_area_disply");
 	 		$(".register_form_area").addClass("form_area_disply");
 	 	});
-	});
 	
 	//登录验证
 	$("#login_form_area").validate({
@@ -114,16 +117,16 @@ $(document).ready(function(){
 	$("#register_button").click(function () {
 		$("#loginBox").animate({height:'480px'});
 		$("#line").animate({height:'140px'});
-		$(".login_form_area").css("display","none");
-		$(".register_form_area").css("display","inherit");
+		$(".login_form_area").removeClass("form_area_disply");
+		$(".register_form_area").addClass("form_area_disply");
 		
 	});
 	
 	$("#returnLogin").click(function () {
 		$("#loginBox").animate({height:'420px'});
 		$("#line").animate({height:'125px'});
-		$(".login_form_area").css("display","inherit");
-		$(".register_form_area").css("display","none");
+		$(".login_form_area").addClass("form_area_disply");
+		$(".register_form_area").removeClass("form_area_disply");
 	});
 	
 	
@@ -214,9 +217,10 @@ $("#loginBtn").click(
 		    $(".signUp").css("visibility","hidden");
 		   	$("#username").css("visibility","visible");
 		  },1000);
-  
 		}
-});
+	});
+}
+		
 
 
 /*

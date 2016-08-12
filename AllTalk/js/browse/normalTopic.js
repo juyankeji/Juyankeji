@@ -75,7 +75,7 @@ $(document).ready(function () {
 		  var d1_1_2 = $("<div></div>").addClass("title_name_area").appendTo(d1_1);
 		   var d1_1_2_1 = $("<a></a>").addClass("title_name").attr("href",personalURL).html(personalName).appendTo(d1_1_2);
 		   var d1_1_2_2 = $("<div></div>").addClass("title_report").appendTo(d1_1_2);
-		   $("<input />").addClass("title_report_btn").attr("type","button").val("举报");
+		   $("<input />").addClass("title_report_btn").attr("type","button").val("举报").appendTo(d1_1_2_2);
 		   var d1_1_2_3 = $("<div></div>").addClass("title_time").html(commentTime).appendTo(d1_1_2);
 		 //晾衣架评论页内容
 		 var d1_2 = $("<div></div>").addClass("normalTopic_comment_content").appendTo(d3);
@@ -114,9 +114,11 @@ $(document).ready(function () {
 		  dots: true,
 		  infinite: false,
 		  slidesToShow: 4,
-		  slidesToScroll: 4
+		  slidesToScroll: 4,
+		  draggable:false
 	});
 	var slideIndex = 1;
+	//左侧评论按钮点击后输入框效果
 	$('.normalTopic_comment_publish').on('click', function  () {
 //		if ($("#comment_disply").css("display") == "none") {
 //			$("#comment_disply").css("display","block");
@@ -126,7 +128,52 @@ $(document).ready(function () {
 		$("#comment_disply").slideToggle(1000);
 //		$("#comment_disply").fadeToggle(1000);
 	});
-	
+	/*****右侧分页操作区效果*****/
+	var comment_page_num_index = 1;
+	$(".slick-dots li").eq(0).find("button").addClass("comment_page_num_button_active");
+	//分页页码按钮颜色变化
+	$(".normalTopic_comment_pole").on("click",".slick-prev",function () {
+		if (comment_page_num_index>1) {
+			comment_page_num_index--;
+		}
+		setPageNum(comment_page_num_index);
+	});
+	$(".normalTopic_comment_pole").on("click",".slick-next",function () {
+		if (comment_page_num_index<$(".slick-dots li").length) {
+			comment_page_num_index++;
+		}
+		setPageNum(comment_page_num_index);
+	});
+	$(".normalTopic_comment_pole").on("click",".comment_page_num_button",function () {
+		comment_page_num_index = $(this).attr("index");
+		setPageNum(comment_page_num_index);
+	});
+	//绑定上一页按钮功能
+	$(".normalTopic_comment_prev").click(function () {
+		$(".slick-prev").trigger("click");
+	});
+	//绑定下一页按钮功能
+	$(".normalTopic_comment_next").click(function () {
+		$(".slick-next").trigger("click");
+	});
+	//绑定尾页按钮功能
+	$(".normalTopic_comment_bottom").click(function () {
+		$(".comment_page_num_button").eq($(".slick-dots li").length-1).trigger("click");
+	});
+	//绑定跳转按钮功能
+	$(".turnTo_comment_page_btn").click(function () {
+		var pageNum = $("#turnTo_comment_page").val();
+		$(".comment_page_num_button").eq(pageNum-1).trigger("click");
+	});
+	//页码按钮效果
+	function setPageNum (index) {
+		$(".comment_page_num_button").removeClass("comment_page_num_button_active");
+		for (var i=0;i<$(".slick-dots li").length;i++) {
+			if ($(".slick-dots li").eq(i).find("button").attr("index") == index) {
+				$(".slick-dots li").eq(i).find("button").addClass("comment_page_num_button_active");
+			}
+		}
+	}
 	
 	//鼠标点击评论操作区域事件
 	$(".normalTopic_comment_btn").on("click",".btn_collection_checked,.btn_like_checked,.btn_comment_num",function () {

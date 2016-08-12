@@ -44,7 +44,7 @@
 
 .form_area_disply
 {
-	display: block;
+	display: inherit;
 }
 
 .login_input,.register_input
