@@ -15,169 +15,92 @@ $(document).ready(function() {
 //    		sectionsColor : ['red', 'red', 'red', 'red'],
       		anchors: ['1', '2', '3', '4'],
       		afterLoad:function (index) {
-      			bgLoad(index);
+//    			bgLoad(index);
       			if (index != 1) {
       				itemCircle(index-1);
       				typePosition(index-1);
       				itemPosition(index-1);
       			}
-      			
-//    				setTimeout(typePosition(index-1),3000);
       		},
-//    		onLeave:function (index,nextIndex,direction){
-//    			test1(nextIndex);
-////    			alert(index+" "+nextIndex);
-//    			bgLoad(index);
-//    			if (direction == 'down') {
-//    				
-//    				itemCircle(index);
-//    				itemPosition(index);
-//    				typePosition(index);
-////    				$(".items_1").removeClass();
-//    			}
-//    		}
+      		onLeave:function (index){
+      			if (index != 1) {
+      				typePosition(index-1);
+      				$(".section_intro_area li").addClass("item_intro_disply");
+      				$(".section_intro_area").addClass("item_intro_disply");
+      			}
+      		}
       		
         });
     });
     }
 
-    
-    /*
-**************图片预加载插件******************
-///参数设置：
-scaling     是否等比例自动缩放
-width       图片最大高
-height      图片最大宽
-loadpic     加载中的图片路径
-*/
-jQuery.fn.LoadImage=function(scaling,width,height,loadpic){
-    if(loadpic==null)loadpic="load3.gif";
-	return this.each(function(){
-		var t=$(this);
-		var src=$(this).attr("src")
-		var img=new Image();
-		//alert("Loading...")
-		img.src=src;
-		//自动缩放图片
-		var autoScaling=function(){
-			if(scaling){
-			
-				if(img.width>0 && img.height>0){ 
-			        if(img.width/img.height>=width/height){ 
-			            if(img.width>width){ 
-			                t.width(width); 
-			                t.height((img.height*width)/img.width); 
-			            }else{ 
-			                t.width(img.width); 
-			                t.height(img.height); 
-			            } 
-			        } 
-			        else{ 
-			            if(img.height>height){ 
-			                t.height(height); 
-			                t.width((img.width*height)/img.height); 
-			            }else{ 
-			                t.width(img.width); 
-			                t.height(img.height); 
-			            } 
-			        } 
-			    } 
-			}	
-		}
-		//处理ff下会自动读取缓存图片
-		if(img.complete){
-		    //alert("getToCache!");
-			autoScaling();
-		    return;
-		}
-		$(this).attr("src","");
-		var loading=$("<img alt=\"加载中...\" title=\"图片加载中...\" src=\""+loadpic+"\" />");
-		
-		t.hide();
-		t.after(loading);
-		$(img).load(function(){
-			autoScaling();
-			loading.remove();
-			t.attr("src",this.src);
-			t.show();
-			//alert("finally!")
-		});
-		
-	});
-}
-    
-//**************图片预加载插件******************
-
 	//背景预加载
-	function bgLoad (index) {
-		var section_num = getSection(index+1,1);
-		section_num_lasChar = section_num.charAt(section_num.length-1);
-		var bgType1;
-		switch (section_num_lasChar)
-    	{
-    		case '2':
-    			bgType1 = "society/shms";
-    			break;
-    		case '3':
-    			bgType1 = "lifestyle/shxx";
-    			break;
-    		case '4':
-    			bgType1 = "game/ylyx";
-    			break;
-    		default:
-    			break;
-    	}
-    	var urladd = "url(img/homepage/" + bgType1 + "1.jpg)";
-//  		$(section).addClass(bgImage);
-    	$(section_num).css('background',urladd);
-    	$(section_num).css('background-size','100%');
-//		alert(section_num);
-	}
+//	function bgLoad (index) {
+//		var section_num = getSection(index+1,1);
+//		section_num_lasChar = section_num.charAt(section_num.length-1);
+//		var bgType1;
+//		switch (section_num_lasChar)
+//  	{
+//  		case '2':
+//  			bgType1 = "society/shms";
+//  			break;
+//  		case '3':
+//  			bgType1 = "lifestyle/shxx";
+//  			break;
+//  		case '4':
+//  			bgType1 = "game/ylyx";
+//  			break;
+//  		default:
+//  			break;
+//  	}
+//  	var urladd = "url(img/homepage/" + bgType1 + "1.jpg)";
+//  	$(section_num).css('background',urladd);
+//  	$(section_num).css('background-size','100%');
+//	}
 
-    //获取当前元素ID并截取字符串最后一位
+    //获取当前元素ID并截取字符串最后一位并设置背景
     function getLastChar (section,bgImg) {
-    	bgImg = bgImg.attr('id');
-    	section = "." + section.attr('id');
-    	var bgType = section.charAt(section.length-1);
-    	
+    	bgImg = bgImg.attr('id');//获取选择的条目
     	var lastChar = bgImg.charAt(bgImg.length-1);
-    	var bgType1;
-    	switch (bgType)
-    	{
-    		case '2':
-    			bgType1 = "society/shms";
-    			break;
-    		case '3':
-    			bgType1 = "lifestyle/shxx";
-    			break;
-    		case '4':
-    			bgType1 = "game/ylyx";
-    			break;
-    		default:
-    			break;
-    	}
-    	var urladd = "url(img/homepage/" + bgType1 + lastChar + ".jpg)";
-//  		$(section).addClass(bgImage);
-    	$(section).css('background',urladd);
-    	$(section).css('background-size','100%');
-//  	alert(lastChar);
+    	var bgType1 = ".background_img_" + lastChar;
+		for (var i=0;i<section.find(".backgroundSet li").length;i++) {
+			section.find(".backgroundSet li").eq(i).css("z-index","-30");
+			if (section.find(".backgroundSet li").eq(i).attr("class").indexOf("background_img_display")<0) {
+				var lastImg = section.find(".backgroundSet li").eq(i);
+				section.find(".backgroundSet li").eq(i).css("z-index","-20");
+			}
+		}
+		section.find(bgType1).removeClass("background_img_display");
+		section.find(bgType1).css("z-index","-10");
+		section.find(bgType1).animate({"opacity":1},300,function() {
+			if (section.find(bgType1).attr("class") != lastImg.attr("class")) {
+				lastImg.css("opacity",0);
+				lastImg.addClass("background_img_display");
+			}
+		});
     }
     
-    //改变背景
-    $(".items_1,.items_2,.items_3,.items_4,.items_5,.items_6").hover(
-    	
+    //更换导读内容
+    function changeIntroContent (section,bgImg) {
+    	bgImg = bgImg.attr('id');//获取选择的条目
+    	var lastChar = bgImg.charAt(bgImg.length-1);
+    	var itemIntro = ".item_intro_" + lastChar;
+    	$(".section_intro_area li").animate({"opacity":0},50).addClass("item_intro_disply");
+    	$(itemIntro).removeClass("item_intro_disply").animate({"opacity":1},500);
+    }
+    
+    //改变背景的触发事件
+    $(".items_1,.items_2,.items_3,.items_4,.items_5,.items_6").click(
     	function (section1,bgImg1) {
     		bgImg1 = $(this);
     		section1 = $(this).parent().parent();
     		getLastChar(section1,bgImg1);
-    	},
-		function () {
-//			$(".section2").removeClass(bgImage);
-		}
-    );
-    
-    
-    
-    
+    		section1.find(".sectionType_span").animate({"top":0,"opacity":0},500,function () {
+    			section1.find(".sectionType_span").css("visibility","hidden");
+    			section1.find(".section_intro_area").removeClass("item_intro_disply");
+    			changeIntroContent (section1,bgImg1);
+    		});
+    		
+    });
     
 });

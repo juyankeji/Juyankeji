@@ -493,7 +493,7 @@ hr
 	color: #FFFFFF;
 	cursor: pointer;
 	background-color: #F05656;
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 
 .loadMore:hover

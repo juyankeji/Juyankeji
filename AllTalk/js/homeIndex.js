@@ -1,4 +1,11 @@
 $(document).ready(function(){
+	
+	$(".header_message_content li").hover(function () {
+		$(this).addClass("message_content_hover");
+	},function () {
+		$(this).removeClass("message_content_hover");
+	});
+	
 	var $header_index = $("#header_index").find(".header_index_all");
 //	$(".header_index_all:first").addClass("index_seleted");
 //	$(".header_index_all:first").find("span").addClass("index_seleted_span");
@@ -15,24 +22,6 @@ $(document).ready(function(){
 		$(this).find("span").css("color","#999999");
 	});
 	
-	//ajax载入个人主页
-//	$(function (bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute) {
-//		bindElement = "body";
-//		action = "click";
-//		triggerElement = "#username";
-//		loadElement = "#content_test";
-//		pageRoute = "view/user/personal.html #personalPage";
-//		cssRoute = "css/personal/main.css";
-//		jsRoute = "js/personal/personal.js";
-//		ajaxLoad(bindElement,action,triggerElement,loadElement,pageRoute,cssRoute,jsRoute);
-//		
-//	});
-	
-	
-//	$("body").on("click","#personal_pic",function () {
-//		$("#loginBox").css('display','inherit');
-//	});
-
 	//底部信息栏跳转到相应位置
 	$(".footer-item a").click(function () {
 		var href = $(this).attr("href");

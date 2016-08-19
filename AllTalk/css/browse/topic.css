@@ -54,6 +54,15 @@ a
 	float: right;
 }
 
+/*iframe相关样式*/
+iframe{
+	border: none;
+}
+
+.iframe_body{
+	margin: 0;
+}
+
 .topic_comment_area_top
 {
 	width: 100%;

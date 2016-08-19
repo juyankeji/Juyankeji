@@ -222,90 +222,90 @@ $(document).ready(function () {
 			 {'colorType':'o','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
 	]
 	//鼠标滚动自动加载item
-	var i=0;
-	var topicLength = $(".topic_item").length;
-	$(window).scroll(function () {
-		var scrollBottom = $(document).height() - $(window).height()-30;
-		itemType = "1";
-		if ($(window).scrollTop() >= scrollBottom && topicLength<20) {
-			for (var j=0;j<4;j++) {
-				if (i<sql.length) {
-					addTopicItem("#topic_area",
-								 sql[i].tagName,
-								 sql[i].title,
-								 sql[i].time,
-								 sql[i].editor,
-								 sql[i].browseNum,
-								 sql[i].support,
-								 sql[i].oppose,
-								 sql[i].imgSrc,
-								 sql[i].colorType,
-								 itemType);
-					setColor();
-					i++;
-					topicLength++;
-				}
-				if (itemType == "1") {
-					itemType = "2";
-				} else{
-					itemType = "1";
-				}
-			}
-			$("#topic_area").css("height","+=406")
-			$(".topic_item").animate({opacity:'1'},1000);
-		}
+//	var i=0;
+//	var topicLength = $(".topic_item").length;
+//	$(window).scroll(function () {
+//		var scrollBottom = $(document).height() - $(window).height()-30;
+//		itemType = "1";
+//		if ($(window).scrollTop() >= scrollBottom && topicLength<20) {
+//			for (var j=0;j<4;j++) {
+//				if (i<sql.length) {
+//					addTopicItem("#topic_area",
+//								 sql[i].tagName,
+//								 sql[i].title,
+//								 sql[i].time,
+//								 sql[i].editor,
+//								 sql[i].browseNum,
+//								 sql[i].support,
+//								 sql[i].oppose,
+//								 sql[i].imgSrc,
+//								 sql[i].colorType,
+//								 itemType);
+//					setColor();
+//					i++;
+//					topicLength++;
+//				}
+//				if (itemType == "1") {
+//					itemType = "2";
+//				} else{
+//					itemType = "1";
+//				}
+//			}
+//			$("#topic_area").css("height","+=406")
+//			$(".topic_item").animate({opacity:'1'},1000);
+//		}
 		//加载更多按钮和footer区域
-		if ($(window).scrollTop() >= scrollBottom+30) {
-			$(".loadMore").css("visibility","visible");
-			$(".footer").css("visibility","visible");
-		}
+//		if ($(window).scrollTop() >= scrollBottom+30) {
+//			$(".loadMore").css("visibility","visible");
+//			$(".footer").css("visibility","visible");
+//		}
 		//数据加载完成
-		if (i>=sql.length) {
-		$(".loadMore").html("没有更多了");
-		$(".loadMore").click(function () {
-			return false;
-		});
-		$(".footer").css("visibility","visible");
-		}
+//		if (i>=sql.length) {
+//		$(".loadMore").html("没有更多了");
+//		$(".loadMore").click(function () {
+//			return false;
+//		});
+//		$(".footer").css("visibility","visible");
+//		}
 		//回到顶部按钮出现与隐藏
-		if ($(window).scrollTop() >= $(window).height()*0.4) {
-			$(".upToTop").css("visibility","visible");
-		}else if ($(window).scrollTop() < $(window).height()*0.4) {
-			$(".upToTop").css("visibility","hidden");
-		}
-	});
+//		if ($(window).scrollTop() >= $(window).height()*0.4) {
+//			$(".upToTop").css("visibility","visible");
+//		}else if ($(window).scrollTop() < $(window).height()*0.4) {
+//			$(".upToTop").css("visibility","hidden");
+//		}
+//	});
 	
 	
 	//加载更多
-	$(".loadMore").click(function  () {
-		for (var j=0;j<4;j++) {
-				if (i<sql.length) {
-					addTopicItem("#topic_area",
-								 sql[i].tagName,
-								 sql[i].title,
-								 sql[i].time,
-								 sql[i].editor,
-								 sql[i].browseNum,
-								 sql[i].support,
-								 sql[i].oppose,
-								 sql[i].imgSrc,
-								 sql[i].colorType,
-								 itemType);
-					setColor();
-					topicLength++;
-					i++;
-				}
-				if (itemType == "1") {
-					itemType = "2";
-				} else{
-					itemType = "1"
-				}
-			}
-			$(".topic_item").animate({opacity:'1'},1000);
-			topicLength= topicLength-20;
-			$(".loadMore").css("visibility","hidden");
-			$(".footer").css("visibility","hidden");
-	});
+//	$(".loadMore").click(function  () {
+//		for (var j=0;j<4;j++) {
+//				if (i<sql.length) {
+//					addTopicItem("#topic_area",
+//								 sql[i].tagName,
+//								 sql[i].title,
+//								 sql[i].time,
+//								 sql[i].editor,
+//								 sql[i].browseNum,
+//								 sql[i].support,
+//								 sql[i].oppose,
+//								 sql[i].imgSrc,
+//								 sql[i].colorType,
+//								 itemType);
+//					setColor();
+//					topicLength++;
+//					i++;
+//				}
+//				if (itemType == "1") {
+//					itemType = "2";
+//				} else{
+//					itemType = "1"
+//				}
+//			}
+//			$(".topic_item").animate({opacity:'1'},1000);
+//			topicLength= topicLength-20;
+//			$(".loadMore").css("visibility","hidden");
+//			$(".footer").css("visibility","hidden");
+//	});
 	
 	var specialTopic = [{
 		'URL':'#specialTopic_content',

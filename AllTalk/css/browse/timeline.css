@@ -67,7 +67,7 @@ header h1 {
   font-size: 18px;
   font-size: 1.125rem;
 }
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   header {
     height: 300px;
     line-height: 300px;
@@ -76,7 +76,7 @@ header h1 {
     font-size: 24px;
     font-size: 1.5rem;
   }
-}
+/*}*/
 
 #cd-timeline {
 	display: inline-block;
@@ -92,7 +92,7 @@ header h1 {
   width: 4px;
   background: #d7e4ed;
 }*/
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   #cd-timeline {
     margin-bottom: 3em;
   }
@@ -100,7 +100,7 @@ header h1 {
     left: 50%;
     margin-left: -2px;
   }
-}
+/*}*/
 
 .cd-timeline-block {
   /*position: absolute;*/
@@ -116,7 +116,7 @@ header h1 {
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   .cd-timeline-block {
     margin-top: 20px;
   }
@@ -127,7 +127,7 @@ header h1 {
   .cd-timeline-block:last-child {
     margin-bottom: 0;
   }
-}
+/*}*/
 
 .cd-timeline-img {
   position: absolute;
@@ -162,7 +162,7 @@ header h1 {
 .cd-timeline-img.cd-location {
   background: #f0ca45;
 }
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -181,7 +181,7 @@ header h1 {
     -moz-animation: cd-bounce-1 0.6s;
     animation: cd-bounce-1 0.6s;
   }
-}
+/*}*/
 
 @-webkit-keyframes cd-bounce-1 {
   0% {
@@ -274,7 +274,7 @@ header h1 {
   width: 0;
 }
 
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   .cd-timeline-content {
     margin-left: 0;
     width: 390px;
@@ -358,16 +358,16 @@ header h1 {
     -moz-animation: cd-bounce-2 0.6s;
     animation: cd-bounce-2 0.6s;
   }
-}
+/*}*/
 
-@media only screen and (min-width: 1170px) {
+/*@media only screen and (min-width: 1170px) {*/
   /* inverse bounce effect on even content blocks */
   .cssanimations .even-cd-timeline-block .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
     -moz-animation: cd-bounce-2-inverse 0.6s;
     animation: cd-bounce-2-inverse 0.6s;
   }
-}
+/*}*/
 @-webkit-keyframes cd-bounce-2 {
   0% {
     opacity: 0;
