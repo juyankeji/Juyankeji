@@ -11,7 +11,131 @@
 	padding: 0;
 }
 
+#personal_concerned li{
+	width: 970px;
+	height: 187px;
+	border: solid 15px #FFFFFF;
+	background-color: #F2F2F2;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 
+#personal_concerned li:hover{
+	background-color: #E4E4E4;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+#personal_concerned .topic_item_reply_hover:before{
+	content: '';
+    border: solid 14px #E4E4E4;
+    border-top: solid 14px transparent;
+    border-bottom: solid 14px transparent;
+    border-left: none;
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    margin-top: -14px;
+}
+
+#personal_concerned .topic_item_content{
+	width: 230px;
+	height: 100%;
+	display: inline-block;
+	float: left;
+}
+
+#personal_concerned .topic_item_reply{
+	width: 690px;
+	height: 145px;
+	float: left;
+	padding: 27px 30px 15px 20px;
+	position: relative;
+	cursor: default;
+}
+
+#personal_concerned .topic_item_reply_unhover:before{
+	content: '';
+    border: solid 14px #F2F2F2;
+    border-top: solid 14px transparent;
+    border-bottom: solid 14px transparent;
+    border-left: none;
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    margin-top: -14px;
+}
+
+#personal_concerned .topic_title,#personal_concerned .topic_time,#personal_concerned .topic_tag{
+	color: #FFFFFF;
+}
+
+#personal_concerned .topic_tag{
+	border-bottom-color: #FFFFFF;
+}
+
+#personal_concerned .topic_item_num span{
+	color: #FFFFFF;
+}
+
+#personal_concerned .topic_item_reply_content{
+	padding: 0 15px 0 25px;
+	word-break: break-all;
+	font: 14px "微软雅黑";
+	color: #333333;
+	position: relative;
+	max-height: 116px;
+	/*display: inline-block;*/
+}
+
+#personal_concerned .myReply_type_blue:before{
+	content: '';
+	position: absolute;
+	width: 11px;
+    height: 15px;
+    margin-left: -25px;
+    background: url(../../img/personal/icon_left_blue.png);
+}
+
+#personal_concerned .myReply_type_blue:after{
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 11px;
+    height: 15px;
+    margin-left: 15px;
+    font-size: 24px;
+    background: url(../../img/personal/icon_right_blue.png);
+}
+
+#personal_concerned .myReply_type_red:before{
+	content: '';
+	position: absolute;
+	width: 11px;
+    height: 15px;
+    margin-left: -25px;
+    background: url(../../img/personal/icon_left_red.png);
+}
+
+#personal_concerned .myReply_type_red:after{
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 11px;
+    height: 15px;
+    margin-left: 15px;
+    font-size: 24px;
+    background: url(../../img/personal/icon_right_red.png);
+}
+
+#personal_concerned .topic_item_reply_time{
+	position: absolute;
+	padding-left: 25px;
+	bottom: 15px;
+	font: 12px arial;
+	color: #999999;
+	letter-spacing: 1px;
+}
 
 .topic_item
 {
@@ -26,6 +150,7 @@
 	background-color: #FFFFFF;
 	border-radius: 4px;
 	overflow: hidden;
+	/*transition: all 5s ease-in-out;*/
 }
 
 .topic_item_hover1

@@ -5,6 +5,16 @@
 		<title>聚言-等你来较真</title>
 	</head>
 	<body>
+		<script type="text/javascript">
+			function iFrameHeight() {
+		        var ifm= document.getElementById("iframe_comment_area");
+		        var subWeb = document.frames ? document.frames["iframe_comment_area"].document:ifm.contentDocument;
+			    if(ifm != null && subWeb != null) {
+			    	ifm.height = subWeb.body.scrollHeight;
+			    }
+			}
+			
+		</script>
 		<div id="main" class="personal_main">
 			<!-------导航栏_top---------->
 			<div id="header" class="header">
@@ -34,7 +44,7 @@
 							<div id="header_select_text" class="header_select_text">
 								<input type="search" name="header_select_input" id="header_select_input" placeholder="搜索" value="" />
 								<div id="select_line"></div>
-								<img src="../../../img/select 01.png"/>
+								<img src="../../../img/select01.png"/>
 							</div>
 						</div>
 					</div>
@@ -116,8 +126,12 @@
 						</ul>
 					</div>
 				</div>
-				<iframe src="../../../view/browse/allTopic/mod_competeArea.html" class="iframe_comment_area" width="100%" height="900px" scrolling="no"></iframe>
-				<div class="topic_comment_area_top">
+				<!--<iframe src="../../../view/browse/allTopic/mod_competeArea.html" id="iframe_comment_area" class="iframe_comment_area" name="iframe_comment_area" onload="iFrameHeight()" width="100%" marginheight="0" marginwidth="0" frameborder="0" scrolling="no"></iframe>-->
+				<div id="test">
+					
+				</div>
+				
+				<!--<div class="topic_comment_area_top">
 					<div class="comment_top">
 						<div class="comment_support_num">
 							<p>62</p>
@@ -137,13 +151,13 @@
 						</div>
 						
 					</div>
-				</div>
+				</div>-->
 				<!--评论区域-->
-				<div class="topic_comment_area_main clearfloat">
+				<!--<div class="topic_comment_area_main clearfloat">-->
 					<!------- 正方评论区域-begin ------->
-					<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-support">
+					<!--<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-support">-->
 						<!-------正方评论框加载-begin-------->
-						<div id="timeline_input_support" class="cd-timeline-block timeline_input_disply">
+						<!--<div id="timeline_input_support" class="cd-timeline-block timeline_input_disply">
 							<div class="cd-timeline-img cd-picture"><span class="close_input" >×</span></div>
 							<div class="cd-timeline-content timeline-content-set-support">
 								<div class="comment_input_header">
@@ -163,10 +177,11 @@
 									<input type="button" id="comment_input_btn_support" class="comment_input_btn" value="发布" />
 								</div>
 							</div>
-						</div><!-------正方评论框加载-end-------->
+						</div>-->
+						<!-------正方评论框加载-end-------->
 						
 						<!-------正方评论-begin------->
-						<div class="cd-timeline-block">
+						<!--<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">P</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -444,10 +459,11 @@
 									</form>
 								</div>
 							</div>
-						</div><!-------正方评论-end------->
+						</div>-->
+						<!-------正方评论-end------->
 						
 						<!-------正方评论-begin------->
-						<div class="cd-timeline-block">
+						<!--<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">P</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -504,10 +520,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------正方评论-end------->
+						</div>-->
+						<!-------正方评论-end------->
 						
 						<!-------正方评论-begin------->
-						<div class="cd-timeline-block">
+						<!--<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">P</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -564,10 +581,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------正方评论-end------->
+						</div>-->
+						<!-------正方评论-end------->
 						
 						<!-------正方评论-begin------->
-						<div class="cd-timeline-block">
+						<!--<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">P</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -624,10 +642,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------正方评论-end------->
+						</div>-->
+						<!-------正方评论-end------->
 						
 						<!-------正方评论-begin------->
-						<div class="cd-timeline-block">
+						<!--<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">P</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -684,13 +703,15 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------正方评论-end------->
-					</section> <!------- 正方评论区域-end ------->
+						</div>-->
+						<!-------正方评论-end------->
+					<!--</section>--> 
+					<!------- 正方评论区域-end ------->
 					
 					<!------- 反方评论区域-begin ------->
-					<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-oppose">
+					<!--<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-oppose">-->
 						<!-------反方评论框加载-begin-------->
-						<div id="timeline_input_oppose" class="cd-timeline-block even-cd-timeline-block timeline_input_disply">
+						<!--<div id="timeline_input_oppose" class="cd-timeline-block even-cd-timeline-block timeline_input_disply">
 							<div class="cd-timeline-img cd-movie close_input">×</div>
 							<div class="cd-timeline-content timeline-content-set-oppose">
 								<div class="comment_input_header">
@@ -710,10 +731,11 @@
 									<input type="button" id="comment_input_btn_oppose" class="comment_input_btn" value="发布" />
 								</div>
 							</div>
-						</div><!-------反方评论框加载-end-------->
+						</div>-->
+						<!-------反方评论框加载-end-------->
 						
 						<!-------反方评论-begin------->
-						<div class="cd-timeline-block even-cd-timeline-block">
+						<!--<div class="cd-timeline-block even-cd-timeline-block">
 							<div class="cd-timeline-img cd-movie">N</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -770,10 +792,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------反方评论-end------->
+						</div>-->
+						<!-------反方评论-end------->
 						
 						<!-------反方评论-begin------->
-						<div class="cd-timeline-block even-cd-timeline-block">
+						<!--<div class="cd-timeline-block even-cd-timeline-block">
 							<div class="cd-timeline-img cd-movie">N</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -830,10 +853,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------反方评论-end------->
+						</div>-->
+						<!-------反方评论-end------->
 						
 						<!-------反方评论-begin------->
-						<div class="cd-timeline-block even-cd-timeline-block">
+						<!--<div class="cd-timeline-block even-cd-timeline-block">
 							<div class="cd-timeline-img cd-movie">N</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -890,10 +914,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------反方评论-end------->
+						</div>-->
+						<!-------反方评论-end------->
 						
 						<!-------反方评论-begin------->
-						<div class="cd-timeline-block even-cd-timeline-block">
+						<!--<div class="cd-timeline-block even-cd-timeline-block">
 							<div class="cd-timeline-img cd-movie">N</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -950,10 +975,11 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------反方评论-end------->
+						</div>-->
+						<!-------反方评论-end------->
 						
 						<!-------反方评论-begin------->
-						<div class="cd-timeline-block even-cd-timeline-block">
+						<!--<div class="cd-timeline-block even-cd-timeline-block">
 							<div class="cd-timeline-img cd-movie">N</div>
 							<div class="cd-timeline-content">
 								<div class="comment_header">
@@ -1010,10 +1036,12 @@
 								</div>
 								<div class="fallback">收起</div>
 							</div>
-						</div><!-------反方评论-end------->
+						</div>-->
+						<!-------反方评论-end------->
 						
-					</section> <!------- 反方评论区域-end ------->
-				</div>
+					<!--</section>--> 
+					<!------- 反方评论区域-end ------->
+				<!--</div>-->
 				
 			</div>
 			<!-------footer------------->
@@ -1066,6 +1094,8 @@
 	<script type="text/javascript" src="../../../js/homeIndex.js"></script>
 	<script type="text/javascript" src="../../../js/examples.js"></script>
 	<script src="../../../js/browse/topic.js" type="text/javascript" charset="utf-8"></script>
-	
+	<script type="text/javascript">
+		$("#test").load("mod_competeArea.html");
+	</script>
 	</body>
 </html>

@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	//通知按钮移入样式
+	$(".header_notic_img,.header_notice_content").hover(function () {
+		$(this).parent().find(".header_notice_content").addClass("visibility_change");
+	},function () {
+		$(this).parent().find(".header_notice_content").removeClass("visibility_change");
+	});
+	//信息按钮移入样式
+	$(".header_message_img,.header_message_content").hover(function () {
+		$(this).parent().find(".header_message_content").addClass("visibility_change");
+	},function () {
+		$(this).parent().find(".header_message_content").removeClass("visibility_change");
+	});
 	
 	$(".header_message_content li").hover(function () {
 		$(this).addClass("message_content_hover");

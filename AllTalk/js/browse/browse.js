@@ -15,7 +15,7 @@ $(document).ready(function () {
 		}
 	});
 	
-	//三级菜单-动画
+	//二级菜单点击获取内容、三级菜单弹出动画
 	$(document).on("click",".type_item",function  () {
 		var thisName = $(this).find("img").attr("name");
 		$(".itemsBtn li").css("color","#666666");
@@ -71,6 +71,7 @@ $(document).ready(function () {
 			default:
 				break;
 		}
+		
 	});
 	//三级菜单功能
 	$(".header_third_index li").click(function () {
@@ -78,7 +79,6 @@ $(document).ready(function () {
 		$(this).css("color","#F05656");
 		var q = $(this).html();
 		var tagName = $(".topic_tag span").html().substring($(".topic_tag span").html().length-2,$(".topic_tag span").html().length);
-		console.log(tagName);
 	});
 	
 	$(".topic_item").animate({opacity:'1'});

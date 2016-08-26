@@ -259,8 +259,19 @@ body
 	top: 4px;
 }
 
-.header_select_text img
+.header_search_button
 {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	background: transparent url(../img/select01.png) center center no-repeat;
+	border: 0;
+	outline: none;
+}
+
+.header_select_text img{
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -303,6 +314,7 @@ body
 	background-color: #FFFFFF;
 	left: -24px;
 	box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+	visibility: hidden;
 	/*display: none;*//*测试*/
 }
 
@@ -351,6 +363,11 @@ body
 	background-color: #FFFFFF;
 	left: -91px;
 	box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+	visibility: hidden;
+}
+
+.visibility_change{
+	visibility: visible;
 }
 
 .notice_content_up{

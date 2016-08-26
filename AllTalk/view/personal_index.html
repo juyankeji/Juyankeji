@@ -34,7 +34,7 @@
 							<div id="header_select_text" class="header_select_text">
 								<input type="search" name="header_select_input" id="header_select_input" placeholder="搜索" value="" />
 								<div id="select_line"></div>
-								<img src="../img/select 01.png"/>
+								<img src="../img/select01.png"/>
 							</div>
 						</div>
 					</div>
@@ -60,10 +60,10 @@
 				<div id="header_secondary_index" class="header_secondary_index">
 					<div id="type_select_area" class="type_select_area">
 					<ul class="itemsBtn">
-						<li class="type_item" id="type_select_all" state="0"><div><img src="../img/browse/type_select_all2.png"/ name="type_select_all" class="type_item_img type_item_img3">全部</div></li>
-						<li class="type_item" state="0"><div><img src="../img/browse/shsh.png" name="shsh" class="type_item_img type_item_img1"/>社会民生<img src="../img/browse/dropDown.png" class="type_item_img type_item_img2"/></div></li>
-						<li class="type_item" state="0"><div><img src="../img/browse/shxx.png" name="shxx" class="type_item_img type_item_img1"/>生活休闲<img src="../img/browse/dropDown.png" class="type_item_img type_item_img2"/></div></li>
-						<li class="type_item" state="0"><div><img src="../img/browse/ylyd.png" name="ylyd" class="type_item_img type_item_img1"/>娱乐游戏<img src="../img/browse/dropDown.png" class="type_item_img type_item_img2"/></div></li>
+						<li class="type_item" id="type_select_all" state="0"><div><img src="../img/browse/type_select_all2.png"/ name="type_select_all" class="type_item_img type_item_img1"><span>全部</span></div></li>
+						<li class="type_item" state="0"><div><img src="../img/browse/shsh.png" name="shsh" class="type_item_img type_item_img1"/><span>社会民生</span></div></li>
+						<li class="type_item" state="0"><div><img src="../img/browse/shxx.png" name="shxx" class="type_item_img type_item_img1"/><span>生活休闲</span></div></li>
+						<li class="type_item" state="0"><div><img src="../img/browse/ylyd.png" name="ylyd" class="type_item_img type_item_img1"/><span>娱乐游戏</span></div></li>
 					</ul>
 				</div>
 				</div>
@@ -303,23 +303,23 @@
 			
 		</div>
 	
-	
-	
-	
-	
-	
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/browse/loadContent.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/personal/concern.css"/>
 	<!--javascript-->
 	<script src="../js/jquery-1.11.1.js" type="text/javascript"></script>
-	<script src="../js/browse/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="../js/browse/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>-->
 	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="../js/homeIndex.js"></script>
 	<script type="text/javascript" src="../js/examples.js"></script>
 	<script src="../js/browse/browse.js" type="text/javascript" charset="utf-8"></script>
-	
+	<script type="text/javascript">
+		$(document).on("click",".type_item",function  () {
+			/*获取点击二级标签的内容*/
+			console.log($(this).find("span").text());
+		});
+	</script>
 	
 	</body>
 </html>

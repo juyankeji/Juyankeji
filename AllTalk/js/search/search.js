@@ -90,8 +90,8 @@ $(document).ready(function () {
 			var q = $(this).find(".topic_item_content").css("border-bottom-color");
 			$(this).find(".triangle").css("margin-bottom","-1px");
 		}
-		ctx = $(this).find(".triangle")[0].getContext("2d");
-		triangle(ctx,itemType,"#ff6666");
+//		ctx = $(this).find(".triangle")[0].getContext("2d");
+//		triangle(ctx,itemType,"#ff6666");
 		$(this).find(".topic_title,.topic_time,.topic_browse,.topic_vote,.topic_tag").attr("style","color:#ffffff");
 		$(this).find(".topic_tag img").attr("src","../../img/browse/topic_tag2.png");
 		$(this).find(".topic_browse img").attr("src","../../img/browse/topic_browse2.png");
@@ -110,15 +110,15 @@ $(document).ready(function () {
 			default:
 				break;
 		}
-		triangle(ctx,itemType,q);
+//		triangle(ctx,itemType,q);
 	})
 	//鼠标移出恢复
 	.on("mouseout",".topic_item",function () {
 		$(this).removeClass("topic_item_hover1");
 		$(this).removeClass("topic_item_hover2");
 		$(this).removeClass("topic_item_hover3");
-		ctx = $(this).find(".triangle")[0].getContext("2d");
-		triangle(ctx,itemType,"#ffffff");
+//		ctx = $(this).find(".triangle")[0].getContext("2d");
+//		triangle(ctx,itemType,"#ffffff");
 		$(this).find(".topic_title,.topic_time,.topic_browse,.topic_vote,.topic_tag").attr("style","");
 		$(this).find(".triangle1").attr("src","../../img/browse/triangle.png");
 		$(this).find(".topic_tag img").attr("src","../../img/browse/topic_tag.png");
@@ -127,32 +127,32 @@ $(document).ready(function () {
 	});
 	
 	//绘制图片遮盖
-	function triangle (ctx,itemType,color) {
-	   ctx.fillStyle = color;//填充的颜色
-	   if (itemType == "1") {
-		   ctx.beginPath();
-		   ctx.moveTo(0,0);
-		   ctx.lineTo(230,0);
-		   ctx.lineTo(230,14);
-		   ctx.lineTo(129,14);
-		   ctx.lineTo(115,0);
-		   ctx.lineTo(101,14);
-		   ctx.lineTo(0,14);
-		   ctx.closePath();
-		   ctx.fill();//填充颜色
-	   } else{
-		   ctx.beginPath();
-		   ctx.moveTo(0,0);
-		   ctx.lineTo(101,0);
-		   ctx.lineTo(115,14);
-		   ctx.lineTo(129,0);
-		   ctx.lineTo(230,0);
-		   ctx.lineTo(230,14);
-		   ctx.lineTo(0,14);
-		   ctx.closePath();
-		   ctx.fill();//填充颜色
-	   }
-	}
+//	function triangle (ctx,itemType,color) {
+//	   ctx.fillStyle = color;//填充的颜色
+//	   if (itemType == "1") {
+//		   ctx.beginPath();
+//		   ctx.moveTo(0,0);
+//		   ctx.lineTo(230,0);
+//		   ctx.lineTo(230,14);
+//		   ctx.lineTo(129,14);
+//		   ctx.lineTo(115,0);
+//		   ctx.lineTo(101,14);
+//		   ctx.lineTo(0,14);
+//		   ctx.closePath();
+//		   ctx.fill();//填充颜色
+//	   } else{
+//		   ctx.beginPath();
+//		   ctx.moveTo(0,0);
+//		   ctx.lineTo(101,0);
+//		   ctx.lineTo(115,14);
+//		   ctx.lineTo(129,0);
+//		   ctx.lineTo(230,0);
+//		   ctx.lineTo(230,14);
+//		   ctx.lineTo(0,14);
+//		   ctx.closePath();
+//		   ctx.fill();//填充颜色
+//	   }
+//	}
 	
 //	var i=0;
 //	$("#search_button").click(function () {

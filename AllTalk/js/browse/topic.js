@@ -25,6 +25,9 @@ $(document).ready(function () {
 		}
 	});
 	
+	//iframe自适应高度
+	
+	
 	var sql=[{
 				'commentType':'support',
 				'userPicURL':'../../../img/personal/strangerPic.png',
@@ -355,6 +358,7 @@ $(document).ready(function () {
 			var top = $(this).parents(".cd-timeline-block").css("top");
 			top = parseInt(top.substring(top));
 			var height =$(this).parents(".cd-timeline-block").height();
+//			iFrameHeight();
 			//判断评论高度(测试)
 			if (height >= $("#cd-timeline").height()) {
 //				alert("1");
@@ -376,10 +380,8 @@ $(document).ready(function () {
 			$(this).parent().removeClass("mark1_2").addClass("mark1_1");
 			console.log($(this).parents(".cd-timeline-block").find("#comment_reply").css("display"));
 			if ($(this).parents(".cd-timeline-block").find(".comment_reply").css("display") == "none") {
-				console.log("1");
 				$(this).parents(".cd-timeline-block").find(".comment_reply").css("display","inherit");
 			} else{
-				console.log("2");
 				$(this).parents(".cd-timeline-block").find(".comment_reply").css("display","none");
 			}
 			
