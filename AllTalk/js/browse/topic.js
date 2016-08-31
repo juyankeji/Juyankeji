@@ -24,15 +24,15 @@ $(document).ready(function () {
 			});
 		}
 	});
+		
 	
-	//iframe自适应高度
 	
-	
+	//评论测试数据
 	var sql=[{
 				'commentType':'support',
 				'userPicURL':'../../../img/personal/strangerPic.png',
 				'userName':'11',
-				'commentTime':'07/20 11:52',
+				'commentTime':'2016/07/24 14:52:12',
 				'likeNum':'11',
 				'commentContent':'真理惟一可靠的标准就是永远自相符合。 —— 欧文',
 				'commentNum':'11'
@@ -41,7 +41,7 @@ $(document).ready(function () {
 				'commentType':'oppose',
 				'userPicURL':'../../../img/personal/strangerPic.png',
 				'userName':'22',
-				'commentTime':'07/20 11:52',
+				'commentTime':'2016/07/23 14:52:12',
 				'likeNum':'22',
 				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'22'
@@ -157,40 +157,17 @@ $(document).ready(function () {
 	]
 	
 	//构建评论树评论
-	function addComment (i,comment_heigth,comment_top,comment_type,commentType,userPicURL,userName,commentTime,likeNum,commentContent,commentNum) {
+	function addComment (i,commentType,userPicURL,userName,commentTime,likeNum,commentContent,commentNum) {
 		$('<!--评论块——cd-timeline-block'+(i+1)+'-->').appendTo($("#cd-timeline"));
-		var div1 = $('<div>').addClass('cd-timeline-block').appendTo($("#cd-timeline"));
-		if (i==0) {
-			div1.css("top",0);
-			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-picture').appendTo(div1);
-			  div1_1.html('P');
-		}
-		else if (i==1) {
-			div1.css("top","90px");
-			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-movie').appendTo(div1);
-			  div1_1.html('N');
-		}
-		else if (commentType=="support") {
+		if (commentType=="support") {
+			var div1 = $('<div>').addClass('cd-timeline-block').appendTo($(".cd-timeline-support"));
 			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-picture').appendTo(div1);
 			  div1_1.html('P');
 		}
 		else if (commentType=="oppose") {
+			var div1 = $('<div>').addClass('cd-timeline-block even-cd-timeline-block').appendTo($(".cd-timeline-oppose"));
 			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-movie').appendTo(div1);
 			  div1_1.html('N');
-		}
-		var toTop1 = comment_top[i-2]+comment_heigth[i-2]+20;
-		var toTop2 = comment_top[i-1]+90;
-		toTop1>toTop2?div1.css("top",toTop1):div1.css("top",toTop2);
-		if (comment_type[i] == comment_type[i-1]) {
-			switch (comment_type[i]){
-				case "support":
-					break;
-				case "oppose":
-					break;
-				default:
-					break;
-			}
-			div1.css("top",comment_top[i-1]+comment_heigth[i-1]+20);
 		}
 		 var div1_2 = $('<div>').addClass('cd-timeline-content').appendTo(div1);
 		  var div1_2_1 = $('<div></div>').addClass("comment_header").appendTo(div1_2);
@@ -249,41 +226,25 @@ $(document).ready(function () {
 		    div1_3_1_1_2_6.attr({'type':'button','value':'取消'});
 		    var div1_3_2 = $('<div></div>').addClass("fallback").appendTo(div1_3);
 		    div1_3_2.html("收起");
-		    
-		if (commentType == "oppose") {
-			$(".cd-timeline-block").eq(i).addClass("even-cd-timeline-block");
-		}
 	}
 	
 	commentBtnEffect();
-//	$(function (count) {
-//		var comment_heigth = {};
-//		var comment_top = {};
-//		var comment_type={};
-//		parseInt(comment_top);
-//		for (var i=0;i<sql.length;i++) {
-//			comment_type[i]=sql[i].commentType;
-//			addComment(i,
-//					   comment_heigth,
-//					   comment_top,
-//					   comment_type,
-//					   sql[i].commentType,
-//					   sql[i].userPicURL,
-//					   sql[i].userName,
-//					   sql[i].commentTime,
-//					   sql[i].likeNum,
-//					   sql[i].commentContent,
-//					   sql[i].commentNum
-//			);
-//			comment_heigth[i] = $(".cd-timeline-block").eq(i).height();
-//			comment_top[i] = $(".cd-timeline-block").eq(i).css("top");
-//			comment_top[i] = parseInt(comment_top[i].substring(0,comment_top[i].length-2));
-//			$("#cd-timeline").css("height",comment_top[i]+comment_heigth[i]+90);
-//			$(".line").css("height",comment_top[i]+comment_heigth[i]+90);
-//			commentBtnEffect();
-//		 }
-//		
-//	});
+	//向评论树添加正反评论
+	$(function (count) {
+		for (var i=0;i<sql.length;i++) {
+			addComment(i,
+					   sql[i].commentType,
+					   sql[i].userPicURL,
+					   sql[i].userName,
+					   sql[i].commentTime,
+					   sql[i].likeNum,
+					   sql[i].commentContent,
+					   sql[i].commentNum
+			);
+			commentBtnEffect();
+		 }
+//		setCommentPosition();
+	});
 	
 	//鼠标滚动出现评论项目
 	$(function(){
@@ -302,7 +263,65 @@ $(document).ready(function () {
 				}
 			});
 		});
+	});	
+	
+	//设置评论条目排列布局
+	$(function setCommentPosition () {
+		var supportCommentNum = $(".cd-timeline-support").find(".cd-timeline-block");
+		var opposeCommentNum = $(".cd-timeline-oppose").find(".cd-timeline-block");
+		var supportDate = supportCommentNum.eq(1).find(".pikachu_time").text();
+		var supportTimestamp = Date.parse(new Date(supportDate));
+		var opposeDate = opposeCommentNum.eq(1).find(".pikachu_time").text();
+		var opposeTimestamp = Date.parse(new Date(opposeDate));
+		function getMarginTop (inputStr) {
+			console.log(i+" "+parseInt(inputStr.substring(0,inputStr.length-2)));
+			inputStr = parseInt(inputStr.substring(0,inputStr.length-2));
+			return inputStr;
+		}
+		var dateLenth;
+		supportCommentNum.length>opposeCommentNum.length?dateLenth=supportCommentNum.length:dateLenth=opposeCommentNum.length;
+		var oppoMarginTo = 0;
+		var supMarginTo = 0;
+		console.log(dateLenth);
+		if (supportTimestamp>opposeTimestamp) {
+			opposeCommentNum.eq(1).css("margin-top","80px");
+			supportCommentNum.eq(1).css("margin-top","0");
+			for (var i=2;i<dateLenth;i++) {
+				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
+				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
+				if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
+					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
+				}else{
+					supportCommentNum.eq(i).css("margin-top","20px");
+				}
+				if (supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
+					opposeCommentNum.eq(i).css("margin-top",supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
+				}else{
+					opposeCommentNum.eq(i).css("margin-top","20px");
+				}
+			}
+		}else {
+			supportCommentNum.eq(1).css("margin-top","80px");
+			opposeCommentNum.eq(1).css("margin-top","0");
+			for (var i=2;i<dateLenth;i++) {
+				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
+				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
+				if (oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
+					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
+				}else{
+					supportCommentNum.eq(i).css("margin-top","20px");
+				}
+				if (supMarginTo+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
+					opposeCommentNum.eq(i).css("margin-top",supMarginTo+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
+				}else{
+					opposeCommentNum.eq(i).css("margin-top","20px");
+				}
+			}
+		}
 	});
+
+	
+	
 	/*******单个评论相关js---begin*******/
 	//点赞数
 	$(function () {
@@ -339,22 +358,23 @@ $(document).ready(function () {
 		var thisLoadArea = "";
 		var i = 0;
 		$(".comment_footer1").click(function () {
+			alert("!");
 			thisLoadArea = $(this).parents(".cd-timeline-block").find("#comment_reply");
 			thisLoadArea.css("display","inherit");
-//			for (i;i<comment_reply.length;i++) {
-//				addReplyComment(thisLoadArea,
-//								comment_reply[i].commentType,
-//								comment_reply[i].replyCommentType,
-//								comment_reply[i].avatarPicURL,
-//								comment_reply[i].userName,
-//								comment_reply[i].replyName,
-//								comment_reply[i].replyCommentContent,
-//								comment_reply[i].likeNum,
-//								comment_reply[i].replyTime,
-//								comment_reply[i].floor
-//				);
-//			}
-//			addReplyInput();
+			for (i;i<comment_reply.length;i++) {
+				addReplyComment(thisLoadArea,
+								comment_reply[i].commentType,
+								comment_reply[i].replyCommentType,
+								comment_reply[i].avatarPicURL,
+								comment_reply[i].userName,
+								comment_reply[i].replyName,
+								comment_reply[i].replyCommentContent,
+								comment_reply[i].likeNum,
+								comment_reply[i].replyTime,
+								comment_reply[i].floor
+				);
+			}
+			addReplyInput();
 			var top = $(this).parents(".cd-timeline-block").css("top");
 			top = parseInt(top.substring(top));
 			var height =$(this).parents(".cd-timeline-block").height();
@@ -374,6 +394,7 @@ $(document).ready(function () {
 	
 	//评论按钮效果
 	function commentBtnEffect () {
+		//评论按钮效果
 		$(".comment_footer").on("click",".comment_footer1",function () {
 			$(".comment_reply").css("display","none");
 			$(".comment_footer").removeClass("mark1_1 mark1_2");
@@ -435,36 +456,36 @@ $(document).ready(function () {
 
 	//单个评论框弹出与收回以及设置默认回复字段
 	$(function addReplyInput () {
-	$(".comment_reply_item").on("click",".isay_operate_reply",function () {
-		var thisCommentReplay = $(this).parents(".comment_reply_item");
-		$(".isay_text_area_mark").css("display","none");
-//		addCommentInput(thisCommentReplay);
-		thisCommentReplay.find(".isay_text_area_mark").css("display","inherit");
-		var reply_text = $(this).parents(".comment_reply_item").find(".reply_name").html();
-		$(this).parents(".comment_reply_item").find(".target1").attr("placeholder","回复："+reply_text);
-		
-		$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_2").addClass("mark1_1");
-		$(this).parents(".cd-timeline-block").find(".comment_reply_input").css("display","none");
-		//回复评论按钮在有无文字情况下的变化
-		$(".isay_text_area").on("input",".target1",function () {
-	        console.log($(this).val());
-	        if ($(this).val() == "") {
-	        	$(this).parent().find(".comment_btn").removeClass("comment_btn_enable");
-	        } else{
-	        	$(this).parent().find(".comment_btn").addClass("comment_btn_enable");
-	        }
+		$(".comment_reply_item").on("click",".isay_operate_reply",function () {
+			var thisCommentReplay = $(this).parents(".comment_reply_item");
+			$(".isay_text_area_mark").css("display","none");
+	//		addCommentInput(thisCommentReplay);
+			thisCommentReplay.find(".isay_text_area_mark").css("display","inherit");
+			var reply_text = $(this).parents(".comment_reply_item").find(".reply_name").html();
+			$(this).parents(".comment_reply_item").find(".target1").attr("placeholder","回复："+reply_text);
+			
+			$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_2").addClass("mark1_1");
+			$(this).parents(".cd-timeline-block").find(".comment_reply_input").css("display","none");
+			//回复评论按钮在有无文字情况下的变化
+			$(".isay_text_area").on("input",".target1",function () {
+		        console.log($(this).val());
+		        if ($(this).val() == "") {
+		        	$(this).parent().find(".comment_btn").removeClass("comment_btn_enable");
+		        } else{
+		        	$(this).parent().find(".comment_btn").addClass("comment_btn_enable");
+		        }
+			});
+			//textarea自动增高
+			$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
+		        if (this.scrollTop > 0)
+		        {
+		        	this.style.height = $(this).height()+19+"px";
+		        	
+		        }
+			});
+		}).on("click",".comment_reply_cancel",function () {
+			$(this).parents(".isay_text_area").css("display","none");
 		});
-		//textarea自动增高
-		$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
-	        if (this.scrollTop > 0)
-	        {
-	        	this.style.height = $(this).height()+19+"px";
-	        	
-	        }
-		});
-	}).on("click",".comment_reply_cancel",function () {
-		$(this).parents(".isay_text_area").css("display","none");
-	});
 	});
 	//添加评论框
 	function addCommentInput (thisCommentReplay) {
@@ -542,62 +563,9 @@ $(document).ready(function () {
 	});
 	
 	
-	//设置评论条目排列布局
-	$(function () {
-		var supportCommentNum = $(".cd-timeline-support").find(".cd-timeline-block");
-		var opposeCommentNum = $(".cd-timeline-oppose").find(".cd-timeline-block");
-		var supportDate = supportCommentNum.eq(1).find(".pikachu_time").text();
-		var supportTimestamp = Date.parse(new Date(supportDate));
-		var opposeDate = opposeCommentNum.eq(1).find(".pikachu_time").text();
-		var opposeTimestamp = Date.parse(new Date(opposeDate));
-		function getMarginTop (inputStr) {
-			inputStr = parseInt(inputStr.substring(0,inputStr.length-2));
-			return inputStr;
-		}
-		var dateLenth;
-		supportCommentNum.length>opposeCommentNum.length?dateLenth=supportCommentNum.length:dateLenth=opposeCommentNum.length;
-		var oppoMarginTo = 0;
-		var supMarginTo = 0;
-		if (supportTimestamp<opposeTimestamp) {
-			opposeCommentNum.eq(1).css("margin-top","80px");
-			supportCommentNum.eq(1).css("margin-top","0");
-			for (var i=2;i<dateLenth;i++) {
-				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
-				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
-				if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
-					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
-				}else{
-					supportCommentNum.eq(i).css("margin-top","20px");
-				}
-				if (supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
-					opposeCommentNum.eq(i).css("margin-top",supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
-				}else{
-					opposeCommentNum.eq(i).css("margin-top","20px");
-				}
-			}
-		}else {
-			supportCommentNum.eq(1).css("margin-top","80px");
-			opposeCommentNum.eq(1).css("margin-top","0");
-			for (var i=2;i<dateLenth;i++) {
-				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
-				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
-				if (oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
-					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
-				}else{
-					supportCommentNum.eq(i).css("margin-top","20px");
-				}
-				if (supMarginTo+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
-					opposeCommentNum.eq(i).css("margin-top",supMarginTo+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
-				}else{
-					opposeCommentNum.eq(i).css("margin-top","20px");
-				}
-			}
-		}
-		
-		
-	});
 	
-	//测试数据
+	
+	//评论的回复测试数据
 	var comment_reply=[{
 						'commentType':'support',
 						'replyCommentType':'oppose',

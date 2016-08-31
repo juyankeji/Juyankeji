@@ -17,7 +17,7 @@ a{color:#666;cursor:pointer}
 a,a:hover{text-decoration:none}
 a:focus{outline:none}
 /*------------------- 华丽分割线 -----------------------*/
-.fl{width: 100%;}
+.fl input{font: 15px "微软雅黑";color: #333333;}
 #HBox{width:300px;height:270px;margin:0 auto;box-shadow:1px 1px 5px #333;-webkit-box-shadow:1px 1px 5px #333;display:none;background-color:#ccc;}
 .list{padding:20px 0;}
 .list li{width:100%;margin-top:0;}

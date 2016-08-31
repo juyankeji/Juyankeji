@@ -1,4 +1,13 @@
 $(document).ready(function () {
+	//标签位置设定
+	$(function setTagPos () {
+		var tagsNum = $(".normalTopic_label_area").find("ul li").length;
+		for (var i=0;i<tagsNum;i++) {
+			console.log($(".normalTopic_label_area").find("ul li").eq(i).width());
+		}
+//		console.log(tagsNum);
+	});
+	
 	//发布成功提示
 	$("#comment_input_submit").click(function () {
 		swal({
@@ -8,10 +17,7 @@ $(document).ready(function () {
 		  timer: 1500
 		});
 	});
-	
-	
-	
-	
+
 	/******普通话题页相关******/
 
 	
@@ -111,7 +117,7 @@ $(document).ready(function () {
 	});
 	
 	//晾衣架上的评论按钮事件
-	$(".normalTopic_comment_btn").on("click",".btn_comment_num",function () {
+	$(".normalTopic_comment_main").on("click",".btn_comment_num",function () {
 		var thisReply = $(this).parents(".normalTopic_comment_btn").parent();		
 		if (thisReply.find(".normalTopic_comment_reply").length>0 && thisReply.find(".normalTopic_comment_reply").css("display") == "block") {
 			thisReply.find(".normalTopic_comment_reply").css("display","none");
@@ -131,20 +137,45 @@ $(document).ready(function () {
 					reply_item[i].replyTime
 				);
 			}
+				//单条评论中的回复框按钮事件
+				$(".reply_content_down_reply").click(function () {
+			        var thisComment = $(this).parents(".reply_content");
+			        console.log(thisComment.find(".reply_content_input").length);
+					if (thisComment.find(".reply_content_input").length == 0) {
+						$(this).parents(".normalTopic_comment_reply").find(".reply_content_input").remove();
+						creatCommentInput(thisComment);
+						console.log("1");
+					} else{
+						thisComment.find(".reply_content_input").remove();
+						console.log("2");
+					}
+				});
+//		$(".reply_content").on("click",".reply_content_down_reply",function () {
+//			console.log("1");
+//	        var thisComment = $(this).parents(".reply_content");
+//			if (thisComment.find(".reply_content_input").length == 0) {
+//				$(this).parents(".normalTopic_comment_reply").find(".reply_content_input").remove();
+//				creatCommentInput(thisComment);
+//			} else{
+//				thisComment.find(".reply_content_input").remove();
+//			}
+//			
+//		});
+			
 		}
 	});
 
-	//单条评论中的回复框按钮事件
-	$(".reply_content").on("click",".reply_content_down_reply",function () {
-        var thisComment = $(this).parents(".reply_content");
-		if (thisComment.find(".reply_content_input").length == 0) {
-			$(this).parents(".normalTopic_comment_reply").find(".reply_content_input").remove();
-			creatCommentInput(thisComment);
-		} else{
-			thisComment.find(".reply_content_input").remove();
-		}
-		
-	});
+//	//单条评论中的回复框按钮事件
+//	$(".reply_content").on("click",".reply_content_down_reply",function () {
+//      var thisComment = $(this).parents(".reply_content");
+//		if (thisComment.find(".reply_content_input").length == 0) {
+//			$(this).parents(".normalTopic_comment_reply").find(".reply_content_input").remove();
+//			creatCommentInput(thisComment);
+//		} else{
+//			thisComment.find(".reply_content_input").remove();
+//		}
+//		
+//	});
 	
 	//举报按钮
 	$(".title_name_area").on("click",".title_report",function () {
@@ -234,17 +265,7 @@ $(document).ready(function () {
 		   	$("<span></span>").addClass("reply_content_down_reply").html("回复").appendTo(d1_2_2_2);
 		   	var d1_2_2_2_1 = $("<span></span>").addClass("reply_content_down_like").appendTo(d1_2_2_2);
 		   	 $("<img />").attr("src","../../../img/browse/normalTopic/icon_like_small.png").appendTo(d1_2_2_2_1);
-    	//单条评论中的回复框按钮事件
-		$(".reply_content").on("click",".reply_content_down_reply",function () {
-	        var thisComment = $(this).parents(".reply_content");
-	        $(this).parents(".reply_content").parent().find(".reply_content_input").not($(this).parents(".reply_content").find(".reply_content_input")).remove();
-			if ($(this).parents(".reply_content").find(".reply_content_input").length <= 0) {
-				creatCommentInput(thisComment);
-			} else{
-				$(this).parents(".reply_content").find(".reply_content_input").remove();
-			}
-			
-		});
+    	
 		//textarea自动增高
 		$(".normalTopic_comment_reply").on("input keyup keypress",".reply_input_text,.reply_content_input_text",function (){  
 	        if (this.scrollTop > 0)

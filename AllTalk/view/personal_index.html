@@ -41,16 +41,69 @@
 					<!--个人信息-->
 					<div id="header_personal" class="header_personal">
 						<div id="header_notice" class="icon_message">
-							<img src="../img/login/notic.png"/>
+							<div class="header_notic_img">
+								<a href="javascript:void(0);">
+									<img src="/AllTalk/img/login/notic.png"/>
+									<em class="header_notic_count">4</em>
+								</a>
+							</div>
+							<div class="header_notice_content">
+								<div class="notice_content_up">
+									<span>关注人</span><span>话题</span>
+								</div>
+								<ul>
+									<li>
+										<a href="javascript:void(0);">
+											<span class="notice_content_pic">
+												<img src=""/>
+											</span>
+										</a>
+										<span class="notice_content_area">
+											<div class="notice_content_name">
+												<a href="javascript:void(0);">昵称</a>
+											</div>
+											<div class="notice_content_text">
+												内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+											</div>
+										</span>
+									</li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">2</em>@我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">3</em>收到的赞</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">4</em>新粉丝</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">5</em>我的通知</a></li>
+								</ul>
+								<div class="notice_content_bottom">
+									查看全部
+								</div>
+							</div>
 						</div>
 						<div id="header_message" class="icon_message">
-							<img src="../img/login/message.png"/>
+							<div class="header_message_img">
+								<a href="javascript:void(0);">
+									<img src="/AllTalk/img/login/message.png"/>
+									<em class="header_message_count">2</em>
+								</a>
+							</div>
+							<div class="header_message_content">
+								<ul>
+									<li><a href="javascript:void(0);"><em class="message_content_num">1</em>回复我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">2</em>@我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">3</em>收到的赞</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">4</em>新粉丝</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">5</em>我的通知</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">6</em>我的私信</a></li>
+								</ul>
+							</div>
 						</div>
 						<div id="personal_pic" class="personal_pic">
-							<img src="../img/unlogin.png" class="personal_pic_unlogin" />
-							<span class="login_text zoomIn dialog">登录/注册</span>
-							<span id="username">name</span>
+							<img src="/AllTalk/img/unlogin.png" class="personal_pic_unlogin" />
+							<div id="username" class="username"><a href="/AllTalk/view/user/personal.html">用户名</a></div>
 						</div>
+					</div>
+					<div class="signUp">
+						<span id="login_text" class="login_text zoomIn dialog">登录</span>
+						|
+						<span id="register_text" class="register_text zoomIn dialog">注册</span>
 					</div>
 				</div>
 			</div>
@@ -313,6 +366,7 @@
 	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="../js/homeIndex.js"></script>
 	<script type="text/javascript" src="../js/examples.js"></script>
+	<script type="text/javascript" src="../js/login/login.js" ></script>
 	<script src="../js/browse/browse.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(document).on("click",".type_item",function  () {
@@ -320,6 +374,6 @@
 			console.log($(this).find("span").text());
 		});
 	</script>
-	
+	<div id="loginBox" class="loginBox"></div>
 	</body>
 </html>

@@ -3,7 +3,7 @@
 	border-radius: 15px;
 	overflow: hidden;
 	cursor: auto;
-	display: none;
+	/*display: none;*/
 }
 
 .login_area_top
@@ -27,10 +27,11 @@
 	text-align: center;
 	font-size: 30px;
 }
-.login_area_top_logo h2
+.login_area_top_logo h3
 {
 	position: relative;
 	top: 25px;
+	font-size: inherit;
 }
 
 .login_form_area,.register_form_area
@@ -50,15 +51,15 @@
 .login_input,.register_input
 {
 	position: relative;
-	width: 370px;
-	height: 40px;
+	width: 330px;
+	height: 28px;
 }
 
 .verification_input
 {
 	position: relative;
-	width: 305px;
-	height: 40px;
+	width: 263px;
+	height: 28px;
 	text-indent:5px;
 	border:1px solid #ccc;
 	padding:5px 0;
@@ -88,6 +89,21 @@
 	text-align: left;
 	padding-left: 65px;
 	margin-bottom: 10px;
+}
+
+#remember label{
+	display: inline-block;
+    max-width: 100%;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+#remember label a{
+	color: #666666;
+}
+
+#remember a:hover,#remember a:focus{
+	color: #2a6496;
 }
 
 #remember_forget
@@ -188,7 +204,7 @@ label.error {
 
 #p1_1,#p1_2,#p2_1,#p2_2,#p2_3
 {
-	height: 26px;
+	height: 21px;
 	padding-top: 5px;
 }
 
@@ -221,6 +237,7 @@ label.error {
 
 .icheckbox_flat-red {
     background-position: 0 0;
+    float: left;
 }
     .icheckbox_flat-red.checked {
         background-position: -22px 0;

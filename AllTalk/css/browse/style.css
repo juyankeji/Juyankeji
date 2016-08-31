@@ -1,15 +1,13 @@
 body{ margin:0; padding:0; font-size:12px; height:100%;}
-ul,li,ol,h1,h2,h3,h4,h5,h6,span,dl,dt,dd,p,input,textarea,strong,a,form,table,tr,td{ margin:0; padding:0;}
-h1,h2,h3,h4,h5,h6{ font-size:12px; font-weight:normal;}
 li{ list-style-type:none;}
-a{ text-decoration:none; blr:expression(this.onFocus=this.blur())}/*È¥µôa±êÇ©µÄÐéÏß¿ò£¬±ÜÃâ³öÏÖÆæ¹ÖµÄÑ¡ÖÐÇøÓò*/
+a{ text-decoration:none; blr:expression(this.onFocus=this.blur())}/*È¥ï¿½ï¿½aï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ò£¬±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 :focus{outline:0;}
 img{ border:none;}
 .clear{ clear:both; height:0; overflow:hidden;}
-.fl{ float:left;}
+/*.fl{ float:left;}*/
 .fr{ float:right;}
 
-/*ÇÐ»»ÑùÊ½*/
+/*ï¿½Ð»ï¿½ï¿½ï¿½Ê½*/
 .home_ad{ width: 728px;overflow: hidden; margin:50px auto}
 .home_ad .picScroll-left{width: 728px;}
 .home_ad .picScroll-left .ad_title{ border-bottom:1px solid #dee2e6;  border-top: 2px solid red; height: 24px; padding: 10px;overflow: hidden; margin-top: 5px;}
@@ -34,7 +32,7 @@ img{ border:none;}
 .home_ad .picScroll-left .bd ul li a:hover img{ border-color:#999;  }
 .home_ad .picScroll-left .bd ul li .title{ line-height:24px;   }
 
-/*Êó±êÐüÍ£*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Í£*/
 .da-thumbs li a,.da-thumbs li a img { display: block; position: relative;}
 .da-thumbs li a { overflow: hidden;}
 .da-thumbs li a div { position: absolute; background:#000; width: 100%; height:174px; overflow:hidden; opacity:.8; filter:alpha(opacity=80);}

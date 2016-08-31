@@ -35,7 +35,7 @@ a
 
 .topic_label_area,.normalTopic_label_area
 {
-	width: 972px;
+	width: 1032px;
 	min-height: 145px;
 	margin: 0 auto 30px;
 }
@@ -256,7 +256,7 @@ iframe{
 	font: 12px "黑体",arial;
 	display: inline-block;
 	height: 16px;
-	margin-right: 15px;
+	margin-right: 10px;
 	vertical-align: top;
 	padding: 2px;
 	line-height: 16px;
@@ -353,7 +353,7 @@ ul
 	padding: 0;
 }
 
-li
+.topic_label_area li
 {
 	margin-bottom: 5px;
 }
@@ -827,7 +827,7 @@ li
 .comment_footer1
 {
 	padding-left: 0;
-	width: 86px;
+	/*width: 86px;*/
 	float: left;
 }
 
@@ -851,7 +851,7 @@ li
 .comment_footer2,.comment_footer3
 {
 	border-left: solid 1px #666;
-	width: 46px;
+	/*width: 46px;*/
 	float: left;
 }
 
@@ -1275,8 +1275,8 @@ li
 
 .normalTopic_label_item
 {
-	height: 36px;
-	min-width: 200px;
+	height: 41px;
+	/*min-width: 200px;*/
 	display: inline-block;
 	float: left;
 	margin-bottom: 36px;
@@ -1286,14 +1286,14 @@ li
 	border-top-left-radius: 25px;
 	padding-left: 36px;
 	font-size: 0;
-    background: #FFFFFF url(../../img/browse/normalTopic/icon_heart_grey.png) no-repeat;
+    background: #FFFFFF url(../../img/browse/normalTopic/icon_heart_grey.png) left center no-repeat;
     cursor: pointer;
 }
 
 .normalTopic_label_item_checked
 {
 	border: solid 2px #F05656;
-	background: #FFFFFF url(../../img/browse/normalTopic/icon_heart_red.png) no-repeat;
+	background: #FFFFFF url(../../img/browse/normalTopic/icon_heart_red.png) left center no-repeat;
 }
 
 /*.normalTopic_label_item_checked:after{
@@ -1307,9 +1307,9 @@ li
 
 .normalTopic_label_item_text
 {
-	min-width: 200px;
-	max-width: 400px;
-	height: 36px;
+	min-width: 136px;
+	max-width: 644px;
+	height: 45px;
 	font: 13px "微软雅黑";
 	color: #333333;
 	display: inline-block;
@@ -1322,7 +1322,7 @@ li
 {
 	display: inline-block;
 	width: 40px;
-	height: 36px;
+	height: 41px;
 	font: 13px arial;
 	color: #FFFFFF;
 	letter-spacing: 0.5px;
@@ -1351,7 +1351,7 @@ li
 	padding: 0 45px;
 	min-height: 500px;
 }
-.slideGroup{ width:1012px;margin: 0 10px;display: inline-block;}
+.slideGroup{ width:1012px;margin: 0 10px;display: inline-block;margin-top: -4px;}
 
 
 /*分页*/
@@ -1516,6 +1516,7 @@ li
 	background-color: #333333;
 	border-radius: 5px;
 	text-align: center;
+	padding: 3px 0;
 }
 
 .total_comment_page,.turnTo_comment_page_btn
@@ -1647,12 +1648,12 @@ li
 
 .normalTopic_comment_top
 {
-	height: 48px;
+	height: 51px;
 	width: 241px;
 	border: none;
 	position: absolute;
 	background: url(../../img/browse/normalTopic/bg_hangers.png) center no-repeat;
-	margin-top: -48px;
+	margin-top: -51px;
 }
 
 .normalTopic_comment_title

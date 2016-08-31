@@ -221,248 +221,1595 @@ word-break:break-all;
 });
 </script>
 
-<ul id="personal_concern" class="personal_concern">
-	<!--话题展示类型1_1-->
-	<div class="topic_item">
-		<div class="delete_item">
-			<p>×</p>
-		</div>
-		<div class="topic_item_content" colorType="o" itemType="1">
-			<div class="topic_tag">
-				<span class=""><img src="img/browse/topic_tag.png"/>文化</span>
-			</div>
-			<div class="topic_item_text">
-				<p class="topic_title">你愿意承受雾霾等代价在南方集中供暖吗？你愿意承受雾霾等代价在</p>
-				<span class="topic_time">2016.06.17&nbsp;&nbsp;&nbsp;Alex</span>
-				<div class="topic_item_num">
-					<span class="topic_browse"><img src="img/browse/topic_browse.png"/>3154</span>
-					<span class="topic_vote"><img src="img/browse/topic_vote.png"/>3154/3154</span>
-				</div>
-			</div>
-		</div>
-		<div class="topic_item_img">
-			<canvas class="triangle" width="230" height="14"></canvas>
-			<img src="img/homepage/society/shms2.jpg" class="topic_img"/>
-		</div>
-	</div>
-	<!--话题展示类型2_1-->
-	<div class="topic_item">
-		<div class="delete_item">
-			<p>×</p>
-		</div>
-		<div class="topic_item_img">
-			<canvas class="triangle" width="230" height="14"></canvas>
-			<img src="img/homepage/society/shms2.jpg" class="topic_img"/>
-		</div>
-		<div class="topic_item_content" colorType="b" itemType="2">
-			<div class="topic_tag">
-				<span class=""><img src="img/browse/topic_tag.png"/>文化</span>
-			</div>
-			<div class="topic_item_text">
-				<p class="topic_title">你愿意承受雾霾等代价在南方集中供暖吗？你愿意承受雾霾等代价在</p>
-				<span class="topic_time">2016.06.17&nbsp;&nbsp;&nbsp;Alex</span>
-				<div class="topic_item_num">
-					<span class="topic_browse"><img src="img/browse/topic_browse.png"/>3154</span>
-					<span class="topic_vote"><img src="img/browse/topic_vote.png"/>3154/3154</span>
-				</div>
-			</div>
-		</div>
-	</div>						
-	<div style="clear: both;">
-		
-	</div>
-</ul><!--关注的话题单条话题样式-end-->
 
-<div class="slideGroup multiple-items">	
-				    	<!-------评论输入框-begin------->
-					    <div id="comment_disply">
-					    	<div class="normalTopic_comment_top"></div>
-					    	<div class="normalTopic_comment_input">
-						    	<!--晾衣架评论输入框操作按钮-->
-								<div class="normalTopic_comment_input_operate">
-									<span class="input_operate_emo"></span>
-									<span class="input_operate_img"></span>
-									<span class="input_operate_line"></span>
-									<span class="input_operate_blod">B</span>
-									<span class="input_operate_italic">I</span>
-									<span class="input_operate_underline">U</span>
-									<span class="input_operate_upper"></span>
+<!--can-->
+<!-------单个评论条目-begin------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">**aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">123</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		<!-------回复评论区域-begin------->
+		    		<div class="normalTopic_comment_reply" style="display: none;">
+		    			<!--回复评论输入框-->
+		    			<div class="reply_input">
+		    				<textarea class="reply_input_text" name="reply"></textarea>
+		    				<div class="reply_input_operate">
+		    					<img src="../../../img/topic/emo.png">
+		    					<img src="../../../img/topic/pic.png">
+		    					<input type="button" id="reply_input_submit" value="评论" >
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示1-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称***</a>回复<a href="#reply_content" >昵称*</a>:是打*开*就*发*货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_input">
+		    					<textarea class="reply_content_input_text" name="reply"></textarea>
+		    					<div class="reply_content_input_operate">
+		    						<img src="../../../img/topic/emo.png">
+		    						<img src="../../../img/topic/pic.png">
+		    						<input type="button" id="reply_content_input_submit" value="评论">
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示2-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称2:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_input">
+		    					<textarea class="reply_content_input_text" name="reply"></textarea>
+		    					<div class="reply_content_input_operate">
+		    						<img src="../../../img/topic/emo.png">
+		    						<img src="../../../img/topic/pic.png">
+		    						<input type="button" id="reply_content_input_submit" value="评论">
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示3-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称2.5:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示4-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称3:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示5-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称4:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			
+		    		</div><!-------回复评论区域-end------->
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    
+		    <!--2-->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		<!-------回复评论区域-begin------->
+		    		<div class="normalTopic_comment_reply" style="display: none;">
+		    			<!--回复评论输入框-->
+		    			<div class="reply_input">
+		    				<textarea class="reply_input_text" name="reply"></textarea>
+		    				<div class="reply_input_operate">
+		    					<img src="../../../img/topic/emo.png">
+		    					<img src="../../../img/topic/pic.png">
+		    					<input type="button" id="reply_input_submit" value="评论" >
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示1-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称**2*</a>回复<a href="#reply_content" >昵称*2</a>:是打2*开*就*发*货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_input">
+		    					<textarea class="reply_content_input_text" name="reply"></textarea>
+		    					<div class="reply_content_input_operate">
+		    						<img src="../../../img/topic/emo.png">
+		    						<img src="../../../img/topic/pic.png">
+		    						<input type="button" id="reply_content_input_submit" value="评论">
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示2-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称2:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_input">
+		    					<textarea class="reply_content_input_text" name="reply"></textarea>
+		    					<div class="reply_content_input_operate">
+		    						<img src="../../../img/topic/emo.png">
+		    						<img src="../../../img/topic/pic.png">
+		    						<input type="button" id="reply_content_input_submit" value="评论">
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示3-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称2.5:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示4-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称3:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			<!--回复评论展示5-->
+		    			<div class="reply_content" id="reply_content">
+		    				<div class="reply_content_up">
+		    					<a class="reply_content_up_pic" href="#reply_content" ></a>
+		    					<span class="reply_content_up_content">
+		    						<a href="#reply_content" >昵称4:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
+		    					</span>
+		    				</div>
+		    				<div class="reply_content_down">
+		    					<span class="reply_content_down_time">7月29日 15:31</span>
+		    					<span class="reply_content_down_operate">
+		    						<span class="reply_content_down_report">举报</span>
+		    						<span class="reply_content_down_reply">回复</span>
+		    						<span class="reply_content_down_like">
+		    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
+		    						</span>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			
+		    		</div><!-------回复评论区域-end------->
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+		    <div>
+		    	<div class="normalTopic_comment_top"></div>
+		    	<div class="normalTopic_comment_main">
+		    		<!--评论顶部信息区-->
+		    		<div class="normalTopic_comment_title clearfloat">
+		    			<div class="title_pic">
+		    				<a href="#reply_content" >
+		    					<img src="../../../img/personal/strangerPic.png">
+		    				</a>
+		    			</div>
+		    			<div class="title_name_area">
+		    				<a class="title_name" href="#reply_content" >昵称*2</a>
+		    				<div class="title_report">
+		    					<input class="title_report_btn" type="button" value="举报">
+		    				</div>
+		    				<div class="title_time">07/28 17:48</div>
+		    			</div>
+		    		</div>
+		    		<!--评论主要内容区-->
+		    		<div class="normalTopic_comment_content">*2*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		    		<!--评论相关操作区-->
+		    		<div class="normalTopic_comment_btn">
+		    			<div class="btn_collection">
+		    				<span class="btn_collection_checked"></span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_comment clearfloat">
+		    				<span class="btn_comment_num">1233</span>
+		    			</div>
+		    			<div id="btn_line"></div>
+		    			<div class="btn_like">
+		    				<span class="btn_like_checked"></span>
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div><!-------单个评论条目-end------->
+<!--can-->
+
+
+
+<!--cannnn-->
+<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-support">
+						<!-------正方评论框加载-begin-------->
+						<div id="timeline_input_support" class="cd-timeline-block timeline_input_disply">
+							<div class="cd-timeline-img cd-picture"><span class="close_input" >×</span></div>
+							<div class="cd-timeline-content timeline-content-set-support">
+								<div class="comment_input_header">
+									<span class="comment_input_operate btn_emo"></span>
+									<span class="comment_input_operate btn_img"></span>
+									<span class="comment_operate_line"></span>
+									<span class="comment_input_operate btn_bold">B</span>
+									<span class="comment_input_operate btn_italic">1</span>
+									<span class="comment_input_operate btn_underline">1</span>
+									<span class="comment_input_operate btn_color">1</span>
 								</div>
-								<!--晾衣评论输入框内容-->
-								<textarea class="normalTopic_comment_input_content"></textarea>
-								<!--晾衣架评论输入框发布按钮-->
-								<div class="normalTopic_comment_input_submit">
-									<input type="button" id="comment_input_submit" value="发布" />
+								<div class="comment_input_content">
+									<textarea class="comment_input_area"></textarea>
 								</div>
-								
+								<div class="comment_input_footer">
+									<span class="comment_input_stand_support">支持</span>
+									<input type="button" id="comment_input_btn_support" class="comment_input_btn" value="发布" />
+								</div>
 							</div>
-					    </div><!-------评论输入框-end------->
-					    
-					    <!-------单个评论条目-begin------->
-					    <div>
-					    	<div class="normalTopic_comment_top"></div>
-					    	<div class="normalTopic_comment_main">
-					    		<!--评论顶部信息区-->
-					    		<div class="normalTopic_comment_title clearfloat">
-					    			<div class="title_pic">
-					    				<a href="#reply_content" >
-					    					<img src="../../../img/personal/strangerPic.png">
-					    				</a>
-					    			</div>
-					    			<div class="title_name_area">
-					    				<a class="title_name" href="#reply_content" >昵称*</a>
-					    				<div class="title_report">
-					    					<input class="title_report_btn" type="button" value="举报">
-					    				</div>
-					    				<div class="title_time">07/28 17:48</div>
-					    			</div>
-					    		</div>
-					    		<!--评论主要内容区-->
-					    		<div class="normalTopic_comment_content">**aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-					    		<!--评论相关操作区-->
-					    		<div class="normalTopic_comment_btn">
-					    			<div class="btn_collection">
-					    				<span class="btn_collection_checked"></span>
-					    			</div>
-					    			<div id="btn_line"></div>
-					    			<div class="btn_comment clearfloat">
-					    				<span class="btn_comment_num">123</span>
-					    			</div>
-					    			<div id="btn_line"></div>
-					    			<div class="btn_like">
-					    				<span class="btn_like_checked"></span>
-					    			</div>
-					    		</div>
-					    		<!-------回复评论区域-begin------->
-					    		<div class="normalTopic_comment_reply" style="display: none;">
-					    			<!--回复评论输入框-->
-					    			<div class="reply_input">
-					    				<textarea class="reply_input_text" name="reply"></textarea>
-					    				<div class="reply_input_operate">
-					    					<img src="../../../img/topic/emo.png">
-					    					<img src="../../../img/topic/pic.png">
-					    					<input type="button" id="reply_input_submit" value="评论" >
-					    				</div>
-					    			</div>
-					    			<!--回复评论展示1-->
-					    			<div class="reply_content" id="reply_content">
-					    				<div class="reply_content_up">
-					    					<a class="reply_content_up_pic" href="#reply_content" ></a>
-					    					<span class="reply_content_up_content">
-					    						<a href="#reply_content" >昵称***</a>回复<a href="#reply_content" >昵称*</a>:是打*开*就*发*货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_down">
-					    					<span class="reply_content_down_time">7月29日 15:31</span>
-					    					<span class="reply_content_down_operate">
-					    						<span class="reply_content_down_report">举报</span>
-					    						<span class="reply_content_down_reply">回复</span>
-					    						<span class="reply_content_down_like">
-					    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
-					    						</span>
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_input">
-					    					<textarea class="reply_content_input_text" name="reply"></textarea>
-					    					<div class="reply_content_input_operate">
-					    						<img src="../../../img/topic/emo.png">
-					    						<img src="../../../img/topic/pic.png">
-					    						<input type="button" id="reply_content_input_submit" value="评论">
-					    					</div>
-					    				</div>
-					    			</div>
-					    			<!--回复评论展示2-->
-					    			<div class="reply_content" id="reply_content">
-					    				<div class="reply_content_up">
-					    					<a class="reply_content_up_pic" href="#reply_content" ></a>
-					    					<span class="reply_content_up_content">
-					    						<a href="#reply_content" >昵称2:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_down">
-					    					<span class="reply_content_down_time">7月29日 15:31</span>
-					    					<span class="reply_content_down_operate">
-					    						<span class="reply_content_down_report">举报</span>
-					    						<span class="reply_content_down_reply">回复</span>
-					    						<span class="reply_content_down_like">
-					    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
-					    						</span>
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_input">
-					    					<textarea class="reply_content_input_text" name="reply"></textarea>
-					    					<div class="reply_content_input_operate">
-					    						<img src="../../../img/topic/emo.png">
-					    						<img src="../../../img/topic/pic.png">
-					    						<input type="button" id="reply_content_input_submit" value="评论">
-					    					</div>
-					    				</div>
-					    			</div>
-					    			<!--回复评论展示3-->
-					    			<div class="reply_content" id="reply_content">
-					    				<div class="reply_content_up">
-					    					<a class="reply_content_up_pic" href="#reply_content" ></a>
-					    					<span class="reply_content_up_content">
-					    						<a href="#reply_content" >昵称2.5:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_down">
-					    					<span class="reply_content_down_time">7月29日 15:31</span>
-					    					<span class="reply_content_down_operate">
-					    						<span class="reply_content_down_report">举报</span>
-					    						<span class="reply_content_down_reply">回复</span>
-					    						<span class="reply_content_down_like">
-					    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
-					    						</span>
-					    					</span>
-					    				</div>
-					    			</div>
-					    			<!--回复评论展示4-->
-					    			<div class="reply_content" id="reply_content">
-					    				<div class="reply_content_up">
-					    					<a class="reply_content_up_pic" href="#reply_content" ></a>
-					    					<span class="reply_content_up_content">
-					    						<a href="#reply_content" >昵称3:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_down">
-					    					<span class="reply_content_down_time">7月29日 15:31</span>
-					    					<span class="reply_content_down_operate">
-					    						<span class="reply_content_down_report">举报</span>
-					    						<span class="reply_content_down_reply">回复</span>
-					    						<span class="reply_content_down_like">
-					    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
-					    						</span>
-					    					</span>
-					    				</div>
-					    			</div>
-					    			<!--回复评论展示5-->
-					    			<div class="reply_content" id="reply_content">
-					    				<div class="reply_content_up">
-					    					<a class="reply_content_up_pic" href="#reply_content" ></a>
-					    					<span class="reply_content_up_content">
-					    						<a href="#reply_content" >昵称4:</a>是打开就发货速度积分换声卡上的地方合适的会计法刷卡缴费和可是对方设定沙发上地方水电费水电费方式是否水电费是
-					    					</span>
-					    				</div>
-					    				<div class="reply_content_down">
-					    					<span class="reply_content_down_time">7月29日 15:31</span>
-					    					<span class="reply_content_down_operate">
-					    						<span class="reply_content_down_report">举报</span>
-					    						<span class="reply_content_down_reply">回复</span>
-					    						<span class="reply_content_down_like">
-					    							<img src="../../../img/browse/normalTopic/icon_like_small.png">
-					    						</span>
-					    					</span>
-					    				</div>
-					    			</div>
-					    			
-					    		</div>
-					    		<!-------回复评论区域-end------->
-					    	</div>
-					    </div>
-					    <!-------单个评论条目-end------->
-					   
-					</div>
+						</div>
+						<!-------正方评论框加载-end-------->
+						
+						<!-------正方评论-begin------->
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">P</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">1</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 11:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>1</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">更丰富的精神分类的个人虐无二个呢瑞个我会每次真理惟一可靠的标准就是永远自相符合。 —— 欧文</div>
+								<div class="comment_footer mark colorRed">
+									<div class="comment_footer1">
+										<span>11条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+								
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+								<div class="comment_reply_item" commenttype="support">
+									<div class="isay_area">
+										<div class="isay_support_avatar">
+											<a href="#cd-timeline">
+												<img src="../../../img/unlogin.png">
+											</a>
+										</div>
+										<div class="isay_support_like">23<br>赞</div>
+										<div class="isay_content">
+											<a href="#cd-timeline" class="reply_name reply_name_s">是的撒大大</a>：回复
+											<a href="#cd-timeline" class="reply_name reply_name_o">123456</a>：jjdjabdsakljasfdalskdfjaslfjalfasklfjaslkfjaslkfjaslkdjaslkdjaslkdjaslkdjaslkdjlhsdlhf
+										</div>
+									</div>
+									<div class="isay_time">07/19 11:59</div>
+									<div class="isay_operate_area">
+										<div class="isay_operate isay_operate_reply">
+											<span>回复</span>
+										</div>
+										<div class="isay_operate isay_operate_like">
+											<span>赞</span>
+										</div>
+										<div class="isay_operate isay_operate_report">
+											<span>举报</span>
+										</div>
+									</div>
+									<div class="isay_floor">#1</div>
+									<form class="isay_text_area isay_text_area_mark" action="" method="post">
+										<textarea class="target1"></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="submit" id="comment_btn" value="评论">
+											<input class="comment_reply_cancel" type="button" value="取消">
+										</div>
+									</form>
+								</div>
+								<div class="comment_reply_item" commenttype="oppose">
+									<div class="isay_area">
+										<div class="isay_oppose_avatar">
+											<a href="#cd-timeline">
+												<img src="../../../img/unlogin.png">
+											</a>
+										</div>
+										<div class="isay_oppose_like">1<br>赞</div>
+										<div class="isay_content">
+											<a href="#cd-timeline" class="reply_name reply_name_o">123456</a>：回复
+											<a href="#cd-timeline" class="reply_name reply_name_o">是的</a>：jjdjabdsakljasfdalskdfjaslfjalfasklfjaslkfjaslkfjaslkdjaslkdjaslkdjaslkdjaslkdjlhsdlhf
+										</div>
+									</div>
+									<div class="isay_time">07/19 11:59</div>
+									<div class="isay_operate_area">
+										<div class="isay_operate isay_operate_reply">
+											<span>回复</span>
+										</div>
+										<div class="isay_operate isay_operate_like">
+											<span>赞</span>
+										</div>
+										<div class="isay_operate isay_operate_report">
+											<span>举报</span>
+										</div>
+									</div>
+									<div class="isay_floor">#2</div>
+									<form class="isay_text_area isay_text_area_mark" action="" method="post">
+										<textarea class="target1"></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="submit" id="comment_btn" value="评论">
+											<input class="comment_reply_cancel" type="button" value="取消">
+										</div>
+									</form>
+								</div>
+								<div class="comment_reply_item" commenttype="oppose">
+									<div class="isay_area">
+										<div class="isay_oppose_avatar">
+											<a href="#cd-timeline">
+												<img src="../../../img/unlogin.png">
+											</a>
+										</div>
+										<div class="isay_oppose_like">2<br>赞</div>
+										<div class="isay_content">
+											<a href="#cd-timeline" class="reply_name reply_name_o">是的</a>：回复
+											<a href="#cd-timeline" class="reply_name reply_name_s">是的撒大大</a>：jjdjabdsakljasfdalskdfjaslfjalfasklfjaslkfjaslkfjaslkdjaslkdjaslkdjaslkdjaslkdjlhsdlhf
+										</div>
+									</div>
+									<div class="isay_time">07/19 11:59</div>
+									<div class="isay_operate_area">
+										<div class="isay_operate isay_operate_reply">
+											<span>回复</span>
+										</div>
+										<div class="isay_operate isay_operate_like">
+											<span>赞</span>
+										</div>
+										<div class="isay_operate isay_operate_report">
+											<span>举报</span>
+										</div>
+									</div>
+									<div class="isay_floor">#3</div>
+									<form class="isay_text_area isay_text_area_mark" action="" method="post">
+										<textarea class="target1"></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="submit" id="comment_btn" value="评论">
+											<input class="comment_reply_cancel" type="button" value="取消">
+										</div>
+									</form>
+								</div>
+								<div class="comment_reply_item" commenttype="support">
+									<div class="isay_area">
+										<div class="isay_support_avatar">
+											<a href="#cd-timeline">
+												<img src="../../../img/unlogin.png">
+											</a>
+										</div>
+										<div class="isay_support_like">55<br>赞</div>
+										<div class="isay_content">
+											<a href="#cd-timeline" class="reply_name reply_name_s">是的撒大大</a>：回复
+											<a href="#cd-timeline" class="reply_name reply_name_s">是的撒大大2</a>：jjdjabdsakljasfdalskdfjaslfjalfasklfjaslkfjaslkfjaslkdjaslkdjaslkdjaslkdjaslkdjlhsdlhf
+										</div>
+									</div>
+									<div class="isay_time">07/19 11:59</div>
+									<div class="isay_operate_area">
+										<div class="isay_operate isay_operate_reply">
+											<span>回复</span>
+										</div>
+										<div class="isay_operate isay_operate_like">
+											<span>赞</span>
+										</div>
+										<div class="isay_operate isay_operate_report">
+											<span>举报</span>
+										</div>
+									</div>
+									<div class="isay_floor">#4</div>
+									<form class="isay_text_area isay_text_area_mark" action="" method="post">
+										<textarea class="target1"></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="submit" id="comment_btn" value="评论">
+											<input class="comment_reply_cancel" type="button" value="取消">
+										</div>
+									</form>
+								</div>
+								<div class="comment_reply_item" commenttype="support">
+									<div class="isay_area">
+										<div class="isay_support_avatar">
+											<a href="#cd-timeline">
+												<img src="../../../img/unlogin.png">
+											</a>
+										</div>
+										<div class="isay_support_like">23<br>赞</div>
+										<div class="isay_content">
+											<a href="#cd-timeline" class="reply_name reply_name_s">是的撒大大</a>：回复
+											<a href="#cd-timeline" class="reply_name reply_name_o">123456</a>：jjdjabdsakljasfdalskdfjaslfjalfasklfjaslkfjaslkfjaslkdjaslkdjaslkdjaslkdjaslkdjlhsdlhf
+										</div>
+									</div>
+									<div class="isay_time">07/19 11:59</div>
+									<div class="isay_operate_area">
+										<div class="isay_operate isay_operate_reply">
+											<span>回复</span>
+										</div>
+										<div class="isay_operate isay_operate_like">
+											<span>赞</span>
+										</div>
+										<div class="isay_operate isay_operate_report">
+											<span>举报</span>
+										</div>
+									</div>
+									<div class="isay_floor">#5</div>
+									<form class="isay_text_area isay_text_area_mark" action="" method="post">
+										<textarea class="target1"></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="submit" id="comment_btn" value="评论">
+											<input class="comment_reply_cancel" type="button" value="取消">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!-------正方评论-end------->
+						
+						<!-------正方评论-begin------->
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">P</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">1</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 12:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>1</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮肤额外花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。 —— 欧文</div>
+								<div class="comment_footer mark colorRed">
+									<div class="comment_footer1">
+										<span>11条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------正方评论-end------->
+						
+						<!-------正方评论-begin------->
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">P</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">1</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 12:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>1</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮肤额外花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。 —— 欧文</div>
+								<div class="comment_footer mark colorRed">
+									<div class="comment_footer1">
+										<span>11条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------正方评论-end------->
+						
+						<!-------正方评论-begin------->
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">P</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">1</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 12:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>1</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮肤额外花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮肤额外花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮肤额外花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。 —— 欧文</div>
+								<div class="comment_footer mark colorRed">
+									<div class="comment_footer1">
+										<span>11条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------正方评论-end------->
+						
+						<!-------正方评论-begin------->
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">P</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">1</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 12:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>1</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">真理惟一啥的首发会尽快收到了哈哈分午安好父亲为皮花费路撒风景都是垃圾费你啥都没，发武汉阿斯蒂芬撒旦法可靠的标准就是永远自相符合。 —— 欧文</div>
+								<div class="comment_footer mark colorRed">
+									<div class="comment_footer1">
+										<span>11条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------正方评论-end------->
+					</section> 
+					<!------- 正方评论区域-end ------->
+					
+					<!------- 反方评论区域-begin ------->
+					<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-oppose">
+						<!-------反方评论框加载-begin-------->
+						<div id="timeline_input_oppose" class="cd-timeline-block even-cd-timeline-block timeline_input_disply">
+							<div class="cd-timeline-img cd-movie close_input">×</div>
+							<div class="cd-timeline-content timeline-content-set-oppose">
+								<div class="comment_input_header">
+									<span class="comment_input_operate btn_emo"></span>
+									<span class="comment_input_operate btn_img"></span>
+									<span class="comment_operate_line"></span>
+									<span class="comment_input_operate btn_bold">B</span>
+									<span class="comment_input_operate btn_italic">1</span>
+									<span class="comment_input_operate btn_underline">1</span>
+									<span class="comment_input_operate btn_color">1</span>
+								</div>
+								<div class="comment_input_content">
+									<textarea class="comment_input_area"></textarea>
+								</div>
+								<div class="comment_input_footer">
+									<span class="comment_input_stand_oppose">反对</span>
+									<input type="button" id="comment_input_btn_oppose" class="comment_input_btn" value="发布" />
+								</div>
+							</div>
+						</div>
+						<!-------反方评论框加载-end-------->
+						
+						<!-------反方评论-begin------->
+						<div class="cd-timeline-block even-cd-timeline-block">
+							<div class="cd-timeline-img cd-movie">N</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">2</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 13:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>2</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田</div>
+								<div class="comment_footer mark colorBlue">
+									<div class="comment_footer1">
+										<span>22条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------反方评论-end------->
+						
+						<!-------反方评论-begin------->
+						<div class="cd-timeline-block even-cd-timeline-block">
+							<div class="cd-timeline-img cd-movie">N</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">2</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 14:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>2</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田</div>
+								<div class="comment_footer mark colorBlue">
+									<div class="comment_footer1">
+										<span>22条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------反方评论-end------->
+						
+						<!-------反方评论-begin------->
+						<div class="cd-timeline-block even-cd-timeline-block">
+							<div class="cd-timeline-img cd-movie">N</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">2</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 14:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>2</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">我需要三件东西：爱情友谊和图书。 —— 蒙田</div>
+								<div class="comment_footer mark colorBlue">
+									<div class="comment_footer1">
+										<span>22条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------反方评论-end------->
+						
+						<!-------反方评论-begin------->
+						<div class="cd-timeline-block even-cd-timeline-block">
+							<div class="cd-timeline-img cd-movie">N</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">2</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 14:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>2</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">我需要三件东西：爱情友谊和图书。 —— 蒙田</div>
+								<div class="comment_footer mark colorBlue">
+									<div class="comment_footer1">
+										<span>22条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------反方评论-end------->
+						
+						<!-------反方评论-begin------->
+						<div class="cd-timeline-block even-cd-timeline-block">
+							<div class="cd-timeline-img cd-movie">N</div>
+							<div class="cd-timeline-content">
+								<div class="comment_header">
+									<div class="pikachusPic">
+										<a href="../../../view/user/personal.html">
+											<img src="../../../img/personal/strangerPic.png">
+										</a>
+									</div>
+									<div class="pikachusName">
+										<div class="pikachu_name">
+											<a href="../../../view/user/personal.html">2</a>
+										</div>
+										<div class="pikachu_time">2016/07/20 14:52:12</div>
+									</div>
+									<div class="like_area">
+										<div class="like" ischecked="false">
+											<div>2</div>
+										</div>
+										<div class="unlike" ischecked="false"></div>
+									</div>
+								</div>
+								<div class="comment_content">我需要三件东西：爱情友谊和图书。 —— 蒙田</div>
+								<div class="comment_footer mark colorBlue">
+									<div class="comment_footer1">
+										<span>22条评论</span>
+									</div>
+									<div class="comment_footer2">
+										<span>回复</span>
+									</div>
+									<div class="comment_footer3">
+										<span>举报</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment_reply bounce-in" id="comment_reply">
+								<div class="comment_reply_input">
+									<div class="isay_text_area area_display">
+										<textarea class="target1" id="target1" placeholder=""></textarea>
+										<div class="isay_text_operate">
+											<div class="isay_text_operate_emotion"></div>
+											<div class="isay_text_operate_picture"></div>
+											<div class="text_support">
+												<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support">
+												<label for="checkbox_support"></label>&nbsp;正方
+											</div>
+											<div class="text_oppose">
+												<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose">
+												<label for="checkbox_oppose"></label>&nbsp;反方
+											</div>
+											<input class="comment_btn" type="button" id="comment_btn" value="评论">
+											<input class="comment_btn2" type="button" value="取消">
+										</div>
+									</div>
+								</div>
+								<div class="fallback">收起</div>
+							</div>
+						</div>
+						<!-------反方评论-end------->
+						
+					</section> 
+					<!------- 反方评论区域-end ------->
+<!--cannnn-->
+
 
 <link rel="stylesheet" type="text/css" href="css/personal/concern.css"/>
 <script type="text/javascript" src="../../js/personal/concern.js" ></script>

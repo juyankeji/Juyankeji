@@ -1,33 +1,25 @@
 $(document).ready(function(){
-//	$("#login_text").click(function () {
-//		$("#loginBox").load("/AllTalk/view/login/loginBox.html",function () {
-//			loginEffect ();
-//		});
-//	});
 	logIn();
 	
 //导航条登录按钮事件
 function logIn () {
 	$("#loginBox").load("/AllTalk/view/login/loginBox.html",function () {
-		console.log("3");
-		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "css/login/animate.min.css"}).appendTo("body");
-		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "css/login/common.css"}).appendTo("body");
-		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "css/login/loginArea.css"}).appendTo("body");
+//		console.log("3");
+//		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"}).appendTo("body");
+		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "/AllTalk/css/login/animate.min.css"}).appendTo("body");
+		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "/AllTalk/css/login/common.css"}).appendTo("body");
+		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "/AllTalk/css/login/loginArea.css"}).appendTo("body");
 		$.getScript("/AllTalk/js/login/jquery.hDialog.min.js").done(function () {console.log("1load success!");}).fail(function() {console.log("load!");});
-		$.getScript("js/login/icheck.js").done(function () {console.log("2load success!");}).fail(function() {console.log("load icheck.js fail!");});
-		$.getScript("js/login/jquery.validate.js").done(function () {console.log("2load success!");}).fail(function() {console.log("load jquery.validate.js fail!");});
-//		jQuery.getScript("js/login/login.js").fail(function() {console.log("load login.js fail!");});
-//		loginEffect ();
-		console.log("4");
+		$.getScript("/AllTalk/js/login/icheck.js").done(function () {console.log("2load success!");}).fail(function() {console.log("load icheck.js fail!");});
+		$.getScript("/AllTalk/js/login/jquery.validate.js",function () {
+			loginEffect();
+		}).done(function () {console.log("3load success!");}).fail(function() {console.log("load jquery.validate.js fail!");});
 	});
-	console.log("2");
-	$("#login_text").click(function () {
-		loginEffect();
-	});
+//	console.log("2");
 }
 
 function loginEffect () {
-	console.log("1");
+//	console.log("1");
 	$(".login_text").hDialog({
 			'box' : '#loginBox',
 			width : 500,
@@ -162,11 +154,11 @@ $(".ipt").focus(function () {
 	var iptType = $(this).attr("type");
 	switch (iptType){
 		case "text":
-			$(this).siblings("img").attr("src","img/login/user 02.png");
+			$(this).siblings("img").attr("src","/AllTalk/img/login/user 02.png");
 			$(this).attr("oninput","this.style.color='#666'");
 			break;
 		case "password":
-			$(this).siblings("img").attr("src","img/login/password 02.png");
+			$(this).siblings("img").attr("src","/AllTalk/img/login/password 02.png");
 			$(this).attr("oninput","this.style.color='#666'");
 			break;
 		default:
@@ -178,10 +170,10 @@ $(".ipt").blur(function () {
 	var iptType = $(this).attr("type");
 	switch (iptType){
 		case "text":
-			$(this).siblings("img").attr("src","img/login/user 01.png");
+			$(this).siblings("img").attr("src","/AllTalk/img/login/user 01.png");
 			break;
 		case "password":
-			$(this).siblings("img").attr("src","img/login/password 01.png");
+			$(this).siblings("img").attr("src","/AllTalk/img/login/password 01.png");
 			break;
 		default:
 			break;
@@ -193,13 +185,13 @@ $(".icon img").hover(function () {
 	var iconName = $(this).attr("name");
 	switch (iconName){
 		case "qq":
-			$(this).attr("src","img/login/QQ 02.png");
+			$(this).attr("src","/AllTalk/img/login/QQ 02.png");
 			break;
 		case "weixin":
-			$(this).attr("src","img/login/weixin 02.png");
+			$(this).attr("src","/AllTalk/img/login/weixin 02.png");
 			break;
 		case "weibo":
-			$(this).attr("src","img/login/weibo 02.png");
+			$(this).attr("src","/AllTalk/img/login/weibo 02.png");
 			break;
 		default:
 			break;
@@ -208,13 +200,13 @@ $(".icon img").hover(function () {
 		var iconName = $(this).attr("name");
 	switch (iconName){
 		case "qq":
-			$(this).attr("src","img/login/QQ 01.png");
+			$(this).attr("src","/AllTalk/img/login/QQ 01.png");
 			break;
 		case "weixin":
-			$(this).attr("src","img/login/weixin 01.png");
+			$(this).attr("src","/AllTalk/img/login/weixin 01.png");
 			break;
 		case "weibo":
-			$(this).attr("src","img/login/weibo 01.png");
+			$(this).attr("src","/AllTalk/img/login/weibo 01.png");
 			break;
 		default:
 			break;
@@ -235,7 +227,7 @@ $("#loginBtn").click(
 		    $("#HOverlay").remove();
 		    $(".icon_message").css("visibility","visible");
 		    $(".personal_pic_unlogin").css("visibility","visible");
-		    $(".personal_pic_unlogin").attr("src","img/personal/personalPicture.png")
+		    $(".personal_pic_unlogin").attr("src","/AllTalk/img/personal/personalPicture.png")
 		    $(".signUp").css("visibility","hidden");
 		   	$("#username").css("visibility","visible");
 		  },1000);
