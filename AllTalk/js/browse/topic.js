@@ -25,7 +25,28 @@ $(document).ready(function () {
 		}
 	});
 		
+	//点击正反方评论框按钮效果（向评论树添加评论）
+	$(".comment_support_btn").click(function () {
+		
+		$("#timeline_input_support").removeClass("timeline_input_disply");
+		$("#timeline_input_oppose").removeClass("timeline_input_disply");
+		$("#timeline_input_oppose").addClass("timeline_input_visibility");
+		$("#timeline_input_support").removeClass("timeline_input_visibility");
+	});
+	$(".comment_oppose_btn").click(function () {
+		$("#timeline_input_oppose").removeClass("timeline_input_disply");
+		$("#timeline_input_support").removeClass("timeline_input_disply");
+		$("#timeline_input_support").addClass("timeline_input_visibility");
+		$("#timeline_input_oppose").removeClass("timeline_input_visibility");
+	});
 	
+	//关闭评论输入框按钮
+	$(".close_input").click(function () {
+		$("#timeline_input_support").removeClass("timeline_input_visibility");
+		$("#timeline_input_oppose").removeClass("timeline_input_visibility");
+		$("#timeline_input_oppose").addClass("timeline_input_disply");
+		$("#timeline_input_support").addClass("timeline_input_disply");
+	});
 	
 	//评论测试数据
 	var sql=[{
@@ -106,7 +127,7 @@ $(document).ready(function () {
 				'userName':'99',
 				'commentTime':'07/20 11:52',
 				'likeNum':'99',
-				'commentContent':'相信谎言的人必将在真理之前毁灭。 —— 赫尔巴特',
+				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'99'
 			 },
 			 {
@@ -115,7 +136,25 @@ $(document).ready(function () {
 				'userName':'00',
 				'commentTime':'07/20 11:52',
 				'likeNum':'00',
+				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
+				'commentNum':'00'
+			 },
+			 {
+				'commentType':'oppose',
+				'userPicURL':'../../../img/personal/strangerPic.png',
+				'userName':'00',
+				'commentTime':'07/20 11:52',
+				'likeNum':'00',
 				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
+				'commentNum':'00'
+			 },
+			 {
+				'commentType':'support',
+				'userPicURL':'../../../img/personal/strangerPic.png',
+				'userName':'00',
+				'commentTime':'07/20 11:52',
+				'likeNum':'00',
+				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'00'
 			 },
 			 {
@@ -133,25 +172,7 @@ $(document).ready(function () {
 				'userName':'00',
 				'commentTime':'07/20 11:52',
 				'likeNum':'00',
-				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
-				'commentNum':'00'
-			 },
-			 {
-				'commentType':'oppose',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
-				'commentNum':'00'
-			 },
-			 {
-				'commentType':'oppose',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
+				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'00'
 			 },			 
 	]
@@ -230,21 +251,20 @@ $(document).ready(function () {
 	
 	commentBtnEffect();
 	//向评论树添加正反评论
-	$(function (count) {
-		for (var i=0;i<sql.length;i++) {
-			addComment(i,
-					   sql[i].commentType,
-					   sql[i].userPicURL,
-					   sql[i].userName,
-					   sql[i].commentTime,
-					   sql[i].likeNum,
-					   sql[i].commentContent,
-					   sql[i].commentNum
-			);
-			commentBtnEffect();
-		 }
-//		setCommentPosition();
-	});
+//	$(function (count) {
+//		for (var i=0;i<sql.length;i++) {
+//			addComment(i,
+//					   sql[i].commentType,
+//					   sql[i].userPicURL,
+//					   sql[i].userName,
+//					   sql[i].commentTime,
+//					   sql[i].likeNum,
+//					   sql[i].commentContent,
+//					   sql[i].commentNum
+//			);
+//			commentBtnEffect();
+//		}
+//	});
 	
 	//鼠标滚动出现评论项目
 	$(function(){
@@ -269,12 +289,15 @@ $(document).ready(function () {
 	$(function setCommentPosition () {
 		var supportCommentNum = $(".cd-timeline-support").find(".cd-timeline-block");
 		var opposeCommentNum = $(".cd-timeline-oppose").find(".cd-timeline-block");
+		for (var j=0;j<supportCommentNum.length;j++) {
+			console.log(j+"-"+supportCommentNum.eq(j).height()+"-"+opposeCommentNum.eq(j).height());
+		}
 		var supportDate = supportCommentNum.eq(1).find(".pikachu_time").text();
 		var supportTimestamp = Date.parse(new Date(supportDate));
 		var opposeDate = opposeCommentNum.eq(1).find(".pikachu_time").text();
 		var opposeTimestamp = Date.parse(new Date(opposeDate));
 		function getMarginTop (inputStr) {
-			console.log(i+" "+parseInt(inputStr.substring(0,inputStr.length-2)));
+//			console.log(i+" "+parseInt(inputStr.substring(0,inputStr.length-2)));
 			inputStr = parseInt(inputStr.substring(0,inputStr.length-2));
 			return inputStr;
 		}
@@ -282,12 +305,15 @@ $(document).ready(function () {
 		supportCommentNum.length>opposeCommentNum.length?dateLenth=supportCommentNum.length:dateLenth=opposeCommentNum.length;
 		var oppoMarginTo = 0;
 		var supMarginTo = 0;
-		console.log(dateLenth);
+//		console.log(dateLenth);
 		if (supportTimestamp>opposeTimestamp) {
 			opposeCommentNum.eq(1).css("margin-top","80px");
 			supportCommentNum.eq(1).css("margin-top","0");
 			for (var i=2;i<dateLenth;i++) {
+//				console.log(i+"-"+opposeCommentNum.eq(i).height()+"-"+supportCommentNum.eq(i).height());
+				console.log("1=>"+oppoMarginTo+","+getMarginTop(opposeCommentNum.eq(i-1).css("margin-top"))+","+opposeCommentNum.eq(i-2).height());
 				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
+				console.log("2=>"+supMarginTo+","+getMarginTop(supportCommentNum.eq(i-1).css("margin-top"))+","+supportCommentNum.eq(i-2).height());
 				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
 				if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
 					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
@@ -354,43 +380,42 @@ $(document).ready(function () {
 	});
 	
 	//加载回复页面的每条评论
-	$(function () {
-		var thisLoadArea = "";
-		var i = 0;
-		$(".comment_footer1").click(function () {
-			alert("!");
-			thisLoadArea = $(this).parents(".cd-timeline-block").find("#comment_reply");
-			thisLoadArea.css("display","inherit");
-			for (i;i<comment_reply.length;i++) {
-				addReplyComment(thisLoadArea,
-								comment_reply[i].commentType,
-								comment_reply[i].replyCommentType,
-								comment_reply[i].avatarPicURL,
-								comment_reply[i].userName,
-								comment_reply[i].replyName,
-								comment_reply[i].replyCommentContent,
-								comment_reply[i].likeNum,
-								comment_reply[i].replyTime,
-								comment_reply[i].floor
-				);
-			}
-			addReplyInput();
-			var top = $(this).parents(".cd-timeline-block").css("top");
-			top = parseInt(top.substring(top));
-			var height =$(this).parents(".cd-timeline-block").height();
-//			iFrameHeight();
-			//判断评论高度(测试)
-			if (height >= $("#cd-timeline").height()) {
-//				alert("1");
-			}
-		});
-		//收回评论页的效果
-		$(".comment_reply").on("click",".fallback",function () {
-			$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_1").removeClass("mark1_2");
-			$(this).parent().css("display","none");
-//			$(this).parent().find(".comment_reply_item").css("display","none");	
-		});
-	});
+//	$(function () {
+//		var thisLoadArea = "";
+//		var i = 0;
+//		$(".comment_footer1").click(function () {
+//			thisLoadArea = $(this).parents(".cd-timeline-block").find("#comment_reply");
+//			thisLoadArea.css("display","inherit");
+//			for (i;i<comment_reply.length;i++) {
+//				addReplyComment(thisLoadArea,
+//								comment_reply[i].commentType,
+//								comment_reply[i].replyCommentType,
+//								comment_reply[i].avatarPicURL,
+//								comment_reply[i].userName,
+//								comment_reply[i].replyName,
+//								comment_reply[i].replyCommentContent,
+//								comment_reply[i].likeNum,
+//								comment_reply[i].replyTime,
+//								comment_reply[i].floor
+//				);
+//			}
+////			addReplyInput();
+//			var top = $(this).parents(".cd-timeline-block").css("top");
+//			top = parseInt(top.substring(top));
+//			var height =$(this).parents(".cd-timeline-block").height();
+////			iFrameHeight();
+//			//判断评论高度(测试)
+//			if (height >= $("#cd-timeline").height()) {
+////				alert("1");
+//			}
+//		});
+//		//收回评论页的效果
+//		$(".comment_reply").on("click",".fallback",function () {
+//			$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_1").removeClass("mark1_2");
+//			$(this).parent().css("display","none");
+////			$(this).parent().find(".comment_reply_item").css("display","none");	
+//		});
+//	});
 	
 	//评论按钮效果
 	function commentBtnEffect () {
@@ -399,7 +424,7 @@ $(document).ready(function () {
 			$(".comment_reply").css("display","none");
 			$(".comment_footer").removeClass("mark1_1 mark1_2");
 			$(this).parent().removeClass("mark1_2").addClass("mark1_1");
-			console.log($(this).parents(".cd-timeline-block").find("#comment_reply").css("display"));
+//			console.log($(this).parents(".cd-timeline-block").find("#comment_reply").css("display"));
 			if ($(this).parents(".cd-timeline-block").find(".comment_reply").css("display") == "none") {
 				$(this).parents(".cd-timeline-block").find(".comment_reply").css("display","inherit");
 			} else{
@@ -445,14 +470,15 @@ $(document).ready(function () {
 				$(this).parents(".cd-timeline-block").find(".fallback").css("visibility","visible");
 			});
 		});
+		//收回评论页的效果
+		$(".comment_reply").on("click",".fallback",function () {
+			$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_1").removeClass("mark1_2");
+			$(this).parent().css("display","none");
+	//			$(this).parent().find(".comment_reply_item").css("display","none");	
+		});
 	}
-	//举报按钮出现与隐藏
-//	$(".cd-timeline-content").hover(function () {
-//		$(this).find(".comment_footer3 span").css("visibility","visible");
-//	},
-//	function () {
-//		$(this).find(".comment_footer3 span").css("visibility","hidden");
-//	});
+	
+	
 
 	//单个评论框弹出与收回以及设置默认回复字段
 	$(function addReplyInput () {
@@ -488,30 +514,30 @@ $(document).ready(function () {
 		});
 	});
 	//添加评论框
-	function addCommentInput (thisCommentReplay) {
-		var f1 = $('<form>').addClass('isay_text_area isay_text_area_mark').appendTo(thisCommentReplay);
-		f1.attr({"action":"","method":"post"});
-		 var f1_1 = $('<textarea></textarea>').addClass('target1').appendTo(f1);
-		 var f1_2 = $('<div></div>').addClass('isay_text_operate').appendTo(f1);
-		  var f1_2_1 = $('<div></div>').addClass('isay_text_operate_emotion').appendTo(f1_2);
-		  var f1_2_2 = $('<div></div>').addClass('isay_text_operate_picture').appendTo(f1_2);
-		  var f1_2_3 = $('<div></div>').appendTo(f1_2);
-		  f1_2_3.attr("id","text_support");
-		  f1_2_3.html('<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support" /><label for="checkbox_support"></label>&nbsp;正方');
-		  var f1_2_4 = $('<div></div>').appendTo(f1_2);
-		  f1_2_4.attr("id","text_oppose");
-		  f1_2_4.html('<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose" /><label for="checkbox_oppose"></label>&nbsp;反方');
-		  var f1_2_5 = $("<input />").addClass("comment_btn").appendTo(f1_2);
-		  f1_2_5.attr({"type":"submit","id":"comment_btn","value":"评论"});
-		  var f1_2_6 = $("<input />").addClass("comment_reply_cancel").appendTo(f1_2);
-		  f1_2_6.attr({"type":"button","value":"取消"});
-		checkBoxSelect();
-	}
+//	function addCommentInput (thisCommentReplay) {
+//		var f1 = $('<form>').addClass('isay_text_area isay_text_area_mark').appendTo(thisCommentReplay);
+//		f1.attr({"action":"","method":"post"});
+//		 var f1_1 = $('<textarea></textarea>').addClass('target1').appendTo(f1);
+//		 var f1_2 = $('<div></div>').addClass('isay_text_operate').appendTo(f1);
+//		  var f1_2_1 = $('<div></div>').addClass('isay_text_operate_emotion').appendTo(f1_2);
+//		  var f1_2_2 = $('<div></div>').addClass('isay_text_operate_picture').appendTo(f1_2);
+//		  var f1_2_3 = $('<div></div>').appendTo(f1_2);
+//		  f1_2_3.attr("id","text_support");
+//		  f1_2_3.html('<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support" /><label for="checkbox_support"></label>&nbsp;正方');
+//		  var f1_2_4 = $('<div></div>').appendTo(f1_2);
+//		  f1_2_4.attr("id","text_oppose");
+//		  f1_2_4.html('<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose" /><label for="checkbox_oppose"></label>&nbsp;反方');
+//		  var f1_2_5 = $("<input />").addClass("comment_btn").appendTo(f1_2);
+//		  f1_2_5.attr({"type":"submit","id":"comment_btn","value":"评论"});
+//		  var f1_2_6 = $("<input />").addClass("comment_reply_cancel").appendTo(f1_2);
+//		  f1_2_6.attr({"type":"button","value":"取消"});
+//		checkBoxSelect();
+//	}
 	
 	$(function checkBoxSelect () {
 		//正方勾选
 		$(".isay_text_operate").on("mouseover",".text_support",function () {
-			$(this).find("input[type=checkbox]").removeClass("checkbox_support_hover checkbox_oppose_hover");
+			$(this).find("input[type=checkbox]").removeClass("checkbox_oppose_hover");
 			$(this).find("input[type=checkbox]").addClass("checkbox_support_hover");
 		}).on("mouseout",".text_support",function () {
 			$(this).find("input[type=checkbox]").removeClass("checkbox_support_hover");
@@ -521,7 +547,7 @@ $(document).ready(function () {
 		});
 		//反方勾选
 		$(".isay_text_operate").on("mouseover",".text_oppose",function () {
-			$(this).find("input[type=checkbox]").removeClass("checkbox_support_hover checkbox_oppose_hover");
+			$(this).find("input[type=checkbox]").removeClass("checkbox_support_hover");
 			$(this).find("input[type=checkbox]").addClass("checkbox_oppose_hover");
 		}).on("mouseout",".text_oppose",function () {
 			$(this).find("input[type=checkbox]").removeClass("checkbox_oppose_hover");
@@ -532,35 +558,15 @@ $(document).ready(function () {
 	});
 	
 	//textarea自动增高
-		$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
-	        if (this.scrollTop > 0)
-	        {
-	        	this.style.height = $(this).height()+19+"px";
-	        	
-	        }
-		});
-	
-	//点击正反方评论按钮效果
-	$(".comment_support_btn").click(function () {
-		$("#timeline_input_support").removeClass("timeline_input_disply");
-		$("#timeline_input_oppose").removeClass("timeline_input_disply");
-		$("#timeline_input_oppose").addClass("timeline_input_visibility");
-		$("#timeline_input_support").removeClass("timeline_input_visibility");
-	});
-	$(".comment_oppose_btn").click(function () {
-		$("#timeline_input_oppose").removeClass("timeline_input_disply");
-		$("#timeline_input_support").removeClass("timeline_input_disply");
-		$("#timeline_input_support").addClass("timeline_input_visibility");
-		$("#timeline_input_oppose").removeClass("timeline_input_visibility");
+	$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
+        if (this.scrollTop > 0)
+        {
+        	this.style.height = $(this).height()+19+"px";
+        	
+        }
 	});
 	
-	//关闭评论输入框按钮
-	$(".close_input").click(function () {
-		$("#timeline_input_support").removeClass("timeline_input_visibility");
-		$("#timeline_input_oppose").removeClass("timeline_input_visibility");
-		$("#timeline_input_oppose").addClass("timeline_input_disply");
-		$("#timeline_input_support").addClass("timeline_input_disply");
-	});
+	
 	
 	
 	

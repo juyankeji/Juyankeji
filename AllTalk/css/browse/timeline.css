@@ -102,9 +102,6 @@ header h1 {
   }
 /*}*/
 
-.cd-timeline-block {
-  /*position: absolute;*/
-}
 .cd-timeline-block:after {
   content: "";
   display: table;

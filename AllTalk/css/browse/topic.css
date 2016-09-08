@@ -845,13 +845,11 @@ ul
 {
 	color: #999999;
 	background: url(../../img/topic/icon_report1.png) no-repeat;
-	/*visibility: hidden;*/
 }
 
 .comment_footer2,.comment_footer3
 {
 	border-left: solid 1px #666;
-	/*width: 46px;*/
 	float: left;
 }
 
@@ -1139,13 +1137,11 @@ ul
 .checkbox_support_check + label
 {
 	border: 0 0 3px rgba(240,86,86,0.7) inset;
-	/*background-color: #999999;*/
 }
 
 .checkbox_oppose_check + label
 {
 	border: 0 0 3px rgba(0,144,204,0.7) inset;
-	/*background-color: #999999;*/
 }
 
 .checkbox_support_check:checked + label
