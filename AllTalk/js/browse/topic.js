@@ -289,9 +289,6 @@ $(document).ready(function () {
 	$(function setCommentPosition () {
 		var supportCommentNum = $(".cd-timeline-support").find(".cd-timeline-block");
 		var opposeCommentNum = $(".cd-timeline-oppose").find(".cd-timeline-block");
-		for (var j=0;j<supportCommentNum.length;j++) {
-			console.log(j+"-"+supportCommentNum.eq(j).height()+"-"+opposeCommentNum.eq(j).height());
-		}
 		var supportDate = supportCommentNum.eq(1).find(".pikachu_time").text();
 		var supportTimestamp = Date.parse(new Date(supportDate));
 		var opposeDate = opposeCommentNum.eq(1).find(".pikachu_time").text();
@@ -310,10 +307,9 @@ $(document).ready(function () {
 			opposeCommentNum.eq(1).css("margin-top","80px");
 			supportCommentNum.eq(1).css("margin-top","0");
 			for (var i=2;i<dateLenth;i++) {
-//				console.log(i+"-"+opposeCommentNum.eq(i).height()+"-"+supportCommentNum.eq(i).height());
-				console.log("1=>"+oppoMarginTo+","+getMarginTop(opposeCommentNum.eq(i-1).css("margin-top"))+","+opposeCommentNum.eq(i-2).height());
+//				console.log("1=>"+oppoMarginTo+","+getMarginTop(opposeCommentNum.eq(i-1).css("margin-top"))+","+opposeCommentNum.eq(i-2).height());
 				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
-				console.log("2=>"+supMarginTo+","+getMarginTop(supportCommentNum.eq(i-1).css("margin-top"))+","+supportCommentNum.eq(i-2).height());
+//				console.log("2=>"+supMarginTo+","+getMarginTop(supportCommentNum.eq(i-1).css("margin-top"))+","+supportCommentNum.eq(i-2).height());
 				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
 				if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
 					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
@@ -419,8 +415,15 @@ $(document).ready(function () {
 	
 	//评论按钮效果
 	function commentBtnEffect () {
+//		var lastElement = $(".comment_reply");
 		//评论按钮效果
 		$(".comment_footer").on("click",".comment_footer1",function () {
+//			console.log(lastElement+"-"+$(this).parents(".cd-timeline-block").find(".comment_reply"))
+//			if (lastElement != $(this).parents(".cd-timeline-block").find(".comment_reply")) {
+//				lastElement.css("display","none");
+//				console.log("1");
+//			}
+//			lastElement = $(this).parents(".cd-timeline-block").find(".comment_reply");
 			$(".comment_reply").css("display","none");
 			$(".comment_footer").removeClass("mark1_1 mark1_2");
 			$(this).parent().removeClass("mark1_2").addClass("mark1_1");
@@ -433,6 +436,14 @@ $(document).ready(function () {
 			
 			$(this).parents(".cd-timeline-block").find(".comment_reply").find(".comment_reply_input").css("display","none");
 			$(this).parents(".cd-timeline-block").find(".fallback").css("visibility","visible");
+			if ($(this).parents(".cd-timeline-support").length>0) {
+				$(this).find("span").addClass("comment_footer1_checked_red");
+				$(this).next(".comment_footer2").find("span").removeClass("comment_footer2_checked_red");
+			}else{
+				$(this).find("span").addClass("comment_footer1_checked_blue");
+				$(this).next(".comment_footer2").find("span").removeClass("comment_footer2_checked_blue");
+			}
+			
 		})
 		//回复按钮效果
 		.on("click",".comment_footer2",function () {
@@ -445,6 +456,13 @@ $(document).ready(function () {
 			$("#target1").attr("placeholder","回复："+reply_text);
 //			checkBoxSelect();
 			$(".isay_text_area_mark").css("display","none");
+			if ($(this).parents(".cd-timeline-support").length>0) {
+				$(this).find("span").addClass("comment_footer2_checked_red");
+				$(this).prev(".comment_footer1").find("span").removeClass("comment_footer1_checked_red");
+			}else{
+				$(this).find("span").addClass("comment_footer2_checked_blue");
+				$(this).prev(".comment_footer1").find("span").removeClass("comment_footer1_checked_blue");
+			}
 			//回复评论按钮在有无文字情况下的变化
 			$(".isay_text_area").on("input",".target1",function () {
 		        console.log($(this).val());
@@ -463,18 +481,30 @@ $(document).ready(function () {
 			$(".comment_reply_input").on("click",".comment_btn2",function () {
 				$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_2").addClass("mark1_1");
 				$(this).parents(".cd-timeline-block").find(".comment_reply_input").css("display","none");
+				if ($(this).parents(".cd-timeline-support").length>0) {
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer1 span").addClass("comment_footer1_checked_red");
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_red");
+				}else{
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer1 span").addClass("comment_footer1_checked_blue");
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_blue");
+				}
 				if ($(this).parents("#comment_reply").find(".comment_reply_item").length == 0) {
 					$(this).parents("#comment_reply").css("display","none");
 					$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_1");
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer1 span").removeClass("comment_footer1_checked_red comment_footer1_checked_blue");
+					$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_red comment_footer2_checked_blue");
 				}
 				$(this).parents(".cd-timeline-block").find(".fallback").css("visibility","visible");
+				
 			});
 		});
 		//收回评论页的效果
 		$(".comment_reply").on("click",".fallback",function () {
 			$(this).parents(".cd-timeline-block").find(".comment_footer").removeClass("mark1_1").removeClass("mark1_2");
 			$(this).parent().css("display","none");
-	//			$(this).parent().find(".comment_reply_item").css("display","none");	
+			$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer1 span").removeClass("comment_footer1_checked_red comment_footer1_checked_blue");
+			$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_red comment_footer2_checked_blue");
+//			$(this).parent().find(".comment_reply_item").css("display","none");	
 		});
 	}
 	

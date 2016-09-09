@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$(function setTagPos () {
 		var tagsNum = $(".normalTopic_label_area").find("ul li").length;
 		for (var i=0;i<tagsNum;i++) {
-			console.log($(".normalTopic_label_area").find("ul li").eq(i).width());
+//			console.log($(".normalTopic_label_area").find("ul li").eq(i).width());
 		}
 //		console.log(tagsNum);
 	});

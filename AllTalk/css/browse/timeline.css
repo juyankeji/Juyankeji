@@ -472,3 +472,81 @@ header h1 {
 {
 	
 }
+
+.bounce-down {
+    -webkit-animation: dropDown 0.6s;
+    -moz-animation: dropDown 0.6s;
+    animation: dropDown 0.6s;
+  }
+
+@-webkit-keyframes dropDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+    -webkit-transform-origin: top;
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: scaleY(1.1);
+    -webkit-transform-origin: top;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    -webkit-transform-origin: top;
+  }
+}
+@-moz-keyframes dropDown {
+  0% {
+    opacity: 0;
+    -moz-transform: scaleY(0);
+  }
+  40% {
+    opacity: 1;
+    -moz-transform: scaleY(1.1);
+  }
+  100% {
+    -moz-transform: scaleY(1);
+  }
+}
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: top;
+    -webkit-transform: scaleY(0);
+    -moz-transform-origin: top;
+    -moz-transform: scaleY(0);
+    -ms-transform-origin: top;
+    -ms-transform: scaleY(0);
+    -o-transform-origin: top;
+    -o-transform: scaleY(0);
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform-origin: top;
+    -webkit-transform: scaleY(1.1);
+    -moz-transform-origin: top;
+    -moz-transform: scaleY(1.1);
+    -ms-transform-origin: top;
+    -ms-transform: scaleY(1.1);
+    -o-transform-origin: top;
+    -o-transform: scaleY(1.1);
+    transform-origin: top;
+    transform: scaleY(1.1);
+  }
+  
+  100% {
+  	-webkit-transform-origin: top;
+    -webkit-transform: scaleY(1);
+    -moz-transform-origin: top;
+    -moz-transform: scaleY(1);
+    -ms-transform-origin: top;
+    -ms-transform: scaleY(1);
+    -o-transform-origin: top;
+    -o-transform: scaleY(1);
+    transform-origin: top;
+    transform: scaleY(1);
+    
+  }
+}
