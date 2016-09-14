@@ -85,7 +85,6 @@ $(document).ready(function () {
 	
 	//设置标签颜色的函数
 	var itemType;
-	var ctx;
 	function setColor () {
 		var colorType;
 		var type;

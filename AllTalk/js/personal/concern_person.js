@@ -28,7 +28,7 @@ $(document).ready(function () {
 			$(this).parent().animate({right:'-75px'},200);
 		}
 	});
-	$("#concern_cancel_Btn,.delete_item").click(function(){
+	$("#concern_cancel_Btn").click(function(){
 		swal({
 			title: "确定取消关注此人?",
 //			text: "点击确定将不再关注此人!",

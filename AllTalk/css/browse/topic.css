@@ -31,6 +31,7 @@ a
 	margin: 0 auto 30px;
 	box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 	border-radius: 5px;
+	position: relative;
 }
 
 .topic_label_area,.normalTopic_label_area
@@ -165,6 +166,7 @@ iframe{
 	height: 100%;
 	background-color: #333333;
 	margin-left: -2px;
+	left: 50%;
 }
 
 .topicPage:after{
@@ -202,6 +204,30 @@ iframe{
     background: #444444;
 }
 
+.login_tip
+{
+	width: 150px;
+	height: 50px;
+	background-color: #1B1E24;
+	position: absolute;
+    right: 0;
+    top: -40px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+.login_tip:after
+{
+	content: "";
+	border: solid 10px #1B1E24;
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+
 .topic_introduction
 {
 	width: 700px;
@@ -229,7 +255,7 @@ iframe{
 
 .topic_concern_Btn
 {
-	width: 70px;
+	/*width: 70px;*/
 	height: 22px;
 	display: inline-block;
 	border: solid 1px #F05656;
@@ -244,6 +270,12 @@ iframe{
     font-family: simhei;
 	float: right;
 	cursor: pointer;
+}
+
+.topic_concerned
+{
+	border: solid 1px #0090CC;
+	color: #0090CC;
 }
 
 .editor
@@ -279,6 +311,7 @@ iframe{
 	font: 14px "microsoft yahei";
 	color: #666666;
 	text-indent: 2em;
+	min-height: 273px;
 }
 
 .topic_introduction_content p
@@ -1172,7 +1205,7 @@ ul
 	border: 0 0 3px rgba(0,144,204,0.7) inset;
 }
 
-.checkbox_support_check:checked + label
+/*.checkbox_support_check:checked + label
 {
 	background-color: rgba(240,86,86,0.1);
 }
@@ -1180,7 +1213,7 @@ ul
 .checkbox_oppose_check:checked + label
 {
 	background-color: rgba(0,144,204,0.1);
-}
+}*/
 
 .checkbox + label:after
 {
@@ -1300,8 +1333,7 @@ ul
 .normalTopic_label_item
 {
 	height: 41px;
-	/*min-width: 200px;*/
-	display: inline-block;
+	display: table;
 	float: left;
 	margin-bottom: 36px;
 	margin-right: 30px;
@@ -1333,27 +1365,26 @@ ul
 {
 	min-width: 136px;
 	max-width: 644px;
-	height: 45px;
+	max-height: 41px;
 	font: 13px "微软雅黑";
 	color: #333333;
-	display: inline-block;
+	vertical-align:middle;
+	display: table-cell;
 	padding: 0 8px;
-	line-height: 36px;
-	float: left;
+	overflow: hidden;
 }
 
 .normalTopic_label_item_like
 {
-	display: inline-block;
-	width: 40px;
-	height: 41px;
-	font: 13px arial;
-	color: #FFFFFF;
-	letter-spacing: 0.5px;
-	line-height: 36px;
-	text-align: center;
-	float: right;
-	background-color: #999999;
+	display: table-cell;
+    width: 40px;
+    /* height: 100%; */
+    font: 13px arial;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #999999;
 }
 
 .normalTopic_label_item_like_checked

@@ -1,11 +1,30 @@
 $(document).ready(function () {
 	//标签位置设定
 	$(function setTagPos () {
-		var tagsNum = $(".normalTopic_label_area").find("ul li").length;
-		for (var i=0;i<tagsNum;i++) {
-//			console.log($(".normalTopic_label_area").find("ul li").eq(i).width());
+		var tagsAdd = new Array();
+		var k = 0;
+		var tagsObj = $(".normalTopic_label_area").find("ul li");
+		var maxSum;
+		for (var i=0;i<tagsObj.length;i++) {
+			for (var j=i+1;j<tagsObj.length;j++) {
+				if (tagsObj.eq(i).width()+40+tagsObj.eq(j).width()+40<972) {
+					tagsAdd[k] = {
+						"front":i,
+						"behind":j,
+						"sum":tagsObj.eq(i).width()+40+tagsObj.eq(j).width()+40
+					}
+					if (k==0) {
+						maxSum = tagsAdd[k].sum;
+					}
+					else if (tagsAdd[k].sum>maxSum) {
+						maxSum = tagsAdd[k].sum;
+					}
+					console.log(tagsAdd[k].front+","+tagsAdd[k].behind+","+tagsAdd[k].sum+","+maxSum);
+					k++;
+				}
+				
+			}
 		}
-//		console.log(tagsNum);
 	});
 	
 	//发布成功提示

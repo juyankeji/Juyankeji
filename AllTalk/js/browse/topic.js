@@ -418,12 +418,6 @@ $(document).ready(function () {
 //		var lastElement = $(".comment_reply");
 		//评论按钮效果
 		$(".comment_footer").on("click",".comment_footer1",function () {
-//			console.log(lastElement+"-"+$(this).parents(".cd-timeline-block").find(".comment_reply"))
-//			if (lastElement != $(this).parents(".cd-timeline-block").find(".comment_reply")) {
-//				lastElement.css("display","none");
-//				console.log("1");
-//			}
-//			lastElement = $(this).parents(".cd-timeline-block").find(".comment_reply");
 			$(".comment_reply").css("display","none");
 			$(".comment_footer").removeClass("mark1_1 mark1_2");
 			$(this).parent().removeClass("mark1_2").addClass("mark1_1");
@@ -436,6 +430,9 @@ $(document).ready(function () {
 			
 			$(this).parents(".cd-timeline-block").find(".comment_reply").find(".comment_reply_input").css("display","none");
 			$(this).parents(".cd-timeline-block").find(".fallback").css("visibility","visible");
+			$(".comment_footer1,.comment_footer2").find("span").removeClass("comment_footer1_checked_red comment_footer1_checked_blue comment_footer2_checked_red comment_footer2_checked_blue");
+//			$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer1 span").removeClass("comment_footer1_checked_red comment_footer1_checked_blue");
+//			$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_red comment_footer2_checked_blue");
 			if ($(this).parents(".cd-timeline-support").length>0) {
 				$(this).find("span").addClass("comment_footer1_checked_red");
 				$(this).next(".comment_footer2").find("span").removeClass("comment_footer2_checked_red");
@@ -454,8 +451,8 @@ $(document).ready(function () {
 			$(this).parents(".cd-timeline-block").find(".comment_reply").find(".comment_reply_input").css("display","inherit");
 			var reply_text = $(this).parents(".cd-timeline-block").find(".pikachu_name a").html();
 			$("#target1").attr("placeholder","回复："+reply_text);
-//			checkBoxSelect();
 			$(".isay_text_area_mark").css("display","none");
+			$(".comment_footer1,.comment_footer2").find("span").removeClass("comment_footer1_checked_red comment_footer1_checked_blue comment_footer2_checked_red comment_footer2_checked_blue");
 			if ($(this).parents(".cd-timeline-support").length>0) {
 				$(this).find("span").addClass("comment_footer2_checked_red");
 				$(this).prev(".comment_footer1").find("span").removeClass("comment_footer1_checked_red");
@@ -465,7 +462,6 @@ $(document).ready(function () {
 			}
 			//回复评论按钮在有无文字情况下的变化
 			$(".isay_text_area").on("input",".target1",function () {
-		        console.log($(this).val());
 		        if ($(this).val() == "") {
 		        	$(this).parent().find(".comment_btn").removeClass("comment_btn_enable");
 	//	      		$(this).parent().find(".comment_btn").attr("disabled","disabled");
@@ -524,7 +520,6 @@ $(document).ready(function () {
 			$(this).parents(".cd-timeline-block").find(".comment_reply_input").css("display","none");
 			//回复评论按钮在有无文字情况下的变化
 			$(".isay_text_area").on("input",".target1",function () {
-		        console.log($(this).val());
 		        if ($(this).val() == "") {
 		        	$(this).parent().find(".comment_btn").removeClass("comment_btn_enable");
 		        } else{
