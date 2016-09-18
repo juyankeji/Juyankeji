@@ -183,10 +183,24 @@ input{
 }
 /*验证维护*/
 label.error {
-  
   padding-bottom: 2px;
   font-weight: bold;
   color: #F05656;
+  display: inherit;
+}
+
+label.repeat{
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #F05656;
+  display: none;
+}
+
+label.available{
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #009a61;
+  display: none;
 }
 
 .list

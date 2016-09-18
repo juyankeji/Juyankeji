@@ -4,17 +4,7 @@
 		<meta charset="utf-8" />
 		<title>聚言-等你来较真</title>
 	</head>
-	<body>
-		<script type="text/javascript">
-			function iFrameHeight() {
-		        var ifm= document.getElementById("iframe_comment_area");
-		        var subWeb = document.frames ? document.frames["iframe_comment_area"].document:ifm.contentDocument;
-			    if(ifm != null && subWeb != null) {
-			    	ifm.height = subWeb.body.scrollHeight;
-			    }
-			}
-			
-		</script>
+	<body>		
 		<div id="main" class="personal_main">
 			<!-------导航栏_top---------->
 			<div id="header" class="header">
@@ -124,7 +114,7 @@
 			<div id="topicPage" class="topicPage">
 				<div class="topic_introduction_area">
 					<div class="login_tip">
-						<p>请先登录</p>
+						<p>您需要先<a href="javascript:void(0);">登录</a></p>
 					</div>
 					<div class="topic_introduction">
 						<div class="topic_introduction_title">

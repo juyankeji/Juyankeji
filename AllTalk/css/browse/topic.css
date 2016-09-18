@@ -206,12 +206,12 @@ iframe{
 
 .login_tip
 {
-	width: 150px;
-	height: 50px;
+	width: 135px;
+	height: 40px;
 	background-color: #1B1E24;
 	position: absolute;
-    right: 0;
-    top: -40px;
+    right: 10px;
+    top: -32px;
     border-radius: 5px;
     opacity: 0.9;
 }
@@ -226,6 +226,18 @@ iframe{
 	bottom: -10px;
     left: 50%;
     margin-left: -10px;
+}
+
+.login_tip p{
+	text-align: center;
+	padding: 10px 0;
+	font: 14px 微软雅黑;
+	color: #7f8c97;
+}
+                
+.login_tip p a{
+	color: #F0F0F0;
+	text-decoration: underline;
 }
 
 .topic_introduction

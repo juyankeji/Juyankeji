@@ -222,7 +222,7 @@ function loginEffect () {
 	
 	//注册按钮获取值
 	$("#registerBtn").click(
-		function loginTest () {
+		function () {
 			var userName = $("#registerUsername").val();
 			var passWord = $("#registerPassword").val();
 			var passWord2 = $("#registerPassword2").val();
@@ -230,5 +230,48 @@ function loginEffect () {
 			var remember = $("#readed").is(":checked");//返回参数为boolean型
 			console.log(userName+","+passWord+","+passWord2+","+verification+","+remember);
 	});
+//	var state1=1;
+	//注册框失去焦点后事件
+	$("#register_form_area").find("input").blur(function (state) {
+		state = 1;
+		var userName = $("#registerUsername").val();
+		var passWord = $("#registerPassword").val();
+		var passWord2 = $("#registerPassword2").val();
+		var verification = $("#verification").val();
+		var remember = $("#readed").is(":checked");//返回参数为boolean型
+		//判断邮箱是否可用
+		console.log(!$("#registerUsername-error").length+","+($("#registerUsername").val()!=""))
+		if (!$("#registerUsername-error").length&&$("#registerUsername").val()!="") {
+			if (state == 0) {
+				$("#p2_1").find("label.repeat").css("display","inherit");
+				console.log("1");
+			}
+			else if (state == 1){
+				$("#p2_1").find("label.available").css("display","inherit");
+				console.log("2");
+			}
+		}
+		else if (($("#registerUsername-error").length&&$("#registerUsername-error").css("display")=="none")) {
+			if (state == 0) {
+				$("#p2_1").find("label.repeat").css("display","inherit");
+				console.log("3");
+			}
+			else if (state == 1){
+				$("#p2_1").find("label.available").css("display","inherit");
+				console.log("4");
+			}
+		}else{
+			$("#p2_1").find("label.repeat").css("display","none");
+			$("#p2_1").find("label.available").css("display","none");
+			console.log("3");
+		}
+		console.log(userName+","+passWord+","+passWord2+","+verification+","+remember);
+	});
+	
+	//关注按钮未登录提示框事件
+	$(".login_tip").find("a").click(function () {
+		$("#login_text").trigger("click");
+	});
+	
 }
 });

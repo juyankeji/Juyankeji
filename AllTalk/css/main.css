@@ -64,7 +64,6 @@ body
 
 .header div
 {
-	height: 64px;
 	vertical-align: top;
 }
 
@@ -77,7 +76,6 @@ body
 	background-color: #FFFFFF;
 	height: 150px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	/*visibility: hidden;*/
 }
 
 #content
@@ -213,7 +211,6 @@ body
 	float: right;
 	color: #999999;
 	font-size: 0;
-	max-width: 310px;
 }
 
 .header_index_text
