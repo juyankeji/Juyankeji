@@ -245,19 +245,7 @@ function getTopic () {
              alert("error");  
          }  
          function succFunction(sql) {    
-  
-             //eval将字符串转成对象数组  
-             //var json = { "id": "10086", "uname": "zhangsan", "email": "zhangsan@qq.com" };  
-             //json = eval(json);  
-             //alert("===json:id=" + json.id + ",uname=" + json.uname + ",email=" + json.email);  
-  
-             sql = eval(sql); //数组         
-//           $.each(sql, function (index, item) {  
-//               //循环获取数据    
-//               var name = sql[index].Name;  
-//               var idnumber = sql[index].IdNumber;  
-//               var sex = sql[index].Sex;  
-//               $("#list").html($("#list").html() + "<br>" + name + " - " + idnumber + " - " + sex + "<br/>");  
-//           });  
+             sql = eval(sql); //数组
          }  
      }
+

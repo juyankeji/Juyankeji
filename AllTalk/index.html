@@ -37,7 +37,7 @@
 								<form action="" method="post">
 									<input type="search" name="header_select_input" id="header_select_input" placeholder="搜索" value="" />
 									<div id="select_line"></div>
-									<input type="submit" class="header_search_button" value=""/>
+									<input type="submit" class="header_search_button" onsubmit="return searchValidate()" value=""/>
 								</form>
 							</div>
 						</div>
@@ -285,7 +285,9 @@
 					<div class="fl">
 						<img src="img/login/user 01.png" class="input_img" />
 						<input type="text" id="loginUsername" name="loginUsername" class="ipt login_input" placeholder="邮箱/用户名" />
-						<p id="p1_1"></p>
+						<p id="p1_1">
+							<label id="loginUsername-error" class="error" for="loginUsername"></label>
+						</p>
 					</div>
 				</li>
 			
@@ -293,7 +295,9 @@
 					<div class="fl">
 						<img src="img/login/password 01.png" class="input_img"/>
 						<input type="password" id="loginPassword" name="loginPassword" class="ipt login_input" placeholder="密码" />
-						<p id="p1_2"></p>
+						<p id="p1_2">
+							<label id="loginUsername-error" class="error" for="loginUsername"></label>
+						</p>
 					</div>
 				</li>
 				<li><input type="submit" value="登&nbsp&nbsp&nbsp录" class="submitBtn" id="loginBtn" /></li>
@@ -349,7 +353,7 @@
 						<p id="p2_3"></p>
 					</div>
 				</li>
-				<li><input type="submit" value="注&nbsp&nbsp&nbsp册" class="submitBtn" id="registerBtn" /></li>
+				<li><input type="submit" value="注&nbsp&nbsp&nbsp册" class="submitBtn" id="registerBtn" for="register_form_area" /></li>
 				<li>
 					<div id="remember" class="fl">
 						<input type="checkbox" name="rememberId" id="readed" value=""/><label for="rememberId" class="declaration">&nbsp;已阅读<a href="test.html">《聚言免责声明》</a></label>

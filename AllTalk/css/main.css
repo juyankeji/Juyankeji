@@ -267,6 +267,7 @@ body
 	background: transparent url(../img/select01.png) center center no-repeat;
 	border: 0;
 	outline: none;
+	cursor: pointer;
 }
 
 .header_select_text img{

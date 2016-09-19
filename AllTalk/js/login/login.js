@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	loginEffect();
+//	loginEffect();
+	logIn();
 	
 //导航条登录按钮事件
 function logIn () {
 	$("#loginBox").load("/AllTalk/view/login/loginBox.html",function () {
-//		console.log("3");
 //		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"}).appendTo("body");
 		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "/AllTalk/css/login/animate.min.css"}).appendTo("body");
 		$("<link>").attr({rel: "stylesheet",type: "text/css",href: "/AllTalk/css/login/common.css"}).appendTo("body");
@@ -218,6 +218,13 @@ function loginEffect () {
 			var passWord = $("#loginPassword").val();
 			var remember = $("#rememberId").is(":checked");//返回参数为boolean型
 			console.log(userName+","+passWord+","+remember);
+			console.log($("#loginUsername-error").html()+","+$("#loginPassword-error").html())
+			if ($("#loginUsername-error").text()==""&&$("#loginPassword-error").text()=="") {
+				$.tooltip('提交成功，2秒后自动关闭',2000,true);
+				setTimeout(function(){ 
+					$(".loginBox").hDialog('close',{box:'#loginBox'}); 
+				},2000);
+			}
 	});
 	
 	//注册按钮获取值

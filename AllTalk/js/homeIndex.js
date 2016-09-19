@@ -43,4 +43,13 @@ $(document).ready(function(){
     	return false;
 	});
 	
+	//搜索栏为空时判断条件
+	$("#header_select_text").on("click",".header_search_button",function searchValidate () {
+		var searchVal = $("#header_select_input").val();
+		console.log(searchVal=="");
+		if (searchVal=="") {
+			return false;
+		}
+	});
+	
 });
