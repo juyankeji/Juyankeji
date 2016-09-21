@@ -1,4 +1,11 @@
 $(document).ready(function () {
+	//无搜索结果提示
+	$(function () {
+		if (!$(".topic_item").length) {
+			$(".tip_nomore").css("margin-top","260px");
+		}
+	});
+	
 	//热搜词添加
 	var inputValue;
 	$(".input").on("keyup","#search_input",function () {
@@ -125,65 +132,5 @@ $(document).ready(function () {
 		$(this).find(".topic_browse img").attr("src","../../img/browse/topic_browse.png");
 		$(this).find(".topic_vote img").attr("src","../../img/browse/topic_vote.png");
 	});
-	
-	//绘制图片遮盖
-//	function triangle (ctx,itemType,color) {
-//	   ctx.fillStyle = color;//填充的颜色
-//	   if (itemType == "1") {
-//		   ctx.beginPath();
-//		   ctx.moveTo(0,0);
-//		   ctx.lineTo(230,0);
-//		   ctx.lineTo(230,14);
-//		   ctx.lineTo(129,14);
-//		   ctx.lineTo(115,0);
-//		   ctx.lineTo(101,14);
-//		   ctx.lineTo(0,14);
-//		   ctx.closePath();
-//		   ctx.fill();//填充颜色
-//	   } else{
-//		   ctx.beginPath();
-//		   ctx.moveTo(0,0);
-//		   ctx.lineTo(101,0);
-//		   ctx.lineTo(115,14);
-//		   ctx.lineTo(129,0);
-//		   ctx.lineTo(230,0);
-//		   ctx.lineTo(230,14);
-//		   ctx.lineTo(0,14);
-//		   ctx.closePath();
-//		   ctx.fill();//填充颜色
-//	   }
-//	}
-	
-//	var i=0;
-//	$("#search_button").click(function () {
-//		itemType = "1";
-//		for (i;i<sql.length;i++) {
-//				addTopicItem("#search_content_items",
-//							 sql[i].tagName,
-//							 sql[i].title,
-//							 sql[i].time,
-//							 sql[i].editor,
-//							 sql[i].browseNum,
-//							 sql[i].support,
-//							 sql[i].oppose,
-//							 sql[i].imgSrc,
-//							 sql[i].colorType,
-//							 itemType);
-//				setColor();
-////				ctx = $(".triangle")[i].getContext("2d");
-//				if (itemType == "1") {
-//					itemType = "2";
-//				} else{
-//					itemType = "1";
-//				}
-//				
-//				if (i%4 == 0) {
-//					$("#search_content_items").css("height","+=406");
-//				}
-//				
-//			$(".topic_item").animate({opacity:'1'},1000);
-//			}
-//			
-//	});
 	
 });

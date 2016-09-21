@@ -58,11 +58,18 @@ $(document).ready(function() {
 //  	$(section_num).css('background-size','100%');
 //	}
 
+	//lazyload加载图片
+
+	
     //获取当前元素ID并截取字符串最后一位并设置背景
     function getLastChar (section,bgImg) {
     	bgImg = bgImg.attr('id');//获取选择的条目
     	var lastChar = bgImg.charAt(bgImg.length-1);
     	var bgType1 = ".background_img_" + lastChar;
+    	
+    	var originalImgURL = section.find(".backgroundSet li").eq(parseInt(lastChar)-1).find("img").attr("data-original");
+    	section.find(".backgroundSet li").eq(parseInt(lastChar)-1).find("img").attr("src",originalImgURL);
+//  	console.log(q);
 		for (var i=0;i<section.find(".backgroundSet li").length;i++) {
 			section.find(".backgroundSet li").eq(i).css("z-index","-30");
 			if (section.find(".backgroundSet li").eq(i).attr("class").indexOf("background_img_display")<0) {
@@ -72,7 +79,7 @@ $(document).ready(function() {
 		}
 		section.find(bgType1).removeClass("background_img_display");
 		section.find(bgType1).css("z-index","-10");
-		section.find(bgType1).animate({"opacity":1},300,function() {
+		section.find(bgType1).animate({"opacity":1},800,function() {
 			if (section.find(bgType1).attr("class") != lastImg.attr("class")) {
 				lastImg.css("opacity",0);
 				lastImg.addClass("background_img_display");
@@ -85,7 +92,7 @@ $(document).ready(function() {
     	bgImg = bgImg.attr('id');//获取选择的条目
     	var lastChar = bgImg.charAt(bgImg.length-1);
     	var itemIntro = ".item_intro_" + lastChar;
-    	$(".section_intro_area li").animate({"opacity":0},50).addClass("item_intro_disply");
+    	$(".section_intro_area li").animate({"opacity":0},10).addClass("item_intro_disply");
     	$(itemIntro).removeClass("item_intro_disply").animate({"opacity":1},500);
     }
     

@@ -83,6 +83,14 @@ $(document).ready(function () {
 	
 	$(".topic_item").animate({opacity:'1'});
 	
+	//话题图片延迟加载
+	$(function() {
+    	$("img.lazy").lazyload({
+//  		placeholder : "../img/white.gif",
+    		effect: "fadeIn"
+    	});
+	});
+	
 	//设置标签颜色的函数
 	var itemType;
 	function setColor () {
