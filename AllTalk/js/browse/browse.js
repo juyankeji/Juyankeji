@@ -81,15 +81,63 @@ $(document).ready(function () {
 		var tagName = $(".topic_tag span").html().substring($(".topic_tag span").html().length-2,$(".topic_tag span").html().length);
 	});
 	
-	$(".topic_item").animate({opacity:'1'});
+//	$(".topic_item").animate({opacity:'1'});
 	
 	//话题图片延迟加载
 	$(function() {
     	$("img.lazy").lazyload({
 //  		placeholder : "../img/white.gif",
-    		effect: "fadeIn"
+    		effect: "fadeIn",
+    		threshold : 160
     	});
 	});
+	
+	//获取数据库中话题总数..
+	function getTopicSum () {
+		var topicSum = 60;
+		return topicSum;
+	}
+	
+	//鼠标滚动加载剩余话题
+	$(function dynamicLoadTopic (topicSum) {
+		topicSum = getTopicSum();
+		var itemLength = $(".topic_item").length;
+		var currentItemNum = 0;
+		if (itemLength>8) {
+			currentItemNum = preLoadTopic(0,8);
+		}else{
+			currentItemNum = preLoadTopic(0,itemLength);
+		}
+		
+		//滚动加载剩余item
+		$(window).scroll(function () {
+			console.log(itemLength+","+topicSum)
+			if (itemLength<topicSum) {
+				//向服务器请求数据...
+//				function function_name () {
+//					
+//				}
+				var scrollBottom = $(document).height() - $(window).height()-160;
+				if ($(window).scrollTop() >= scrollBottom) {
+					for (var i=0;i<4;i++) {
+						if (currentItemNum<itemLength) {
+							$(".topic_item").eq(currentItemNum).removeClass("topic_item_display").animate({opacity:1},500);
+							currentItemNum++;
+						}
+					}
+				}
+			}
+			
+		});
+	});
+	//预加载前8个item
+	function preLoadTopic (currentItemNum,p) {
+		for (var i=0;i<p;i++) {
+			$(".topic_item").eq(i).removeClass("topic_item_display").animate({opacity:1},500);
+			currentItemNum++;
+		}
+		return currentItemNum;
+	}
 	
 	//设置标签颜色的函数
 	var itemType;

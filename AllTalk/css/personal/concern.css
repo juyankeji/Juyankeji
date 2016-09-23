@@ -150,7 +150,17 @@
 	background-color: #FFFFFF;
 	border-radius: 4px;
 	overflow: hidden;
-	/*transition: all 5s ease-in-out;*/
+	
+}
+
+#topic_area.topic_item
+{
+	opacity: 0;
+}
+
+.topic_item_display
+{
+	display: none;
 }
 
 .topic_item_hover1

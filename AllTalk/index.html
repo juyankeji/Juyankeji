@@ -108,6 +108,8 @@
 						<span id="login_text" class="login_text zoomIn dialog">登录</span>
 						|
 						<span id="register_text" class="register_text zoomIn dialog">注册</span>
+						<!--|
+						<span id="test_text" class="test_text">测试</span>-->
 					</div>
 				</div>
 			</div>
@@ -263,6 +265,7 @@
 	<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="resources/layer/layer.js"></script>
 	<script type="text/javascript" src="js/sweetalert.min.js" ></script>
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript" src="js/homeIndex.js"></script>
@@ -297,7 +300,7 @@
 						<img src="img/login/password 01.png" class="input_img"/>
 						<input type="password" id="loginPassword" name="loginPassword" class="ipt login_input" placeholder="密码" />
 						<p id="p1_2">
-							<label id="loginUsername-error" class="error" for="loginUsername"></label>
+							<label class="login_error" for="loginPassword">账号或密码错误！</label>
 						</p>
 					</div>
 				</li>
@@ -373,6 +376,13 @@
 	<script type="text/javascript" src="js/login/icheck.js"></script>
 	<script type="text/javascript" src="js/login/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/login/login.js"></script>
-	
+	<script type="text/javascript">
+		$("#loginBtn").click(function () {
+			var data = 1;
+			if (data!=1) {
+				$("#p1_2").find("label.login_error").css("display","inherit");
+			}
+		});
+	</script>
 	</body>
 </html>

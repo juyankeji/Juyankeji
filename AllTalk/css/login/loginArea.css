@@ -3,6 +3,7 @@
 	border-radius: 15px;
 	overflow: hidden;
 	cursor: auto;
+	background-color: #f0f0f0;
 	/*display: none;*/
 }
 
@@ -189,7 +190,7 @@ label.error {
   display: inherit;
 }
 
-label.repeat{
+label.repeat,label.login_error{
   padding-bottom: 2px;
   font-weight: bold;
   color: #F05656;
