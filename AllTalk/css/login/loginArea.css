@@ -4,7 +4,7 @@
 	overflow: hidden;
 	cursor: auto;
 	background-color: #f0f0f0;
-	/*display: none;*/
+	display: none;
 }
 
 .login_area_top

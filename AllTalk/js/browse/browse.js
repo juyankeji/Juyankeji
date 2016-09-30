@@ -79,58 +79,73 @@ $(document).ready(function () {
 		$(this).css("color","#F05656");
 		var q = $(this).html();
 		var tagName = $(".topic_tag span").html().substring($(".topic_tag span").html().length-2,$(".topic_tag span").html().length);
+		
 	});
-	
-//	$(".topic_item").animate({opacity:'1'});
 	
 	//话题图片延迟加载
-	$(function() {
-    	$("img.lazy").lazyload({
-//  		placeholder : "../img/white.gif",
+	function lazyLoadImg(i) {
+    	$("img.lazy").eq(i).lazyload({
+    		placeholder : "../img/white.gif",
     		effect: "fadeIn",
-    		threshold : 160
+    		threshold : 260
     	});
-	});
+	}
+	
+	//话题浏览页测试数据
+	var sql=[{'colorType':'o','id':'1','tagName':'标签1','title':'1你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'b','id':'2','tagName':'文化','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'b','id':'3','tagName':'标签3','title':'3你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'4','tagName':'标签4','title':'你愿意承受雾霾等代价在南方集中供暖吗？','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'o','id':'5','tagName':'文化','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'6','tagName':'标签6','title':'6你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'g','id':'7','tagName':'标签7','title':'7你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'8','tagName':'文化','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'o','id':'9','tagName':'标签9','title':'9你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'10','tagName':'文化','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'11','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'12','tagName':'文化','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'13','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'14','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签1','title':'1你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签2','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签3','title':'3你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签4','title':'你愿意承受雾霾等代价在南方集中供暖吗？','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签5','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签6','title':'6你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'g','id':'1','tagName':'标签7','title':'7你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'b','id':'1','tagName':'标签8','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'o','id':'1','tagName':'标签9','title':'9你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签10','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签12','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'o','id':'1','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'b','id':'1','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'o','id':'1','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签12','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'o','id':'1','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+			 {'colorType':'b','id':'1','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'g','id':'1','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'Y'},
+			 {'colorType':'b','id':'1','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg','itemCategory':'N'},
+	]
 	
 	//获取数据库中话题总数..
 	function getTopicSum () {
-		var topicSum = 60;
+		var topicSum = 60;//数据库内话题总数
 		return topicSum;
 	}
+	//每次滚动获取的话题数量
+	function getAjaxTopicNum () {
+		var getTopicNum = 20;//每次从数据库中获取的话题数量
+		return getTopicNum;
+	}
 	
-	//鼠标滚动加载剩余话题
-	$(function dynamicLoadTopic (topicSum) {
-		topicSum = getTopicSum();
-		var itemLength = $(".topic_item").length;
-		var currentItemNum = 0;
-		if (itemLength>8) {
-			currentItemNum = preLoadTopic(0,8);
-		}else{
-			currentItemNum = preLoadTopic(0,itemLength);
-		}
-		
-		//滚动加载剩余item
-		$(window).scroll(function () {
-			console.log(itemLength+","+topicSum)
-			if (itemLength<topicSum) {
-				//向服务器请求数据...
-//				function function_name () {
-//					
-//				}
-				var scrollBottom = $(document).height() - $(window).height()-160;
-				if ($(window).scrollTop() >= scrollBottom) {
-					for (var i=0;i<4;i++) {
-						if (currentItemNum<itemLength) {
-							$(".topic_item").eq(currentItemNum).removeClass("topic_item_display").animate({opacity:1},500);
-							currentItemNum++;
-						}
-					}
-				}
-			}
-			
-		});
-	});
-	//预加载前8个item
+	//预加载前12个item
 	function preLoadTopic (currentItemNum,p) {
 		for (var i=0;i<p;i++) {
 			$(".topic_item").eq(i).removeClass("topic_item_display").animate({opacity:1},500);
@@ -139,8 +154,101 @@ $(document).ready(function () {
 		return currentItemNum;
 	}
 	
+	//获取三级菜单的catalog-id
+	$(".header_third_index li").click(function () {
+//		$(this).attr("data-catalog-id");
+		console.log($(this).attr("data-catalog-id"));
+	});
+	
+	//鼠标滚动加载剩余话题
+	$(function dynamicLoadTopic () {
+		var currentItemNum = 0;
+//		var topicSum = getTopicSum();
+		var ajaxTopicSum = getAjaxTopicNum();
+		var itemLength = $(".topic_item").length;
+		var itemType="1";
+		if (itemLength>12) {
+			currentItemNum = preLoadTopic(0,12);
+			ajaxTopicSum = ajaxTopicSum - currentItemNum;
+		}else{
+			currentItemNum = preLoadTopic(0,itemLength);
+			ajaxTopicSum = preLoadTopic(0,itemLength);
+		}
+		//设置图片预加载
+		for (var i=0;i<currentItemNum;i++) {
+			lazyLoadImg(i);
+		}
+		//滚动加载剩余item
+		var request = true;
+		$(window).scroll(function () {
+			itemLength = $(".topic_item").length;
+			//回到顶部按钮出现与隐藏
+			if ($(window).scrollTop() >= $(window).height()*0.4) {
+				$(".upToTop").css("visibility","visible");
+			}else if ($(window).scrollTop() < $(window).height()*0.4) {
+				$(".upToTop").css("visibility","hidden");
+			}
+//			if (itemLength<topicSum) {
+				if (ajaxTopicSum!=0) {
+					var scrollBottom = $(document).height() - $(window).height()-160;
+					if ($(window).scrollTop() >= scrollBottom) {
+						for (var i=0;i<4;i++) {
+							if (currentItemNum<itemLength) {
+//								console.log($(".topic_item").offset().top);
+								$(".topic_item").eq(currentItemNum).removeClass("topic_item_display").animate({opacity:1},500);
+								ajaxTopicSum--;
+								lazyLoadImg(currentItemNum);
+								currentItemNum++;
+							}
+						}
+					}
+				}else{
+					function getNum () {
+						//向服务器请求数据...
+						var ajaxNum = 20;//获取ajax加载的话题条目数量
+						if (ajaxNum!=0) {
+							ajaxTopicSum = ajaxNum;		//将获取的话题条数设置为提取出来的话题条数
+							//拼装加载的条目
+							for (var i=0;i<ajaxNum;i++) {
+								addTopicItem(
+									"#topic_area",
+									sql[i].tagName,
+									sql[i].title,
+									sql[i].time,
+									sql[i].editor,
+									sql[i].browseNum,
+									sql[i].support,
+									sql[i].oppose,
+									sql[i].imgSrc,
+									sql[i].colorType,
+									sql[i].itemCategory,
+									itemType);
+									setColor();
+								if (itemType == "1") {
+									itemType = "2";
+								} else{
+									itemType = "1";
+								}
+							}
+							$(".spinner").css("display","none");
+							request=true;
+						} else{
+							$(".loadMore").css("display","inherit");
+						}
+					}
+					if (request) {
+						$(".spinner").css("display","inherit");
+						setTimeout(getNum,1000);
+						request=false;
+					}
+				}
+//			}else{
+//				$(".loadMore").css("display","inherit");
+//			}
+		});
+	});
+	
 	//设置标签颜色的函数
-	var itemType;
 	function setColor () {
 		var colorType;
 		var type;
@@ -234,48 +342,11 @@ $(document).ready(function () {
 		},300);
 	});
 	
-	var sql=[{'colorType':'o','tagName':'标签1','title':'1你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'文化','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签3','title':'3你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签4','title':'你愿意承受雾霾等代价在南方集中供暖吗？','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'文化','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签6','title':'6你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签7','title':'7你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'文化','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签9','title':'9你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'文化','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'文化','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签1','title':'1你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签2','title':'2你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签3','title':'3你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签4','title':'你愿意承受雾霾等代价在南方集中供暖吗？','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签5','title':'5你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签6','title':'6你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签7','title':'7你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签8','title':'8你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签9','title':'9你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签10','title':'10你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签12','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签11','title':'11你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签12','title':'12你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签13','title':'13你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签14','title':'14你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'g','tagName':'标签15','title':'15你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'b','tagName':'标签16','title':'16你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-			 {'colorType':'o','tagName':'标签17','title':'17你愿意','time':'2016.06.22','editor':'Alex','browseNum':'3154','support':'3154','oppose':'3154','imgSrc':'../img/homepage/society/shms2.jpg'},
-	]
+	//点击返回顶部事件
+	$(".upToTop").click(function () {
+		$('body,html').animate({ scrollTop: 0 }, 800);
+	});
+	
 	//鼠标滚动自动加载item
 //	var i=0;
 //	var topicLength = $(".topic_item").length;

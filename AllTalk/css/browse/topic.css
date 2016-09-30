@@ -1713,6 +1713,11 @@ ul
 	cursor: pointer;
 }
 
+#comment_disply
+{
+	display: none;
+}
+
 .normalTopic_comment_top
 {
 	height: 51px;
@@ -2094,4 +2099,5 @@ ul
 	-webkit-transform:rotate(45deg);
 	-o-transform:rotate(45deg); 
 }
+
 

@@ -50,12 +50,6 @@ function loginEffect () {
 	 		$(".register_form_area").addClass("form_area_disply");
 	 	});
 		
-	//判断账号密码是否正确
-//	jQuery.validator.addMethod("isLoginSuccess", function(value, element) {
-//	    var getMark = 1;
-//	    return this.optional(element) || !getMark.test( value );    
-//	}, "请正确格式的姓名(暂支持汉字)");
-		
 	//登录验证
 	$("#login_form_area").validate({
 		rules:{
@@ -228,35 +222,11 @@ function loginEffect () {
 //			if ($("#loginUsername-error").text()==""&&$("#loginPassword-error").text()=="") {
 //				$.tooltip('提交成功，2秒后自动关闭',2000,true);
 //				setTimeout(function(){ 
-//					$(".loginBox").hDialog('close',{box:'#loginBox'}); 
+//					$(".login_text").hDialog('close',{box:'#loginBox'}); 
 //				},2000);
 //			}
 	});
-	
-	//提交并验证表单
-//	$('.submitBtn').click(function() {
-//		var EmailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/; //邮件正则
-//		var PhoneReg = /^0{0,1}(13[0-9]|15[0-9]|153|156|18[7-9])[0-9]{8}$/ ; //手机正则
-//		var $nickname = $('.nickname');
-//		var $email = $('.email'); 
-//		var $phone = $('.phone');
-//		if($nickname.val() == ''){
-//			$.tooltip('昵称还没填呢...'); $nickname.focus();
-//		}else if($phone.val() == ''){
-//			$.tooltip('手机还没填呢...'); $phone.focus();
-//		}else if(!PhoneReg.test($phone.val())){
-//			$.tooltip('手机格式错咯...'); $phone.focus();
-//		}else if($email.val() == ''){
-//			$.tooltip('邮箱还没填呢...'); $email.focus();
-//		}else if(!EmailReg.test($email.val())){
-//			$.tooltip('邮箱格式错咯...'); $email.focus();
-//		}else{
-//			$.tooltip('提交成功，2秒后自动关闭',2000,true);
-//			setTimeout(function(){ 
-//				$el.hDialog('close',{box:'#HBox'}); 
-//			},2000);
-//		}
-//	});
+
 	
 	//注册按钮获取值
 	$("#registerBtn").click(
@@ -267,7 +237,35 @@ function loginEffect () {
 			var verification = $("#verification").val();
 			var remember = $("#readed").is(":checked");//返回参数为boolean型
 			console.log(userName+","+passWord+","+passWord2+","+verification+","+remember);
+			
+			if (registerValidate ()) {
+				$.tooltip('注册成功，3秒后自动关闭',3000,true);
+//				setTimeout(function(){ 
+//					$(".loginBox").hDialog('close',{box:'#loginBox'}); 
+//				},2000);
+			}
 	});
+	
+	//注册信息框验证
+	function registerValidate () {
+		var $password_input = $("#registerPassword");
+		var $password_input2 = $("#registerPassword2");
+		var $password_error = $("#registerPassword-error");
+		var $password2_error = $("#registerPassword2-error");
+		if (!$password_error.length||$password_error.text()=="") {
+			if(!$password2_error.length||$password2_error.text()==""&&$password_input!=""&&$password_input2!=""){
+				alert("1");
+				return true;
+			}else{
+				alert("3");
+				return false;
+			}
+		} else{
+			alert("2");
+			return false;
+		}
+	}
+	
 //	var state1=1;
 	//注册框失去焦点后事件
 	$("#register_form_area").find("#registerUsername").blur(function (state) {

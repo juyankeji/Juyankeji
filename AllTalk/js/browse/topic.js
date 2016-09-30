@@ -24,7 +24,19 @@ $(document).ready(function () {
 			});
 		}
 	});
+	
+	var isChecked = false;
+	//评论按钮上方对正反方的支持数
+	$(".comment_support_num,.comment_oppose_num").click(function () {
+		if (!isChecked) {
+			var sn = parseInt($(this).find("p").text())+1;
+			$(this).find("p").text(sn);
+			console.log(sn);
+			isChecked = true;
+		}
 		
+	});
+	
 	//点击正反方评论框按钮效果（向评论树添加评论）
 	$(".comment_support_btn").click(function () {
 		

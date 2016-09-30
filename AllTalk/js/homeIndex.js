@@ -52,4 +52,33 @@ $(document).ready(function(){
 		}
 	});
 	
+	//图片预加载优化
+	$(function () {
+		for (var i=0;i<$('#section1 img[data-original]').length;i++) {
+			var $sectionNum = $('#section1 img[data-original]').eq(i);
+			preloader($sectionNum);
+		}
+	});
+	
+	function preloader($sectionNum) {
+		var __this__ = $sectionNum;  
+	    var url = __this__.attr('data-original');  
+	    var src = __this__.attr('src');  
+	    console.log(url+","+src);
+	    if(url ==''|| url == src)//这里判断如果图片实际地址不存在或者已经加载不处理  
+	    {  
+	         return;  
+	    }  
+	    var img =new Image();//实例化一个图片的对象  
+	    img.src = url;//将要显示的图片加载进来  
+	    if(img.complete)//如果图片已经加载存在浏览器缓存中直接处理  
+	    {  
+	       __this__.attr('src',url);//将要显示的图片替换过来
+	       return;  
+	    }  
+	    img.onload =function(){//要显示的图片加载完成后做处理  
+	       __this__.attr('src',url);
+	    }
+	}
+		
 });

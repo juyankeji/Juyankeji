@@ -162,22 +162,16 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
     }
    
 	//构建item内的元素
-	function addTopicItem (itemAreaID,tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemType) {
-		var path;
-		if (itemAreaID == "#topic_area") {
-			path = "";
-		} else{
-			path = "../";
-		}
+	function addTopicItem (itemAreaID,tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemCategory,itemType) {		
 		if (itemType == "1") {
-			var div1 = $('<div>').addClass('topic_item').appendTo($(itemAreaID));
+			var div1 = $('<div>').addClass('topic_item topic_item_display').appendTo($(itemAreaID));
 			 //加入话题内容区域
 			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
 			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
 			  //加入话题标签区域
 			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
 			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
-			   $(div1_1_1_1).html('<img src="'+path+'../img/browse/topic_tag.png"/>'+tagName);
+			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
 			  //加入话题文字区域
 			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
 			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
@@ -186,26 +180,31 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;"+editor);
 			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
 			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_1).html('<img src="'+path+'../img/browse/topic_tag.png"/>'+browseNum);
+			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
 			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_2).html('<img src="'+path+'../img/browse/topic_vote.png"/>' + support + '/'+oppose);
+			    if (itemCategory=="Y") {
+					$(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support + '/'+oppose);
+				} else{
+					$(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support);
+				}
 			 //加入话题图片区域
 			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
-			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
-			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
+			  var div1_2_1 = $('<div></div>').addClass('triangle').appendTo(div1_2);
+			  var div1_2_2 = $('<img />').addClass('topic_img lazy').attr({'alt':title,'width':'230','height':'201','data-original':imgSrc}).appendTo(div1_2);
+			  
 		}else{
-			var div1 = $('<div>').addClass('topic_item').appendTo($(itemAreaID));
+			var div1 = $('<div>').addClass('topic_item topic_item_display').appendTo($(itemAreaID));
 			 //加入话题图片区域
 			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
-			  var div1_2_1 = $('<canvas></canvas>').addClass('triangle').attr({'width':'230','height':'14'}).appendTo(div1_2);
-			  var div1_2_2 = $('<img />').addClass('topic_img').attr('src',imgSrc).appendTo(div1_2);
+			  var div1_2_1 = $('<div></div>').addClass('triangle').appendTo(div1_2);
+			  var div1_2_2 = $('<img />').addClass('topic_img lazy').attr({'alt':title,'width':'230','height':'201','data-original':imgSrc}).appendTo(div1_2);
 			 //加入话题内容区域
 			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
 			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
 			  //加入话题标签区域
 			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
 			   var div1_1_1_1 = $('<span></span>').appendTo(div1_1_1);
-			   $(div1_1_1_1).html('<img src="'+path+'../img/browse/topic_tag.png"/>'+tagName);
+			   $(div1_1_1_1).html('<img src="../img/browse/topic_tag.png"/>'+tagName);
 			  //加入话题文字区域
 			  var div1_1_2 = $('<div>').addClass('topic_item_text').appendTo(div1_1);
 			   var div1_1_2_1 = $('<p></p>').addClass('topic_title').appendTo(div1_1_2);
@@ -214,9 +213,13 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 			   $(div1_1_2_2).html(time+"&nbsp;&nbsp;&nbsp;Alex"+editor);
 			   var div1_1_2_3 = $('<div></div>').addClass('topic_item_num').appendTo(div1_1_2);
 			    var div1_1_2_3_1 = $('<span></span>').addClass('topic_browse').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_1).html('<img src="'+path+'../img/browse/topic_tag.png"/>'+browseNum);
+			    $(div1_1_2_3_1).html('<img src="../img/browse/topic_tag.png"/>'+browseNum);
 			    var div1_1_2_3_2 = $('<span></span>').addClass('topic_vote').appendTo(div1_1_2_3);
-			    $(div1_1_2_3_2).html('<img src="'+path+'../img/browse/topic_vote.png"/>'+support+'/'+oppose);
+			    if (itemCategory=="Y") {
+					$(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support + '/'+oppose);
+				} else{
+					$(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support);
+				}
 		}
 	}
 	

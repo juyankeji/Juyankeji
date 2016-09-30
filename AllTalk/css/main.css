@@ -107,6 +107,7 @@ body
 {
 	display: inline-block;
     padding: 8px 0;
+    width: 96px;
 }
 
 .header_logo img
@@ -203,7 +204,7 @@ body
 	width: 240px;
 	cursor: auto;
 	padding: 16px 0;
-	margin-left: 100px;
+	margin-left: 10%;
 }
 
 .header_personal

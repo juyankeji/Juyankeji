@@ -480,15 +480,15 @@ hr
 {
 	font: 18px simhei;
 	position: relative;
-	width: 200px;
+	width: 320px;
 	height: 50px;
 	margin: 16px auto 0 auto;
 	text-align: center;
 	line-height: 50px;
 	color: #FFFFFF;
-	cursor: pointer;
+	cursor: default;
 	background-color: #F05656;
-	/*visibility: hidden;*/
+	display: none;
 }
 
 .loadMore:hover
@@ -665,4 +665,54 @@ hr
 .specialTopic_time
 {
 	margin-left: 10px;
+}
+
+.spinner {
+  margin: 0px auto 30px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  text-align: center;
+  display: none;
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+ 
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #F05656;
+  border-radius: 100%;
+   
+  -webkit-animation: bouncex 2.0s infinite ease-in-out;
+  animation: bouncex 2.0s infinite ease-in-out;
+}
+ 
+.dot2 {
+	background-color: #0090CC;
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+ 
+@-webkit-keyframes bouncex {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncex {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
 }
