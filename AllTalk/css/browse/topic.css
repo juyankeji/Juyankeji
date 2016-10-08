@@ -114,6 +114,7 @@ iframe{
 .close_input
 {
 	display: inline-block;
+	background: url(../../img/browse/specialTopic/icon_close.png) no-repeat center center;
 	cursor: pointer;
 	width: 100%;
 	height: 100%;
@@ -281,7 +282,6 @@ iframe{
 	font-size: 12px;
     font-family: simhei;
 	float: right;
-	cursor: pointer;
 }
 
 .topic_concerned

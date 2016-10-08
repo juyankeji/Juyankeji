@@ -66,6 +66,11 @@ ul
 	zoom:1;
 } 
 
+.receive{
+	display: none;
+	z-index: -999;
+}
+
 #type_select_area
 {
 	height: 56px;

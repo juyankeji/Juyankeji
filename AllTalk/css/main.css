@@ -642,6 +642,7 @@ h3
 	line-height: 50px;
 	font:bold 40px simhei;
 	color: #FFFFFF;
+	background: url(../img/browse/specialTopic/icon_totop.png) no-repeat center center;
 	background-color: rgba(0,0,0,0.7);
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	border-radius: 25px;

@@ -309,8 +309,32 @@ function loginEffect () {
 	});
 	
 	//关注按钮未登录提示框事件
-	$(".login_tip").find("a").click(function () {
-		$("#login_text").trigger("click");
+//	$(".login_tip").find("a").click(function () {
+//		$("#login_text").trigger("click");
+//	});
+
+	$(".topic_concern_Btn").click(function () {
+		$(".login_tip").html('<p>您需要先<a href="javascript:void(0);">登录</a></p>').show(function () {
+			$(".login_tip").find("a").click(function () {
+				$("#login_text").trigger("click");
+			});
+		});
+	});
+	
+//	function aaa () {
+//		$(".login_tip").find("a").click(function () {
+//			$("#login_text").trigger("click");
+//		});
+//	}
+	
+	
+	//评论页点击评论框时提示登录
+	$(".unlogin").find("a").click(function () {
+		if ($(this).text() == "登录") {
+			$("#login_text").trigger("click");
+		} else{
+			$("#register_text").trigger("click");
+		}
 	});
 	
 }

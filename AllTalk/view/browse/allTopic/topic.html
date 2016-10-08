@@ -114,17 +114,17 @@
 			<div id="topicPage" class="topicPage">
 				<div class="topic_introduction_area">
 					<div class="login_tip">
-						<p>您需要先<a href="javascript:void(0);">登录</a></p>
+						
 					</div>
 					<div class="topic_introduction">
 						<div class="topic_introduction_title">
 							<span class="introduction_title_text">你会听傻子说完他的梦想吗？</span>
-							<div class="topic_concern_Btn">
+							<a class="topic_concern_Btn" href="javascript:void(0);">
 								❤关注话题
-							</div>
-							<div class="topic_concern_Btn topic_concerned">
+							</a>
+							<a class="topic_concern_Btn topic_concerned" href="javascript:void(0);">
 								❤已关注
-							</div>
+							</a>
 						</div>
 						<div class="editor">
 							<a href="javascript:void(0)"><span><img class="tag_img" src="../../../img/browse/topic_tag.png"/>标签</span></a>
@@ -211,7 +211,7 @@
 					<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-support">
 						<!-------正方评论框加载-begin-------->
 						<div id="timeline_input_support" class="cd-timeline-block timeline_input_disply">
-							<div class="cd-timeline-img cd-picture"><span class="close_input" >×</span></div>
+							<div class="cd-timeline-img cd-picture"><span class="close_input" ></span></div>
 							<div class="cd-timeline-content timeline-content-set-support">
 								<div class="comment_input_header">
 									<span class="comment_input_operate btn_emo"></span>
@@ -765,7 +765,7 @@
 					<section id="cd-timeline" class="topic_comment_area_content cd-container cssanimations cd-timeline-oppose">
 						<!-------反方评论框加载-begin-------->
 						<div id="timeline_input_oppose" class="cd-timeline-block even-cd-timeline-block timeline_input_disply">
-							<div class="cd-timeline-img cd-movie close_input">×</div>
+							<div class="cd-timeline-img cd-movie"><span class="close_input" ></span></div>
 							<div class="cd-timeline-content timeline-content-set-oppose">
 								<div class="comment_input_header">
 									<span class="comment_input_operate btn_emo"></span>
@@ -1163,6 +1163,14 @@
 			console.log($(this).parents(".isay_text_area").find(".target1").attr("standstate"));
 		});
 	</script>
+<!--	
+	<script type="text/javascript">
+		function aaa () {
+			$(".login_tip").find("a").click(function () {
+				$("#login_text").trigger("click");
+			});
+		}
+	</script>-->
 	<div id="loginBox" class="loginBox"></div>
 	</body>
 </html>

@@ -155,10 +155,10 @@ $(document).ready(function () {
 	}
 	
 	//获取三级菜单的catalog-id
-	$(".header_third_index li").click(function () {
-//		$(this).attr("data-catalog-id");
-		console.log($(this).attr("data-catalog-id"));
-	});
+//	$(".header_third_index li").click(function () {
+//		a= $(this).attr("data-catalog-id");
+//	});
+	
 	
 	//鼠标滚动加载剩余话题
 	$(function dynamicLoadTopic () {
@@ -205,6 +205,7 @@ $(document).ready(function () {
 				}else{
 					function getNum () {
 						//向服务器请求数据...
+						console.log($(".receive").text());
 						var ajaxNum = 20;//获取ajax加载的话题条目数量
 						if (ajaxNum!=0) {
 							ajaxTopicSum = ajaxNum;		//将获取的话题条数设置为提取出来的话题条数

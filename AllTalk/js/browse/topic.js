@@ -31,7 +31,6 @@ $(document).ready(function () {
 		if (!isChecked) {
 			var sn = parseInt($(this).find("p").text())+1;
 			$(this).find("p").text(sn);
-			console.log(sn);
 			isChecked = true;
 		}
 		
