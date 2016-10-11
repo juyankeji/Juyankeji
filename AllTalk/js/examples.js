@@ -162,11 +162,17 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
     }
    
 	//构建item内的元素
-	function addTopicItem (itemAreaID,tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemCategory,itemType) {		
+	function addTopicItem (itemAreaID,ID,tagName,title,time,editor,browseNum,support,oppose,imgSrc,colorType,itemCategory,itemType) {		
 		if (itemType == "1") {
 			var div1 = $('<div>').addClass('topic_item topic_item_display').appendTo($(itemAreaID));
+			if (itemCategory == "Y") {
+				var tagA = $('<a></a>').attr('href','/?r=post/vote&id='+ID).appendTo(div1);
+			} else{
+				var tagA = $('<a></a>').attr('href','/?r=post/view&id='+ID).appendTo(div1);
+			}
+			
 			 //加入话题内容区域
-			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
+			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(tagA);
 			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
 			  //加入话题标签区域
 			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
@@ -188,18 +194,23 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 					$(div1_1_2_3_2).html('<img src="../img/browse/topic_vote.png"/>' + support);
 				}
 			 //加入话题图片区域
-			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
+			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(tagA);
 			  var div1_2_1 = $('<div></div>').addClass('triangle').appendTo(div1_2);
 			  var div1_2_2 = $('<img />').addClass('topic_img lazy').attr({'alt':title,'width':'230','height':'201','data-original':imgSrc}).appendTo(div1_2);
 			  
 		}else{
 			var div1 = $('<div>').addClass('topic_item topic_item_display').appendTo($(itemAreaID));
+			if (itemCategory == "Y") {
+				var tagA = $('<a></a>').attr('href','/?r=post/vote&id='+ID).appendTo(div1);
+			} else{
+				var tagA = $('<a></a>').attr('href','/?r=post/view&id='+ID).appendTo(div1);
+			}
 			 //加入话题图片区域
-			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(div1);
+			 var div1_2 = $('<div>').addClass('topic_item_img').appendTo(tagA);
 			  var div1_2_1 = $('<div></div>').addClass('triangle').appendTo(div1_2);
 			  var div1_2_2 = $('<img />').addClass('topic_img lazy').attr({'alt':title,'width':'230','height':'201','data-original':imgSrc}).appendTo(div1_2);
 			 //加入话题内容区域
-			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(div1);
+			 var div1_1 = $('<div>').addClass('topic_item_content').appendTo(tagA);
 			 $(div1_1).attr({'colorType':colorType,'itemType':itemType});
 			  //加入话题标签区域
 			  var div1_1_1 = $('<div>').addClass('topic_tag').appendTo(div1_1);
@@ -223,7 +234,77 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 		}
 	}
 	
-	
+	//构建正反方评论树的评论
+	function addComment (i,commentType,userPicURL,userName,userPageURL,commentTime,likeNum,commentContent,commentNum) {
+		$('<!--评论块——cd-timeline-block'+(i+1)+'-->').appendTo($("#cd-timeline"));
+		if (commentType=="Y") {
+			var div1 = $('<div>').addClass('cd-timeline-block').appendTo($(".cd-timeline-support"));
+			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-picture').appendTo(div1);
+			  div1_1.html('P');
+		}
+		else if (commentType=="N") {
+			var div1 = $('<div>').addClass('cd-timeline-block even-cd-timeline-block').appendTo($(".cd-timeline-oppose"));
+			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-movie').appendTo(div1);
+			  div1_1.html('N');
+		}
+		 var div1_2 = $('<div>').addClass('cd-timeline-content').appendTo(div1);
+		  var div1_2_1 = $('<div></div>').addClass("comment_header").appendTo(div1_2);
+		   var div1_2_1_1 = $('<div></div>').addClass("pikachusPic").appendTo(div1_2_1);
+		    var div1_2_1_1_1 = $('<a></a>').appendTo(div1_2_1_1);
+		    div1_2_1_1_1.attr("href",userPageURL);
+		    div1_2_1_1_1.html('<img src="'+userPicURL+'" />');
+		   var div1_2_1_2 = $('<div></div>').addClass("pikachusName").appendTo(div1_2_1);
+		    var div1_2_1_2_1 = $('<div></div>').addClass("pikachu_name").appendTo(div1_2_1_2);
+		     var div1_2_1_2_1_1 = $('<a></a>').appendTo(div1_2_1_2_1);
+		     div1_2_1_2_1_1.attr("href",userPageURL);
+		     div1_2_1_2_1_1.html(userName);
+		    var div1_2_1_2_2 = $('<div></div>').addClass("pikachu_time").appendTo(div1_2_1_2);
+		    div1_2_1_2_2.html(commentTime);
+		   var div1_2_1_3 = $('<div></div>').addClass("like_area").appendTo(div1_2_1);
+		    var div1_2_1_3_1 = $('<div></div>').addClass("like").appendTo(div1_2_1_3);
+		    div1_2_1_3_1.attr("isChecked","false");
+		     var div1_2_1_3_1_1 = $('<div></div>').appendTo(div1_2_1_3_1);
+		     div1_2_1_3_1_1.html(likeNum);
+		    var div1_2_1_3_2 = $('<div></div>').addClass("unlike").appendTo(div1_2_1_3);
+		    div1_2_1_3_2.attr("isChecked","false");
+		  
+		  var div1_2_2 = $('<div></div>').addClass("comment_content").appendTo(div1_2);
+		  div1_2_2.html(commentContent);
+		  
+		if (commentType=="Y") {
+			var div1_2_3 = $('<div></div>').addClass("comment_footer mark colorRed").appendTo(div1_2);
+		} else{
+			var div1_2_3 = $('<div></div>').addClass("comment_footer mark colorBlue").appendTo(div1_2);
+		}
+		   var div1_2_3_1 = $('<div></div>').addClass("comment_footer1").appendTo(div1_2_3);
+		    var div1_2_3_1_1 = $('<span></span>').appendTo(div1_2_3_1);
+		    div1_2_3_1_1.html(commentNum+"条评论");
+		   var div1_2_3_2 = $('<div></div>').addClass("comment_footer2").appendTo(div1_2_3);
+		    var div1_2_3_2_1 = $('<span></span>').appendTo(div1_2_3_2);
+		    div1_2_3_2_1.html("回复");
+		   var div1_2_3_3 = $('<div></div>').addClass("comment_footer3").appendTo(div1_2_3);
+		    var div1_2_3_3_1 = $('<span></span>').appendTo(div1_2_3_3);
+		    div1_2_3_3_1.html("举报");
+		 var div1_3 = $('<div></div>').addClass('comment_reply bounce-down').appendTo(div1);
+		 div1_3.attr("id","comment_reply");
+		  var div1_3_1 = $('<div></div>').addClass("comment_reply_input").appendTo(div1_3);
+		  var div1_3_1_1 = $('<div></div>').addClass("isay_text_area area_display").appendTo(div1_3_1);
+		   var div1_3_1_1_1 = $('<textarea></textarea>').addClass("target1").appendTo(div1_3_1_1);
+		   div1_3_1_1_1.attr({'id':'target1','placeholder':''})
+		   var div1_3_1_1_2 = $('<div></div>').addClass("isay_text_operate").appendTo(div1_3_1_1);
+		    var div1_3_1_1_2_1 = $('<div></div>').addClass("isay_text_operate_emotion").appendTo(div1_3_1_1_2);
+		    var div1_3_1_1_2_2 = $('<div></div>').addClass("isay_text_operate_picture").appendTo(div1_3_1_1_2);
+		    var div1_3_1_1_2_3 = $('<div></div>').addClass("text_support").appendTo(div1_3_1_1_2);
+		    div1_3_1_1_2_3.html('<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support" /><label></label>&nbsp;正方');
+		    var div1_3_1_1_2_4 = $('<div></div>').addClass("text_oppose").appendTo(div1_3_1_1_2);
+		    div1_3_1_1_2_4.html('<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose" /><label></label>&nbsp;反方');
+		    var div1_3_1_1_2_5 = $('<input />').addClass("comment_btn").appendTo(div1_3_1_1_2);
+		    div1_3_1_1_2_5.attr({'type':'button','id':'comment_btn','value':'评论'});
+		    var div1_3_1_1_2_6 = $('<input />').addClass("comment_btn2").appendTo(div1_3_1_1_2);
+		    div1_3_1_1_2_6.attr({'type':'button','value':'取消'});
+		    var div1_3_2 = $('<div></div>').addClass("fallback").appendTo(div1_3);
+		    div1_3_2.html("收起");
+	}
 	
 //图片替换函数
 function changeImg (elementLoc,imgSrc) {

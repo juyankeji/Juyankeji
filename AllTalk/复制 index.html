@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>聚言-等你来较真</title>
+	</head>
+	<body>
+		<div id="main">
+			<!-------导航栏_top---------->
+			<div id="header" class="header">
+				<div id="header_content" class="header_content">
+					<!--logo-->
+					<div id="header_logo" class="header_logo">
+						<a href="/AllTalk/index.html"><img src="img/聚言-LOGO_01.png" border="0" /></a>
+					</div>
+					<!--导航-->
+					<div id="header_index" class="header_index">
+						<a href="javascript:void(0);">
+							<div id="header_index_all" class="header_index_all" onclick="window.open('index.html','_self')" >
+								<p id="header_index_text" class="header_index_text">
+									<span class="header_span_txt">首页</span>
+								</p>
+							</div>
+						</a>
+						<div id="header_index_subject" class="header_index_all" onclick="window.open('#','_self')" >
+							<p  class="header_index_text">
+								<span class="header_span_txt">专题</span>
+							</p>
+						</div>
+						<div id="header_index_topic" class="header_index_all" onclick="window.open('view/personal_index.html','_self')" >
+							<p  class="header_index_text">
+								<span class="header_span_txt">话题</span>
+							</p>
+						</div>
+						<div id="header_select" class="header_select">
+							<div id="header_select_text" class="header_select_text">
+								<form action="" method="post">
+									<input type="search" name="header_select_input" id="header_select_input" placeholder="搜索" value="" />
+									<div id="select_line"></div>
+									<input type="submit" class="header_search_button" onsubmit="return searchValidate()" value=""/>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!--个人信息-->
+					<div id="header_personal" class="header_personal">
+						<div id="header_notice" class="icon_message">
+							<div class="header_notic_img">
+								<a href="javascript:void(0);">
+									<img src="img/login/notic.png"/>
+									<em class="header_notic_count">4</em>
+								</a>
+							</div>
+							<div class="header_notice_content">
+								<div class="notice_content_up">
+									<span>关注人</span><span>话题</span>
+								</div>
+								<ul>
+									<li>
+										<a href="javascript:void(0);">
+											<span class="notice_content_pic">
+												<img src=""/>
+											</span>
+										</a>
+										<span class="notice_content_area">
+											<div class="notice_content_name">
+												<a href="javascript:void(0);">昵称</a>
+											</div>
+											<div class="notice_content_text">
+												内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+											</div>
+										</span>
+									</li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">2</em>@我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">3</em>收到的赞</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">4</em>新粉丝</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">5</em>我的通知</a></li>
+								</ul>
+								<div class="notice_content_bottom">
+									查看全部
+								</div>
+							</div>
+						</div>
+						<div id="header_message" class="icon_message">
+							<div class="header_message_img">
+								<a href="javascript:void(0);">
+									<img src="img/login/message.png"/>
+									<em class="header_message_count">2</em>
+								</a>
+							</div>
+							<div class="header_message_content">
+								<ul>
+									<li><a href="javascript:void(0);"><em class="message_content_num">1</em>回复我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">2</em>@我的</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">3</em>收到的赞</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">4</em>新粉丝</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">5</em>我的通知</a></li>
+									<li><a href="javascript:void(0);"><em class="message_content_num">6</em>我的私信</a></li>
+								</ul>
+							</div>
+						</div>
+						<div id="personal_pic" class="personal_pic">
+							<img src="img/unlogin.png" class="personal_pic_unlogin" />
+							<div id="username" class="username"><a href="/AllTalk/view/user/personal.html">用户名</a></div>
+						</div>
+					</div>
+					<div class="signUp">
+						<span id="login_text" class="login_text zoomIn dialog">登录</span>
+						|
+						<span id="register_text" class="register_text zoomIn dialog">注册</span>
+						<!--|
+						<span id="test_text" class="test_text">测试</span>-->
+					</div>
+				</div>
+			</div>
+			
+			<!-------主体部分------------>
+			<div id="content" class="content">
+				<!--焦点图轮播-->
+				<div class="section section1" id="section1">
+					<div class="slide active slide1"><a href="javascript:void(0);"><img src="img/white.gif" data-original = "img/homepage/fouce/fouce_1.jpg"/></a></div>
+    				<div class="slide slide2"><img src="img/white.gif" data-original = "img/homepage/fouce/fouce_2.jpg"/></div>
+    				<div class="slide slide3"><img src="img/white.gif" data-original = "img/homepage/fouce/fouce_3.jpg"/></div>
+				</div>
+				<!--社会民生类-->
+				<div class="section section2" id="section2">
+					<ul class="backgroundSet">
+						<li class="background_img_1" style="opacity: 1;"><img src="img/homepage/society/shms1.jpg" data-original = "img/homepage/society/shms1.jpg" /></li>
+						<li class="background_img_2 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/society/shms2.jpg" /></li>
+						<li class="background_img_3 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/society/shms3.jpg" /></li>
+						<li class="background_img_4 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/society/shms4.jpg" /></li>
+						<li class="background_img_5 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/society/shms5.jpg" /></li>
+						<li class="background_img_6 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/society/shms6.jpg" /></li>
+					</ul>
+					<div class="black"></div><!--半透明遮罩-->
+					<div id="section_1" class="section_1">
+						<div id="sectionType1" class="sectionType">
+						<span id="sectionType_span1" class="sectionType_span">
+							<h1>社会民生</h1>
+							<p>观社会万象，论民生百态</p>
+						</span>
+						<ul class="section_intro_area item_intro_disply">
+							<h3>导读：</h3>
+							<li class="item_intro_1 item_intro_disply">
+								<p>1和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+							<li class="item_intro_2 item_intro_disply">
+								<p>2和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+							<li class="item_intro_3 item_intro_disply">
+								<p>3和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+							<li class="item_intro_4 item_intro_disply">
+								<p>4和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+							<li class="item_intro_5 item_intro_disply">
+								<p>5和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+							<li class="item_intro_6 item_intro_disply">
+								<p>6和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊</p>
+								<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了</p>
+								<!--<p>而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好看哈官方噶了股份公司的部分呢奥if哦啊而垃圾费哈古哈空间干哈了和监控如何更好地发挥挂哈人太好</p>-->
+								<a href="#section1">进去看看>></a>
+							</li>
+						</ul>
+						</div>
+						<img src="img/homepage/circle_out.png" class="section_img"/>
+					</div>
+					
+					<div id="items1_1" class="items_1">拐卖儿童是否应该判处死刑？</div>
+					<div id="items1_2" class="items_2">你愿意承受雾霾等代价在南方集中供暖吗？</div>
+					<div id="items1_3" class="items_3">讨论：如何看待春晚导演不请六小龄童上春晚事件？</div>
+					<div id="items1_4" class="items_4">人工智能是否会超过并取代人类？</div>
+					<div id="items1_5" class="items_5">快播案件公开庭审，你觉得快播有罪么？</div>
+					<div id="items1_6" class="items_6">交朋友你会选择广而泛还是窄而深？</div>
+				</div>
+				<!--生活休闲类-->
+				<div class="section section3" id="section3">
+					<ul class="backgroundSet">
+						<li class="background_img_1" style="opacity: 1;"><img src="img/homepage/lifestyle/shxx1.jpg" data-original = "img/homepage/lifestyle/shxx1.jpg" /></li>
+						<li class="background_img_2 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/lifestyle/shxx2.jpg" /></li>
+						<li class="background_img_3 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/lifestyle/shxx3.jpg" /></li>
+						<li class="background_img_4 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/lifestyle/shxx4.jpg" /></li>
+						<li class="background_img_5 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/lifestyle/shxx5.jpg" /></li>
+						<li class="background_img_6 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/lifestyle/shxx6.jpg" /></li>
+					</ul>
+					<div class="black"></div>
+					<div id="section_2" class="section_2">
+						<div id="sectionType1" class="sectionType">
+						<span id="sectionType_span2" class="sectionType_span">
+							<h1>生活休闲</h1>
+							<p>衣食住行皆日常</p>
+						</span>
+						</div>
+						<img src="img/homepage/circle_out.png" class="section_img"/>
+					</div>
+					<div id="items2_1" class="items_1">去日本旅游，你会选择跟团行还是自助行？</div>
+					<div id="items2_2" class="items_2">家庭聚餐AA制，你觉得可行吗？</div>
+					<div id="items2_3" class="items_3">讨论：给你1000万，你会怎么花？</div>
+					<div id="items2_4" class="items_4">生活中不停的自拍行为是否让你厌烦？</div>
+					<div id="items2_5" class="items_5">泡面算不算美食？</div>
+					<div id="items2_6" class="items_6">长相还是品性会成为你择偶的第一要素？</div>
+				</div>
+				<!--娱乐游戏类-->
+				<div class="section section4" id="section4">
+					<ul class="backgroundSet">
+						<li class="background_img_1" style="opacity: 1;"><img src="img/homepage/game/ylyx1.jpg" data-original = "img/homepage/game/ylyx1.jpg" /></li>
+						<li class="background_img_2 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/game/ylyx2.jpg" /></li>
+						<li class="background_img_3 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/game/ylyx3.jpg" /></li>
+						<li class="background_img_4 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/game/ylyx4.jpg" /></li>
+						<li class="background_img_5 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/game/ylyx5.jpg" /></li>
+						<li class="background_img_6 background_img_display"><img src="img/grey.gif" data-original = "img/homepage/game/ylyx6.jpg" /></li>
+					</ul>
+					<div class="black"></div>
+					<div id="section_3" class="section_3">
+						<div id="sectionType1" class="sectionType">
+						<span id="sectionType_span3" class="sectionType_span">
+							<h1>娱乐游戏</h1>
+							<p>嬉笑怒骂寻消遣</p>
+						</span>
+						</div>
+						<img src="img/homepage/circle_out.png" class="section_img"/>
+					</div>
+					<div id="items3_1" class="items_1">金州勇士会获得16年NBA总冠军么？</div>
+					<div id="items3_2" class="items_2">章子怡会成为汪峰的最后一任妻子么？</div>
+					<div id="items3_3" class="items_3">讨论：说说你玩过让你难忘终身的游戏。</div>
+					<div id="items3_4" class="items_4">暴雪公司是世界第一大影视公司么？</div>
+					<div id="items3_5" class="items_5">五月天是伪摇滚么？</div>
+					<div id="items3_6" class="items_6">杨幂的演技真的很烂么？</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	
+	
+	
+	
+	
+	
+	<!--CSS-->
+	<!--全局样式-->
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+	<!--局部样式-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+	<link rel="stylesheet" type="text/css" href="css/sectionArea.css"/>
+	<!--javascript-->
+	<!--全局js-->
+	<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="resources/layer/layer.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js" ></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+	<script type="text/javascript" src="js/homeIndex.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>-->
+	<!--首页局部js-->
+	<script type="text/javascript" src="js/jquery.fullpage.js"></script>
+	<script type="text/javascript" src="js/fullPage.js"></script>
+	<!--登录窗口-->
+	<div id="loginBox" class="loginBox">
+		<div id="login_area_top" class="login_area_top">
+			<div class="login_area_top_logo">
+				<h3>聚言</h3>
+			</div>
+			<div class="login_area_top_border"></div>
+		</div>
+		<!--登录窗体-->
+		<form action="index.html" method="post" onsubmit="return false;" id="login_form_area" class="login_form_area">
+			<ul class="list">
+				
+				<li>
+					<div class="fl">
+						<img src="img/login/user 01.png" class="input_img" />
+						<input type="text" id="loginUsername" name="loginUsername" class="ipt login_input" placeholder="邮箱/用户名" />
+						<p id="p1_1">
+							<label id="loginUsername-error" class="error" for="loginUsername"></label>
+						</p>
+					</div>
+				</li>
+			
+				<li>
+					<div class="fl">
+						<img src="img/login/password 01.png" class="input_img"/>
+						<input type="password" id="loginPassword" name="loginPassword" class="ipt login_input" placeholder="密码" />
+						<p id="p1_2">
+							<label class="login_error" for="loginPassword">账号或密码错误！</label>
+						</p>
+					</div>
+				</li>
+				<li><input type="submit" value="登&nbsp&nbsp&nbsp录" class="submitBtn" id="loginBtn" /></li>
+				<li>
+					<div id="remember" class="fl">
+						<input type="checkbox" name="rememberId" id="rememberId" value=""/><label for="rememberId">&nbsp;下次自动登录</label>
+						<span id="remember_forget">忘记密码</span>
+					</div>
+				</li>
+				<li>
+					<div class="icon">
+						<img src="img/login/QQ 01.png" name="qq" style="margin-left: 0;" />
+						<img src="img/login/weixin 01.png" name="weixin" />
+						<img src="img/login/weibo 01.png" name="weibo" />
+					</div>
+					<div id="register_button">注册</div>
+				</li>
+			</ul>
+		</form>
+		<!--注册窗体-->
+		<form action="" method="post" onsubmit="return registerValidate();" id="register_form_area" class="register_form_area">
+			<ul class="list">
+				<li>
+				</li>
+				<li>
+					<div class="fl">
+						<img src="img/login/user 01.png" class="input_img" />
+						<input type="text" id="registerUsername" name="registerUsername" class="ipt register_input" placeholder="输入电子邮箱" />
+						<p id="p2_1">
+							<label class="repeat" for="registerUsername">该邮箱已被注册！</label>
+							<label class="available" for="registerUsername">该邮箱可用！</label>
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="fl">
+						<img src="img/login/password 01.png" class="input_img" />
+						<input type="password" id="registerPassword" name="registerPassword" class="ipt register_input" placeholder="设定密码" />
+						<p id="p2_2"></p>
+					</div>
+				</li>
+				<li>
+					<div class="fl">
+						<img src="img/login/password 01.png" class="input_img" />
+						<input type="password" id="registerPassword2" name="registerPassword2" class="ipt register_input" placeholder="确认密码" />
+						<p id="p2_3"></p>
+					</div>
+				</li>
+				<li>
+					<div class="fl">
+						<input type="text" id="verification" name="verification" class="verification_input" placeholder="请输入验证码" />
+						<img src="img/聚言-LOGO_01.png"/ class="verification_img">
+						<p id="p2_3"></p>
+					</div>
+				</li>
+				<li><input type="submit" value="注&nbsp&nbsp&nbsp册" class="submitBtn" id="registerBtn" for="register_form_area" /></li>
+				<li>
+					<div id="remember" class="fl">
+						<input type="checkbox" name="rememberId" id="readed" value=""/><label for="rememberId" class="declaration">&nbsp;已阅读<a href="test.html">《聚言免责声明》</a></label>
+						<span id="returnLogin">已有账号→</span>
+					</div>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<!--登录窗口-->
+	<!--登录窗口依赖文件-->
+	<link rel="stylesheet" type="text/css" href="css/login/animate.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login/loginArea.css"/>
+	<script type="text/javascript" src="js/login/jquery.hDialog.min.js"></script>
+	<script type="text/javascript" src="js/login/icheck.js"></script>
+	<script type="text/javascript" src="js/login/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/login/login.js"></script>
+	<script type="text/javascript">
+		$("#loginBtn").click(function () {
+			var data = 1;
+			if (data!=1) {
+				$("#p1_2").find("label.login_error").css("display","inherit");
+			}
+		});
+	</script>
+	</body>
+</html>

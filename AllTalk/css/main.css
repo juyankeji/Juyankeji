@@ -209,9 +209,11 @@ body
 
 .header_personal
 {
-	float: right;
+	position: absolute;
 	color: #999999;
 	font-size: 0;
+	top: 0;
+	right: 0;
 }
 
 .header_index_text
@@ -523,6 +525,8 @@ body
     font-size: 12px;
     vertical-align: top;
     line-height: 64px;
+    width: 72px;
+    top: 0;
 }
 
 #login_text:hover,#register_text:hover
@@ -589,8 +593,8 @@ h3
 	text-align: center;
 	width: 1002px;
 	height: 20px;
-	font: 14px simhei;
-	color: #999999;
+	font-size: 12px;
+	color: #444444;
 	bottom: 0;
 }
 

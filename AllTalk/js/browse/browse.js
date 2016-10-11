@@ -43,9 +43,13 @@ $(document).ready(function () {
 					opacity:1,
 					width:'100%'
 				},1000);
+				var wt = $(".header_third_content1").width();
+				var ls = $(this).position().left;
+				var ws = $(this).width();
+				var lt = ls+ws/2-wt/2+20;
 				$(".header_third_content1").css("visibility","visible");
 				$(".header_third_content2,.header_third_content3").stop().animate({left:'-14.5px',opacity:0},500);
-				$(".header_third_content1").animate({left:'-14.5px',opacity:1},500);
+				$(".header_third_content1").animate({left:lt,opacity:1},500);
 				$(".header_third_content2,.header_third_content3").css("visibility","hidden");
 				break;
 			case "shxx":
@@ -53,9 +57,13 @@ $(document).ready(function () {
 					opacity:1,
 					width:'100%'
 				},1000);
+				var wt = $(".header_third_content2").width();
+				var ls = $(this).position().left;
+				var ws = $(this).width();
+				var lt = ls+ws/2-wt/2+20;
 				$(".header_third_content2").css("visibility","visible");
 				$(".header_third_content1,.header_third_content3").stop().animate({left:'145.5px',opacity:0},500);
-				$(".header_third_content2").animate({opacity:1,left:'145.5px'},500);
+				$(".header_third_content2").animate({opacity:1,left:lt},500);
 				$(".header_third_content1,.header_third_content3").css("visibility","hidden");
 				break;
 			case "ylyd":
@@ -63,9 +71,13 @@ $(document).ready(function () {
 					opacity:1,
 					width:'100%'
 				},1000);
+				var wt = $(".header_third_content3").width();
+				var ls = $(this).position().left;
+				var ws = $(this).width();
+				var lt = ls+ws/2-wt/2+20;
 				$(".header_third_content3").css("visibility","visible");
 				$(".header_third_content1,.header_third_content2").stop().animate({left:'306.5px',opacity:0},500);
-				$(".header_third_content3").animate({opacity:1,left:'306.5px'},500);
+				$(".header_third_content3").animate({opacity:1,left:lt},500);
 				$(".header_third_content1,.header_third_content2").css("visibility","hidden");
 				break;
 			default:
@@ -213,6 +225,7 @@ $(document).ready(function () {
 							for (var i=0;i<ajaxNum;i++) {
 								addTopicItem(
 									"#topic_area",
+									sql[i].id,
 									sql[i].tagName,
 									sql[i].title,
 									sql[i].time,

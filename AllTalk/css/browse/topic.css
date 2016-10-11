@@ -205,6 +205,11 @@ iframe{
     background: #444444;
 }
 
+.receive_t{
+	display: none;
+	z-index: -999;
+}
+
 .login_tip
 {
 	width: 135px;
@@ -756,6 +761,8 @@ ul
 	position: relative;
 	font-size: 0;
 	float: left;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .pikachusPic img
@@ -1743,10 +1750,11 @@ ul
 	width: 45px;
 	height: 45px;
 	background-color: #CCCCCC;
-	border-radius: 30px;
+	border-radius: 50%;
 	border: solid 2px #FFFFFF;
 	display: inline-block;
 	float: left;
+	overflow: hidden;
 }
 
 .title_pic img{

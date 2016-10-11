@@ -38,7 +38,6 @@ $(document).ready(function () {
 	
 	//点击正反方评论框按钮效果（向评论树添加评论）
 	$(".comment_support_btn").click(function () {
-		
 		$("#timeline_input_support").removeClass("timeline_input_disply");
 		$("#timeline_input_oppose").removeClass("timeline_input_disply");
 		$("#timeline_input_oppose").addClass("timeline_input_visibility");
@@ -59,245 +58,192 @@ $(document).ready(function () {
 		$("#timeline_input_support").addClass("timeline_input_disply");
 	});
 	
-	//评论测试数据
+	//正反方评论树测试数据
 	var sql=[{
-				'commentType':'support',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'11',
+				'userName':'!11',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'2016/07/24 14:52:12',
 				'likeNum':'11',
 				'commentContent':'真理惟一可靠的标准就是永远自相符合。 —— 欧文',
 				'commentNum':'11'
 			 },
 			 {
-				'commentType':'oppose',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'22',
+				'userName':'!22',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'2016/07/23 14:52:12',
 				'likeNum':'22',
 				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'22'
 			 },
 			 {
-				'commentType':'support',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'33',
+				'userName':'!33',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'33',
 				'commentContent':'我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田',
 				'commentNum':'33'
 			 },
 			 {
-				'commentType':'oppose',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'44',
+				'userName':'!44',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'44',
 				'commentContent':'时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多',
 				'commentNum':'44'
 			 },
 			 {
-				'commentType':'support',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'55',
+				'userName':'!55',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'55',
 				'commentContent':'世界上一成不变的东西，只有“任何事物都是在不断变化的”这条真理。 —— 斯里兰卡',
 				'commentNum':'55'
 			 },
 			 {
-				'commentType':'oppose',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'66',
+				'userName':'!66',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'66',
 				'commentContent':'过放荡不羁的生活，容易得像顺水推舟，但是要结识良朋益友，却难如登天。 —— 巴尔扎克',
 				'commentNum':'66'
 			 },
 			 {
-				'commentType':'support',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'77',
+				'userName':'!77',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'77',
 				'commentContent':'这世界要是没有爱情，它在我们心中还会有什么意义！这就如一盏没有亮光的走马灯。 —— 歌德',
 				'commentNum':'77'
 			 },
 			 {
-				'commentType':'oppose',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'88',
+				'userName':'!88',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'88',
 				'commentContent':'生活有度，人生添寿。 —— 书摘',
 				'commentNum':'88'
 			 },
 			 {
-				'commentType':'support',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'99',
+				'userName':'!99',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'99',
 				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'99'
 			 },
 			 {
-				'commentType':'oppose',
+				'commentType':'Y',
 				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
+				'userName':'!00',
+				'userPageURL':'../../../view/user/personal.html',
 				'commentTime':'07/20 11:52',
 				'likeNum':'00',
 				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
 				'commentNum':'00'
-			 },
-			 {
-				'commentType':'oppose',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
-				'commentNum':'00'
-			 },
-			 {
-				'commentType':'support',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
-				'commentNum':'00'
-			 },
-			 {
-				'commentType':'oppose',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'爱情原如树叶一样，在人忽视里绿了，在忍耐里露出蓓蕾。 —— 何其芳',
-				'commentNum':'00'
-			 },
-			 {
-				'commentType':'oppose',
-				'userPicURL':'../../../img/personal/strangerPic.png',
-				'userName':'00',
-				'commentTime':'07/20 11:52',
-				'likeNum':'00',
-				'commentContent':'土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基',
-				'commentNum':'00'
-			 },			 
+			 }
 	]
 	
-	//构建评论树评论
-	function addComment (i,commentType,userPicURL,userName,commentTime,likeNum,commentContent,commentNum) {
-		$('<!--评论块——cd-timeline-block'+(i+1)+'-->').appendTo($("#cd-timeline"));
-		if (commentType=="support") {
-			var div1 = $('<div>').addClass('cd-timeline-block').appendTo($(".cd-timeline-support"));
-			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-picture').appendTo(div1);
-			  div1_1.html('P');
-		}
-		else if (commentType=="oppose") {
-			var div1 = $('<div>').addClass('cd-timeline-block even-cd-timeline-block').appendTo($(".cd-timeline-oppose"));
-			 var div1_1 = $('<div>').addClass('cd-timeline-img cd-movie').appendTo(div1);
-			  div1_1.html('N');
-		}
-		 var div1_2 = $('<div>').addClass('cd-timeline-content').appendTo(div1);
-		  var div1_2_1 = $('<div></div>').addClass("comment_header").appendTo(div1_2);
-		   var div1_2_1_1 = $('<div></div>').addClass("pikachusPic").appendTo(div1_2_1);
-		    var div1_2_1_1_1 = $('<a></a>').appendTo(div1_2_1_1);
-		    div1_2_1_1_1.attr("href","../../../view/user/personal.html");
-		    div1_2_1_1_1.html('<img src="'+userPicURL+'" />');
-		   var div1_2_1_2 = $('<div></div>').addClass("pikachusName").appendTo(div1_2_1);
-		    var div1_2_1_2_1 = $('<div></div>').addClass("pikachu_name").appendTo(div1_2_1_2);
-		     var div1_2_1_2_1_1 = $('<a></a>').appendTo(div1_2_1_2_1);
-		     div1_2_1_2_1_1.attr("href","../../../view/user/personal.html");
-		     div1_2_1_2_1_1.html(userName);
-		    var div1_2_1_2_2 = $('<div></div>').addClass("pikachu_time").appendTo(div1_2_1_2);
-		    div1_2_1_2_2.html(commentTime);
-		   var div1_2_1_3 = $('<div></div>').addClass("like_area").appendTo(div1_2_1);
-		    var div1_2_1_3_1 = $('<div></div>').addClass("like").appendTo(div1_2_1_3);
-		    div1_2_1_3_1.attr("isChecked","false");
-		     var div1_2_1_3_1_1 = $('<div></div>').appendTo(div1_2_1_3_1);
-		     div1_2_1_3_1_1.html(likeNum);
-		    var div1_2_1_3_2 = $('<div></div>').addClass("unlike").appendTo(div1_2_1_3);
-		    div1_2_1_3_2.attr("isChecked","false");
-		  
-		  var div1_2_2 = $('<div></div>').addClass("comment_content").appendTo(div1_2);
-		  div1_2_2.html(commentContent);
-		  
-		if (commentType=="support") {
-			var div1_2_3 = $('<div></div>').addClass("comment_footer mark colorRed").appendTo(div1_2);
-		} else{
-			var div1_2_3 = $('<div></div>').addClass("comment_footer mark colorBlue").appendTo(div1_2);
-		}
-		   var div1_2_3_1 = $('<div></div>').addClass("comment_footer1").appendTo(div1_2_3);
-		    var div1_2_3_1_1 = $('<span></span>').appendTo(div1_2_3_1);
-		    div1_2_3_1_1.html(commentNum+"条评论");
-		   var div1_2_3_2 = $('<div></div>').addClass("comment_footer2").appendTo(div1_2_3);
-		    var div1_2_3_2_1 = $('<span></span>').appendTo(div1_2_3_2);
-		    div1_2_3_2_1.html("回复");
-		   var div1_2_3_3 = $('<div></div>').addClass("comment_footer3").appendTo(div1_2_3);
-		    var div1_2_3_3_1 = $('<span></span>').appendTo(div1_2_3_3);
-		    div1_2_3_3_1.html("举报");
-		 var div1_3 = $('<div></div>').addClass('comment_reply bounce-in').appendTo(div1);
-		 div1_3.attr("id","comment_reply");
-		  var div1_3_1 = $('<div></div>').addClass("comment_reply_input").appendTo(div1_3);
-		  var div1_3_1_1 = $('<div></div>').addClass("isay_text_area area_display").appendTo(div1_3_1);
-		   var div1_3_1_1_1 = $('<textarea></textarea>').addClass("target1").appendTo(div1_3_1_1);
-		   div1_3_1_1_1.attr({'id':'target1','placeholder':''})
-		   var div1_3_1_1_2 = $('<div></div>').addClass("isay_text_operate").appendTo(div1_3_1_1);
-		    var div1_3_1_1_2_1 = $('<div></div>').addClass("isay_text_operate_emotion").appendTo(div1_3_1_1_2);
-		    var div1_3_1_1_2_2 = $('<div></div>').addClass("isay_text_operate_picture").appendTo(div1_3_1_1_2);
-		    var div1_3_1_1_2_3 = $('<div></div>').appendTo(div1_3_1_1_2);
-		    div1_3_1_1_2_3.attr("id","text_support").html('<input type="checkbox" name="" id="checkbox_support" class="checkbox" value="support" /><label for="checkbox_support"></label>&nbsp;正方');
-		    var div1_3_1_1_2_4 = $('<div></div>').appendTo(div1_3_1_1_2);
-		    div1_3_1_1_2_4.attr("id","text_oppose").html('<input type="checkbox" name="" id="checkbox_oppose" class="checkbox" value="oppose" /><label for="checkbox_oppose"></label>&nbsp;反方');
-		    var div1_3_1_1_2_5 = $('<input />').addClass("comment_btn").appendTo(div1_3_1_1_2);
-		    div1_3_1_1_2_5.attr({'type':'button','id':'comment_btn','value':'评论'});
-		    var div1_3_1_1_2_6 = $('<input />').addClass("comment_btn2").appendTo(div1_3_1_1_2);
-		    div1_3_1_1_2_6.attr({'type':'button','value':'取消'});
-		    var div1_3_2 = $('<div></div>').addClass("fallback").appendTo(div1_3);
-		    div1_3_2.html("收起");
+	
+	
+//	commentBtnEffect();
+	//预加载12条评论
+//	function preLoadComment (currentCommentNum,p) {
+//		for (var i=0;i<p;i++) {
+//			$(".topic_item").eq(i).removeClass("topic_item_display").animate({opacity:1},500);
+//			currentCommentNum++;
+//		}
+//		return currentCommentNum;
+//	}
+
+	//获取传入数据的数量
+	function getAjaxCommentNum () {
+		var getCommentNum = 10;
+		return getCommentNum;
 	}
 	
-	commentBtnEffect();
 	//向评论树添加正反评论
-//	$(function (count) {
-//		for (var i=0;i<sql.length;i++) {
-//			addComment(i,
-//					   sql[i].commentType,
-//					   sql[i].userPicURL,
-//					   sql[i].userName,
-//					   sql[i].commentTime,
-//					   sql[i].likeNum,
-//					   sql[i].commentContent,
-//					   sql[i].commentNum
-//			);
-//			commentBtnEffect();
-//		}
-//	});
-	
-	//鼠标滚动出现评论项目
-	$(function(){
-		var $timeline_block = $('.cd-timeline-block');
-		//hide timeline blocks which are outside the viewport
-		$timeline_block.each(function(){
-			if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
-				$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+	$(function () {
+		var currentCommentNum = 0;
+		var request = true;
+//		console.log(currentCommentNum);
+		$(window).scroll(function () {
+			var scrollBottom = $(document).height() - $(window).height()-160;
+			if (currentCommentNum<=0&&$(window).scrollTop() >= scrollBottom) {
+				function loadCommnet () {
+					//向服务器请求数据...
+	//				getDate();
+					currentCommentNum = getAjaxCommentNum();
+					for (var i=0;i<getAjaxCommentNum();i++) {
+						sql[i].userPageURL = "?r=user/space&id="+sql[i].userPageURL;
+//						console.log(sql[i].userPageURL);
+						addComment(i,
+								   sql[i].commentType,
+								   sql[i].userPicURL,
+								   sql[i].userName,
+								   sql[i].userPageURL,
+								   sql[i].commentTime,
+								   sql[i].likeNum,
+								   sql[i].commentContent,
+								   sql[i].commentNum
+						);
+						currentCommentNum--;
+						setCommentPosition();
+						commentBtnEffect();
+						if (currentCommentNum<=0) {
+							request = true;
+						}
+					}
+					var commentCount = $(".cd-timeline-support").find(".cd-timeline-block").length + $(".cd-timeline-oppose").find(".cd-timeline-block").length;
+//					console.log(commentCount+","+$(".receive_t").text()+","+"getComment!");
+//					console.log(currentCommentNum+","+request);
+				}
+				if (request) {
+					request = false;
+					setTimeout(loadCommnet(),1000);
+				}
 			}
 		});
-		//on scolling, show/animate timeline blocks when enter the viewport
-		$(window).on('scroll', function(){
-			$timeline_block.each(function(){
-				if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.85 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
-					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-				}
-			});
-		});
-	});	
+	});
+	
+	//鼠标滚动出现评论项目
+//	$(function(){
+//		var $timeline_block = $('.cd-timeline-block');
+//		//hide timeline blocks which are outside the viewport
+//		$timeline_block.each(function(){
+//			if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+//				$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+//			}
+//		});
+//		//on scolling, show/animate timeline blocks when enter the viewport
+//		$(window).on('scroll', function(){
+//			$timeline_block.each(function(){
+//				if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.85 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+//					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+//				}
+//			});
+//		});
+//	});	
 	
 	//设置评论条目排列布局
-	$(function setCommentPosition () {
+	function setCommentPosition () {
 		var supportCommentNum = $(".cd-timeline-support").find(".cd-timeline-block");
 		var opposeCommentNum = $(".cd-timeline-oppose").find(".cd-timeline-block");
 		var supportDate = supportCommentNum.eq(1).find(".pikachu_time").text();
@@ -318,40 +264,69 @@ $(document).ready(function () {
 			opposeCommentNum.eq(1).css("margin-top","80px");
 			supportCommentNum.eq(1).css("margin-top","0");
 			for (var i=2;i<dateLenth;i++) {
-//				console.log("1=>"+oppoMarginTo+","+getMarginTop(opposeCommentNum.eq(i-1).css("margin-top"))+","+opposeCommentNum.eq(i-2).height());
-				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
-//				console.log("2=>"+supMarginTo+","+getMarginTop(supportCommentNum.eq(i-1).css("margin-top"))+","+supportCommentNum.eq(i-2).height());
-				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
-				if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
-					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
-				}else{
+				if (opposeCommentNum.eq(i-1).length<1) {
 					supportCommentNum.eq(i).css("margin-top","20px");
-				}
-				if (supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
-					opposeCommentNum.eq(i).css("margin-top",supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
-				}else{
+				}else if (supportCommentNum.eq(i).length<1) {
 					opposeCommentNum.eq(i).css("margin-top","20px");
+				}else{
+	//				console.log("1=>"+oppoMarginTo+","+getMarginTop(opposeCommentNum.eq(i-1).css("margin-top"))+","+opposeCommentNum.eq(i-2).height());
+					oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
+	//				console.log("2=>"+supMarginTo+","+getMarginTop(supportCommentNum.eq(i-1).css("margin-top"))+","+supportCommentNum.eq(i-2).height());
+//					console.log(supportCommentNum.eq(i).length);
+					supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
+					if (oppoMarginTo+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
+						supportCommentNum.eq(i).css("margin-top",oppoMarginTo+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
+					}else{
+						supportCommentNum.eq(i).css("margin-top","20px");
+					}
+					if (supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
+						opposeCommentNum.eq(i).css("margin-top",supMarginTo+supportCommentNum.eq(i-1).height()+getMarginTop(supportCommentNum.eq(i).css("margin-top"))+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
+					}else{
+						opposeCommentNum.eq(i).css("margin-top","20px");
+					}
 				}
 			}
 		}else {
 			supportCommentNum.eq(1).css("margin-top","80px");
 			opposeCommentNum.eq(1).css("margin-top","0");
 			for (var i=2;i<dateLenth;i++) {
-				oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
-				supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
-				if (oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
-					supportCommentNum.eq(i).css("margin-top",oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
-				}else{
+				if (opposeCommentNum.eq(i).length<1) {
 					supportCommentNum.eq(i).css("margin-top","20px");
-				}
-				if (supMarginTo+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
-					opposeCommentNum.eq(i).css("margin-top",supMarginTo+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
-				}else{
+				}else if (supportCommentNum.eq(i-1).length<1) {
 					opposeCommentNum.eq(i).css("margin-top","20px");
+				}else{
+					oppoMarginTo = oppoMarginTo + getMarginTop(opposeCommentNum.eq(i-1).css("margin-top")) + opposeCommentNum.eq(i-2).height();
+					supMarginTo = supMarginTo + getMarginTop(supportCommentNum.eq(i-1).css("margin-top")) + supportCommentNum.eq(i-2).height();
+					if (oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+60 > supMarginTo+supportCommentNum.eq(i-1).height()) {
+						supportCommentNum.eq(i).css("margin-top",oppoMarginTo+opposeCommentNum.eq(i-1).height()+getMarginTop(opposeCommentNum.eq(i).css("margin-top"))+80-(supMarginTo+supportCommentNum.eq(i-1).height()));
+					}else{
+						supportCommentNum.eq(i).css("margin-top","20px");
+					}
+					if (supMarginTo+60 > oppoMarginTo+opposeCommentNum.eq(i-1).height()) {
+						opposeCommentNum.eq(i).css("margin-top",supMarginTo+80-(oppoMarginTo+opposeCommentNum.eq(i-1).height()));
+					}else{
+						opposeCommentNum.eq(i).css("margin-top","20px");
+					}
 				}
 			}
 		}
-	});
+		var $timeline_block = $('.cd-timeline-block');
+		//hide timeline blocks which are outside the viewport
+		$timeline_block.each(function(){
+			if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+			}
+		});
+		//on scolling, show/animate timeline blocks when enter the viewport
+		$(window).on('scroll', function(){
+			$timeline_block.each(function(){
+				if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.85 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+				}
+			});
+		});
+	}
+	setCommentPosition();
 
 	
 	
@@ -513,12 +488,22 @@ $(document).ready(function () {
 			$(this).parents(".comment_reply").prev(".cd-timeline-content").find(".comment_footer2 span").removeClass("comment_footer2_checked_red comment_footer2_checked_blue");
 //			$(this).parent().find(".comment_reply_item").css("display","none");	
 		});
+		addReplyInput();
+		checkBoxSelect();
+		$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
+	        if (this.scrollTop > 0)
+	        {
+	        	this.scrollTop = 0;
+	        	this.style.height = $(this).height()+19+"px";
+	        	
+	        }
+		});
 	}
 	
 	
 
 	//单个评论框弹出与收回以及设置默认回复字段
-	$(function addReplyInput () {
+	function addReplyInput () {
 		$(".comment_reply_item").on("click",".isay_operate_reply",function () {
 			var thisCommentReplay = $(this).parents(".comment_reply_item");
 			$(".isay_text_area_mark").css("display","none");
@@ -548,7 +533,8 @@ $(document).ready(function () {
 		}).on("click",".comment_reply_cancel",function () {
 			$(this).parents(".isay_text_area").css("display","none");
 		});
-	});
+	}
+	addReplyInput();
 	//添加评论框
 //	function addCommentInput (thisCommentReplay) {
 //		var f1 = $('<form>').addClass('isay_text_area isay_text_area_mark').appendTo(thisCommentReplay);
@@ -570,7 +556,7 @@ $(document).ready(function () {
 //		checkBoxSelect();
 //	}
 	
-	$(function checkBoxSelect () {
+	function checkBoxSelect () {
 		//正方勾选
 		$(".isay_text_operate").on("mouseover",".text_support",function () {
 			$(this).find("input[type=checkbox]").removeClass("checkbox_oppose_hover");
@@ -591,12 +577,14 @@ $(document).ready(function () {
 			$(this).parent().find("input[type=checkbox]").removeClass("checkbox_support_check checkbox_oppose_check");
 			$(this).find("input[type=checkbox]").addClass("checkbox_oppose_check");
 		});
-	});
+	}
+	checkBoxSelect();
 	
 	//textarea自动增高
 	$(".isay_text_area").on("input keyup keypress",".target1",function MaxMe() {  
         if (this.scrollTop > 0)
         {
+        	this.style.scrollTop = 0;
         	this.style.height = $(this).height()+19+"px";
         	
         }
