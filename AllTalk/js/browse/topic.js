@@ -211,6 +211,7 @@ $(document).ready(function () {
 							request = true;
 						}
 					}
+					click_getData();
 					var commentCount = $(".cd-timeline-support").find(".cd-timeline-block").length + $(".cd-timeline-oppose").find(".cd-timeline-block").length;
 //					console.log(commentCount+","+$(".receive_t").text()+","+"getComment!");
 //					console.log(currentCommentNum+","+request);
@@ -500,7 +501,7 @@ $(document).ready(function () {
 		});
 	}
 	
-	
+	commentBtnEffect();
 
 	//单个评论框弹出与收回以及设置默认回复字段
 	function addReplyInput () {
@@ -590,10 +591,47 @@ $(document).ready(function () {
         }
 	});
 	
+	//获取评论回复数据
+	function getReplyData (tagNum,thisLoadArea) {
+		//获取数据。。
+//		function..
+		var thisReplyPage = $("<div></div>").addClass("comment_reply_tag").attr("data-pageNum",tagNum).appendTo(thisLoadArea);
+		for (var i=0;i<comment_reply.length;i++) {
+			addReplyComment(thisReplyPage,
+							comment_reply[i].commentType,
+							comment_reply[i].replyCommentType,
+							comment_reply[i].avatarPicURL,
+							comment_reply[i].userName,
+							comment_reply[i].replyName,
+							comment_reply[i].replyCommentContent,
+							comment_reply[i].likeNum,
+							comment_reply[i].replyTime,
+							comment_reply[i].floor
+			);
+		}
+		addReplyInput();
+	}
 	
-	
-	
-	
+	function click_getData () {
+		var pageTagNum = 1;
+		var thisLoadArea; 
+		$(".comment_footer").on("click",".comment_footer1",function () {
+			thisLoadArea = $(this).parents(".cd-timeline-block").find("#comment_reply");
+			getReplyData(pageTagNum,thisLoadArea);
+		});
+		
+		$(".comment_reply").on("click",".reply_next",function () {
+			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+//			console.log(a);
+			pageTagNum++;
+			getReplyData(pageTagNum,thisLoadArea);
+		});
+		
+		$(".comment_reply").on("click",".reply_pre",function () {
+			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+		});
+	}
 	
 	//评论的回复测试数据
 	var comment_reply=[{

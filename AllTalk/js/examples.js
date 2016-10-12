@@ -304,6 +304,10 @@ function ajaxLoad (bindElement,action,triggerElement,loadElement,pageRoute,cssRo
 		    div1_3_1_1_2_6.attr({'type':'button','value':'取消'});
 		    var div1_3_2 = $('<div></div>').addClass("fallback").appendTo(div1_3);
 		    div1_3_2.html("收起");
+		    var div1_3_3 = $('<a></a>').attr("href","javascript:void(0)").addClass("reply_pre").appendTo(div1_3);
+		    div1_3_3.html("←");
+		    var div1_3_4 = $('<a></a>').attr("href","javascript:void(0)").addClass("reply_next").appendTo(div1_3);
+		    div1_3_4.html("→");
 	}
 	
 //图片替换函数
