@@ -1,24 +1,7 @@
 $(document).ready(function () {
 	var isClick = false;
 	//二级菜单
-	$(".itemsBtn").on("mouseover",".type_item",function  () {
-		var thisSrc = $(this).find("img").attr("name");
-		thisSrc = "../img/browse/" + thisSrc + "2.png";
-		$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
-		$(this).css("color","#F05656");
-	}).on("mouseout",".type_item",function  () {
-		if ($(this).attr("state") == "0") {
-			var thisSrc = $(this).find("img").attr("name");
-			thisSrc = "../img/browse/" + thisSrc + ".png";
-			$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
-			$(this).css("color","#666666");
-		}
-	});
-	
-	//二级菜单点击获取内容、三级菜单弹出动画
-	$(document).on("click",".type_item",function  () {
-		var thisName = $(this).find("img").attr("name");
-		$(".itemsBtn li").css("color","#666666");
+	$(function () {
 		var allName;
 		for (var i = 0;i<$(".type_item").length;i++) {
 			allName = $(".type_item").eq(i).find("img").attr("name");
@@ -26,65 +9,148 @@ $(document).ready(function () {
 			$(".type_item").find(".type_item_img3,.type_item_img1").eq(i).attr("src",allName);
 			$(".type_item").eq(i).attr("state","0");
 		}
-		allName = "../img/browse/" + thisName + "2.png";
-		$(this).find(".type_item_img3,.type_item_img1").attr("src",allName);
-		$(this).css("color","#F05656");
-		$(this).attr("state","1");
-		switch (thisName){
-			case "type_select_all":
-				$(".header_third").stop().animate({
-					opacity:0,
-					width:'0',
-				},800);
-				$(".header_third_content1,.header_third_content2,.header_third_content3").css("visibility","hidden");
+		var id = 3;//获取的ID
+		switch (id){
+			case 0:
+				$(".type_item").eq(0).find(".type_item_img3,.type_item_img1").attr("src","../img/browse/type_select_all2.png");
+				$(".type_item").eq(0).find("a").addClass("setTextRed");
+				$(".type_item").eq(0).attr("state","1");
 				break;
-			case "shsh":
-				$(".header_third").stop().animate({
-					opacity:1,
-					width:'100%'
-				},1000);
-				var wt = $(".header_third_content1").width();
-				var ls = $(this).position().left;
-				var ws = $(this).width();
-				var lt = ls+ws/2-wt/2+20;
-				$(".header_third_content1").css("visibility","visible");
-				$(".header_third_content2,.header_third_content3").stop().animate({left:'-14.5px',opacity:0},500);
-				$(".header_third_content1").animate({left:lt,opacity:1},500);
-				$(".header_third_content2,.header_third_content3").css("visibility","hidden");
+			case 1:
+				$(".type_item").eq(1).find(".type_item_img3,.type_item_img1").attr("src","../img/browse/shsh2.png");
+				$(".type_item").eq(1).find("a").addClass("setTextRed");
+				$(".type_item").eq(1).attr("state","1");
 				break;
-			case "shxx":
-				$(".header_third").stop().animate({
-					opacity:1,
-					width:'100%'
-				},1000);
-				var wt = $(".header_third_content2").width();
-				var ls = $(this).position().left;
-				var ws = $(this).width();
-				var lt = ls+ws/2-wt/2+20;
-				$(".header_third_content2").css("visibility","visible");
-				$(".header_third_content1,.header_third_content3").stop().animate({left:'145.5px',opacity:0},500);
-				$(".header_third_content2").animate({opacity:1,left:lt},500);
-				$(".header_third_content1,.header_third_content3").css("visibility","hidden");
+			case 2:
+				$(".type_item").eq(2).find(".type_item_img3,.type_item_img1").attr("src","../img/browse/shxx2.png");
+				$(".type_item").eq(2).find("a").addClass("setTextRed");
+				$(".type_item").eq(2).attr("state","1");
 				break;
-			case "ylyd":
-				$(".header_third").stop().animate({
-					opacity:1,
-					width:'100%'
-				},1000);
-				var wt = $(".header_third_content3").width();
-				var ls = $(this).position().left;
-				var ws = $(this).width();
-				var lt = ls+ws/2-wt/2+20;
-				$(".header_third_content3").css("visibility","visible");
-				$(".header_third_content1,.header_third_content2").stop().animate({left:'306.5px',opacity:0},500);
-				$(".header_third_content3").animate({opacity:1,left:lt},500);
-				$(".header_third_content1,.header_third_content2").css("visibility","hidden");
+			case 3:
+				$(".type_item").eq(3).find(".type_item_img3,.type_item_img1").attr("src","../img/browse/ylyd2.png");
+				$(".type_item").eq(3).find("a").addClass("setTextRed");
+				$(".type_item").eq(3).attr("state","1");
 				break;
 			default:
 				break;
 		}
-		
+			
+			
 	});
+	
+	$(".itemsBtn").on("mouseover",".type_item",function  () {
+		if ($(this).attr("id")=="type_select_all") {
+			var thisSrc = $(this).find("img").attr("name");
+			thisSrc = "../img/browse/" + thisSrc + "2.png";
+			$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
+			$(this).find("a").css("color","#F05656");
+		}
+	}).on("mouseout",".type_item",function  () {
+		if ($(this).attr("id")=="type_select_all"&& $(this).attr("state")=="0") {
+			var thisSrc = $(this).find("img").attr("name");
+			thisSrc = "../img/browse/" + thisSrc + ".png";
+			$(this).find(".type_item_img3,.type_item_img1").attr("src",thisSrc);
+			$(this).find("a").css("color","#666666");
+		}
+	});
+	
+	//二级菜单点击获取内容、三级菜单弹出动画
+	$(document).on("mouseover",".type_item",function  () {
+		if ($(this).attr("id")!="type_select_all") {
+			var thisName = $(this).find("img").attr("name");
+			$(".itemsBtn li").css("color","#666666");
+			var allName;
+			for (var i = 0;i<$(".type_item").length;i++) {
+				allName = $(".type_item").eq(i).find("img").attr("name");
+				allName = "../img/browse/" + allName + ".png";
+				$(".type_item").find(".type_item_img3,.type_item_img1").eq(i).attr("src",allName);
+				$(".type_item").find("a").eq(i).css("color","#666666");
+				$(".type_item").eq(i).attr("state","0");
+			}
+			allName = "../img/browse/" + thisName + "2.png";
+			$(this).find(".type_item_img3,.type_item_img1").attr("src",allName);
+			$(this).find("a").css("color","#F05656");
+			$(this).attr("state","1");
+			switch (thisName){
+				case "type_select_all":
+					
+					break;
+				case "shsh":
+					$(".header_third").stop().animate({
+						opacity:1,
+						width:'100%'
+					},500);
+					var wt = $(".header_third_content1").width();
+					var ls = $(this).position().left;
+					var ws = $(this).width();
+					var lt = ls+ws/2-wt/2+20;
+					$(".header_third_content1").css("visibility","visible");
+					$(".header_third_content2,.header_third_content3").stop().animate({left:'-14.5px',opacity:0},500);
+					$(".header_third_content1").stop().animate({left:lt,opacity:1},500);
+					$(".header_third_content2,.header_third_content3").css("visibility","hidden");
+					break;
+				case "shxx":
+					$(".header_third").stop().animate({
+						opacity:1,
+						width:'100%'
+					},500);
+					var wt = $(".header_third_content2").width();
+					var ls = $(this).position().left;
+					var ws = $(this).width();
+					var lt = ls+ws/2-wt/2+20;
+					$(".header_third_content2").css("visibility","visible");
+					$(".header_third_content1,.header_third_content3").stop().animate({left:'145.5px',opacity:0},500);
+					$(".header_third_content2").stop().animate({opacity:1,left:lt},500);
+					$(".header_third_content1,.header_third_content3").css("visibility","hidden");
+					break;
+				case "ylyd":
+					$(".header_third").stop().animate({
+						opacity:1,
+						width:'100%'
+					},500);
+					var wt = $(".header_third_content3").width();
+					var ls = $(this).position().left;
+					var ws = $(this).width();
+					var lt = ls+ws/2-wt/2+20;
+					$(".header_third_content3").css("visibility","visible");
+					$(".header_third_content1,.header_third_content2").stop().animate({left:'306.5px',opacity:0},500);
+					$(".header_third_content3").stop().animate({opacity:1,left:lt},500);
+					$(".header_third_content1,.header_third_content2").css("visibility","hidden");
+					break;
+				default:
+					break;
+			}
+		}
+	});
+	
+	$(document).on("click",".type_item",function() {
+		var thisTypeName = $(this).find("img").attr("name");
+		switch (thisTypeName){
+			case "type_select_all":
+				$(".header_third").stop().animate({
+					opacity:0,
+					width:'0',
+				},500);
+				$(".header_third_content1,.header_third_content2,.header_third_content3").css("visibility","hidden");
+				break;
+			case "shsh":
+				//获取社会民生
+				for (var i = 0;i<$(".type_item").length;i++) {
+					$(".type_item").find("a").eq(i).removeClass("setTextRed");
+				}
+				$(this).find("a").addClass("setTextRed");
+				break;
+			case "shxx":
+				//获取生活休闲
+				break;
+			case "ylyd":
+				//获取娱乐游戏
+				break;
+			default:
+				break;
+		}
+	});
+	
 	//三级菜单功能
 	$(".header_third_index li").click(function () {
 		$(".header_third_index li").css("color","#999999");

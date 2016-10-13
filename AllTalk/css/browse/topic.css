@@ -1338,6 +1338,12 @@ ul
     position: absolute;
 }
 
+.page_change
+{
+	bottom: 0;
+    position: absolute;
+    right: 0;
+}
 
 /******普通话题页相关样式******/
 #nTopicPage 

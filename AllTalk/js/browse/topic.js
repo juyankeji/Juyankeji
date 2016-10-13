@@ -596,6 +596,7 @@ $(document).ready(function () {
 		//获取数据。。
 //		function..
 		var thisReplyPage = $("<div></div>").addClass("comment_reply_tag").attr("data-pageNum",tagNum).appendTo(thisLoadArea);
+		$("<div></div>").text(tagNum).appendTo(thisReplyPage);
 		for (var i=0;i<comment_reply.length;i++) {
 			addReplyComment(thisReplyPage,
 							comment_reply[i].commentType,
@@ -621,15 +622,28 @@ $(document).ready(function () {
 		});
 		
 		$(".comment_reply").on("click",".reply_next",function () {
-			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
-//			console.log(a);
-			pageTagNum++;
-			getReplyData(pageTagNum,thisLoadArea);
+			if ($(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum).length>0) {
+				$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+				$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum).css("display","inherit");
+				pageTagNum++;
+//				console.log(pageTagNum+","+"1");
+			} else{
+				$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+	//			console.log(a);
+				pageTagNum++;
+				getReplyData(pageTagNum,thisLoadArea);
+//				console.log(pageTagNum+","+"2");
+			}
+			
 		});
 		
 		$(".comment_reply").on("click",".reply_pre",function () {
-			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
-			$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+			if (pageTagNum>1) {
+				$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-1).css("display","none");
+				$(this).parents(".comment_reply").find(".comment_reply_tag").eq(pageTagNum-2).css("display","inherit");
+				pageTagNum--;
+	//			console.log(pageTagNum+","+"3");
+			}
 		});
 	}
 	

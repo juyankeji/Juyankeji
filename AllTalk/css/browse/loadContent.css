@@ -130,7 +130,7 @@ ul
 	float: right;
 }
 
-.type_item div
+.type_item a
 {
 	margin: 6px auto;
 	height: 24px;
@@ -140,7 +140,9 @@ ul
 	background:	url(../../img/browse/dropDown.png) right center no-repeat;
 }
 
-
+.setTextRed{
+	color: #F05656;
+}
 
 .header_third
 {
